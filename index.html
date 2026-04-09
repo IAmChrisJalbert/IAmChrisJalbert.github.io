@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAmChrisJalbert | Android Developer</title>
-    <!-- This script pulls in the Tailwind CSS to make the dark theme work perfectly in plain HTML -->
+    <title>Traffic Stats | IAmChrisJalbert</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- STEP 1: Paste your Google AdSense verification script here -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1387580026325751" crossorigin="anonymous"></script>
-</head>
-<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30">
+
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRW2SR2KL5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,7 +16,10 @@
 
       gtag('config', 'G-WRW2SR2KL5');
     </script>
-    <!-- Navigation -->
+</head>
+<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
+
+    <!-- Navigation (Standard - No Stats Link to keep it secret) -->
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
@@ -27,7 +27,7 @@
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end">
-                <a href="index.html" class="text-blue-500 transition-colors">Apps</a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
                 <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
@@ -35,165 +35,70 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="py-24 px-6 text-center max-w-4xl mx-auto space-y-6">
-        <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter italic">
-            THE <span class="text-blue-500 underline decoration-blue-500/30 underline-offset-8">SIMPLY</span> COLLECTION
-        </h1>
-        <p class="text-xl text-slate-400 font-medium leading-relaxed">
-            Fast, practical Android apps built with zero clutter. Focused on your privacy and your goals.
-        </p>
-    </header>
+    <!-- Dashboard Content -->
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-24 w-full">
+        <section class="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <!-- Background Glow -->
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-    <!-- App Grid -->
-    <main class="max-w-6xl mx-auto px-6 pb-24">
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            
-            <!-- Simply Sip -->
-            <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
-                <div class="flex flex-col items-center text-center space-y-4">
-                    <img src="images/sip_icon.png" alt="Simply Sip" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
-                    <div class="space-y-1">
-                        <h3 class="text-xl font-bold text-white">Simply Sip</h3>
-                        <p class="text-sm text-slate-500">Skip the drink. Fund the fun.</p>
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplysip" target="_blank" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Simply Solitaire -->
-            <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
-                <div class="flex flex-col items-center text-center space-y-4">
-                    <img src="images/solitaire_icon.png" alt="Simply Solitaire" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
-                    <div class="space-y-1">
-                        <h3 class="text-xl font-bold text-white">Simply Solitaire</h3>
-                        <p class="text-sm text-slate-500">Relaxing cards, classic gameplay.</p>
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.solitare" target="_blank" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Simply Minesweeper -->
-            <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
-                <div class="flex flex-col items-center text-center space-y-4">
-                    <img src="images/minesweeper_icon.png" alt="Simply Minesweeper" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
-                    <div class="space-y-1">
-                        <h3 class="text-xl font-bold text-white">Simply Minesweeper</h3>
-                        <p class="text-sm text-slate-500">Old-school logic, modern look.</p>
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.minesweeper" target="_blank" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Simply Tic Tac Toe -->
-            <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
-                <div class="flex flex-col items-center text-center space-y-4">
-                    <img src="images/tictactoe_icon.png" alt="Simply Tic Tac Toe" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
-                    <div class="space-y-1">
-                        <h3 class="text-xl font-bold text-white">Simply Tic Tac Toe</h3>
-                        <p class="text-sm text-slate-500">The classic game, clutter-free.</p>
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.tictactoe" target="_blank" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Simply Dots & Boxes -->
-            <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
-                <div class="flex flex-col items-center text-center space-y-4">
-                    <img src="images/dotsandboxes_icon.png" alt="Simply Dots & Boxes" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
-                    <div class="space-y-1">
-                        <h3 class="text-xl font-bold text-white">Simply Dots & Boxes</h3>
-                        <p class="text-sm text-slate-500">The nostalgic pen-and-paper game.</p>
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.dotsandboxes" target="_blank" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Beta Tester Callout -->
-        <div class="mt-16 bg-gradient-to-br from-blue-900/20 to-slate-900/50 border border-blue-500/20 rounded-[2.5rem] p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
-            <div class="absolute inset-0 bg-blue-500/5 blur-[100px] pointer-events-none"></div>
             <div class="relative z-10">
-                <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mx-auto mb-6 border border-blue-500/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <div class="text-center mb-12 space-y-4">
+                    <h1 class="text-4xl md:text-5xl font-black text-white tracking-tighter italic">TRAFFIC <span class="text-blue-500">DASHBOARD</span></h1>
+                    <p class="text-lg text-slate-400">Live view counts for your portfolio pages.</p>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-black text-white tracking-tighter italic mb-4">BECOME A <span class="text-blue-500">TESTER</span></h3>
-                <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
-                    Want to try out the newest apps before they hit the Play Store? Join the official Google Group to get exclusive early access to unreleased "Simply" apps.
-                </p>
-                <a href="https://groups.google.com/g/iamchrisjalbert" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-all font-bold shadow-lg shadow-blue-900/20">
-                    Join the Google Group
-                </a>
-            </div>
-        </div>
 
-        <!-- STEP 2: The Non-Intrusive Ad Space -->
-        <div class="mt-20 flex justify-center w-full">
-            <div class="w-full max-w-3xl bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
-                <p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold mb-2">Advertisement</p>
-                
-                <!-- Portfolio Horizontal Break -->
-                <ins class="adsbygoogle"
-                     style="display:inline-block;width:100%;height:90px"
-                     data-ad-client="ca-pub-1387580026325751"
-                     data-ad-slot="5333806087"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <!-- END GOOGLE AD UNIT CODE -->
-                
-            </div>
-        </div>
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Home / Apps -->
+                    <div class="bg-slate-900/80 border border-slate-700/50 rounded-2xl p-8 flex flex-col items-center justify-center space-y-4 hover:border-blue-500/50 transition-colors">
+                        <h2 class="text-sm font-black text-slate-500 uppercase tracking-widest">Home / Apps</h2>
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiamchrisjalbert.com&label=VIEWS&labelColor=%230f172a&countColor=%232563eb" alt="Home Traffic" class="h-8 rounded shadow-lg">
+                    </div>
 
-        <!-- Philosophy Grid -->
-        <section class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24">
-            <div class="space-y-4">
-                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    <!-- About -->
+                    <div class="bg-slate-900/80 border border-slate-700/50 rounded-2xl p-8 flex flex-col items-center justify-center space-y-4 hover:border-emerald-500/50 transition-colors">
+                        <h2 class="text-sm font-black text-slate-500 uppercase tracking-widest">About Me</h2>
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiamchrisjalbert.com/about&label=VIEWS&labelColor=%230f172a&countColor=%2310b981" alt="About Traffic" class="h-8 rounded shadow-lg">
+                    </div>
+
+                    <!-- Privacy -->
+                    <div class="bg-slate-900/80 border border-slate-700/50 rounded-2xl p-8 flex flex-col items-center justify-center space-y-4 hover:border-amber-500/50 transition-colors">
+                        <h2 class="text-sm font-black text-slate-500 uppercase tracking-widest">Privacy Policies</h2>
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiamchrisjalbert.com/privacy&label=VIEWS&labelColor=%230f172a&countColor=%23f59e0b" alt="Privacy Traffic" class="h-8 rounded shadow-lg">
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="bg-slate-900/80 border border-slate-700/50 rounded-2xl p-8 flex flex-col items-center justify-center space-y-4 hover:border-pink-500/50 transition-colors">
+                        <h2 class="text-sm font-black text-slate-500 uppercase tracking-widest">Contact</h2>
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiamchrisjalbert.com/contact&label=VIEWS&labelColor=%230f172a&countColor=%23ec4899" alt="Contact Traffic" class="h-8 rounded shadow-lg">
+                    </div>
+
                 </div>
-                <h4 class="text-lg font-bold text-white uppercase tracking-wider">Fast & Focused</h4>
-                <p class="text-sm text-slate-500 leading-relaxed">No bloat. No long loading screens. Every Simply app is designed to let you do what you need and get on with your day.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+
+                <!-- Google Analytics Callout -->
+                <div class="mt-12 bg-blue-900/20 border border-blue-500/20 rounded-2xl p-6 text-center">
+                    <p class="text-slate-400 text-sm">
+                        These counters track basic page hits. For deep analytics (device types, bounce rates, and traffic sources), log into your <a href="https://analytics.google.com" target="_blank" class="text-blue-400 hover:text-blue-300 font-bold transition-colors">Google Analytics</a> dashboard.
+                    </p>
                 </div>
-                <h4 class="text-lg font-bold text-white uppercase tracking-wider">Private by Design</h4>
-                <p class="text-sm text-slate-500 leading-relaxed">Your data belongs to you. Simply apps keep your logs and habits strictly on your own device.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                </div>
-                <h4 class="text-lg font-bold text-white uppercase tracking-wider">Modern Interface</h4>
-                <p class="text-sm text-slate-500 leading-relaxed">Built using Jetpack Compose for a butter-smooth experience that feels at home on any modern Android device.</p>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             
+            <!-- Left Side: Copyright & Stealth Counter (for the stats page itself!) -->
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <p class="text-xs font-medium text-slate-600 uppercase tracking-widest">
                     © 2026 IAmChrisJalbert | Built in Gloucester, MA
                 </p>
-                <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiamchrisjalbert.com&label=&labelColor=%230a0a0c&countColor=%231e293b" alt="traffic" class="h-4 opacity-30 hover:opacity-100 transition-opacity rounded">
+                <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiamchrisjalbert.com/stats&label=&labelColor=%230a0a0c&countColor=%231e293b" alt="traffic" class="h-4 opacity-30 hover:opacity-100 transition-opacity rounded">
             </div>
 
+            <!-- Right Side: Links -->
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="about.html" class="hover:text-white transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policies</a>
@@ -205,5 +110,6 @@
 
         </div>
     </footer>
+
 </body>
 </html>
