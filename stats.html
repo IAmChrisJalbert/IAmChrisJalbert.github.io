@@ -90,15 +90,16 @@
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             
-            <!-- Left Side: Copyright & Stealth Counter (for the stats page itself!) -->
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <p class="text-xs font-medium text-slate-600 uppercase tracking-widest">
                     © 2026 IAmChrisJalbert | Built in Gloucester, MA
                 </p>
-                <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fiamchrisjalbert.com/stats&label=&labelColor=%230a0a0c&countColor=%231e293b" alt="traffic" class="h-4 opacity-30 hover:opacity-100 transition-opacity rounded">
+                <!-- Secret Link to Stats Dashboard (Stable Hits.sh Counter) -->
+                <a href="stats.html" class="cursor-default" title="">
+                    <img src="https://hits.sh/iamchrisjalbert.com.svg?style=flat-square&label=%20&color=1e293b&labelColor=1e293b" alt="traffic" class="h-4 opacity-30 rounded">
+                </a>
             </div>
 
-            <!-- Right Side: Links -->
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="about.html" class="hover:text-white transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policies</a>
