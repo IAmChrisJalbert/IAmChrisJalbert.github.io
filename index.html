@@ -51,8 +51,34 @@
     <main class="flex-grow max-w-6xl mx-auto px-6 pb-24 w-full">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Simply Sudoku -->
-            <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
+            <!-- Simply Connect (NEW RELEASE) -->
+            <div class="group bg-blue-600/5 border border-blue-500/20 rounded-[2.5rem] p-8 hover:bg-blue-600/10 hover:border-blue-500/40 transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-4 right-6">
+                    <span class="bg-blue-500 text-[10px] text-white font-black px-2 py-1 rounded-md tracking-widest italic">NEW RELEASE</span>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-24 h-24 rounded-3xl bg-slate-900 border border-blue-500/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-2xl">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 fill-none stroke-blue-500" stroke-width="8" stroke-linecap="round">
+                           <circle cx="35" cy="50" r="15" />
+                           <circle cx="65" cy="50" r="15" />
+                           <path d="M45,50 h10" />
+                        </svg>
+                    </div>
+                    <div class="space-y-1">
+                        <h3 class="text-xl font-bold text-white">Simply Connect</h3>
+                        <p class="text-sm text-slate-500">Ephemeral Group Chat</p>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplyconnect" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Simply Sudoku (COMING SOON) -->
+            <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 opacity-70 grayscale transition-all duration-300 relative">
+                <div class="absolute top-4 right-6">
+                    <span class="bg-slate-700 text-[10px] text-slate-300 font-black px-2 py-1 rounded-md tracking-widest italic uppercase">Coming Soon</span>
+                </div>
                 <div class="flex flex-col items-center text-center space-y-4">
                     <div class="w-24 h-24 rounded-3xl bg-slate-800 flex items-center justify-center border border-white/10 group-hover:scale-105 transition-transform duration-500">
                         <span class="text-4xl font-black text-blue-500 italic">S</span>
@@ -61,9 +87,9 @@
                         <h3 class="text-xl font-bold text-white">Simply Sudoku</h3>
                         <p class="text-sm text-slate-500">Pure logic, zero clutter.</p>
                     </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplysudoku" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
-                    </a>
+                    <div class="mt-4 pointer-events-none opacity-30">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Coming Soon" class="h-12">
+                    </div>
                 </div>
             </div>
 
