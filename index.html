@@ -18,6 +18,36 @@
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1387580026325751" crossorigin="anonymous"></script>
+
+    <!-- LIVE STATS ENGINE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const statsCol = collection(db, 'artifacts', appId, 'public', 'data', 'tester_stats');
+                onSnapshot(statsCol, (snapshot) => {
+                    snapshot.forEach((doc) => {
+                        const countEl = document.getElementById(`live-count-${doc.id}`);
+                        if (countEl) {
+                            countEl.innerText = `${doc.data().count} / 14 Testers Found`;
+                            countEl.parentElement.classList.remove('hidden');
+                        }
+                    });
+                }, (err) => {});
+            } else {
+                signInAnonymously(auth);
+            }
+        });
+    </script>
 </head>
 <body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
 
@@ -33,7 +63,7 @@
                 <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
-                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -48,16 +78,15 @@
         </p>
     </header>
 
-    <!-- App Grid -->
+    <!-- Main Content -->
     <main class="flex-grow max-w-6xl mx-auto px-6 pb-24 w-full space-y-20">
 
-        <!-- NEEDS HELP / MUTUAL TESTING SECTION -->
+        <!-- MUTUAL TESTING SWAP SECTION -->
         <section>
-            <!-- Testing Group Banner -->
             <div class="flex flex-col md:flex-row items-center justify-between mb-12 px-2 bg-emerald-500/10 border border-emerald-500/20 py-6 rounded-3xl gap-6">
                 <div class="space-y-1 md:ml-6 text-center md:text-left">
                     <h2 class="text-3xl font-black text-emerald-400 italic tracking-tighter uppercase">Mutual Testing <span class="text-white">Swap</span></h2>
-                    <p class="text-sm text-emerald-200">I need testers to hit production. 1-for-1 strict 14-day trade for my latest projects!</p>
+                    <p class="text-sm text-emerald-200">I need 14 testers to hit production. 1-for-1 strict 14-day trade for my latest projects!</p>
                 </div>
                 <a href="https://groups.google.com/g/IAmChrisJalbert" target="_blank" class="group flex items-center gap-3 px-6 py-4 md:mr-6 bg-emerald-600 hover:bg-emerald-500 rounded-2xl transition-all font-bold text-white shadow-lg shadow-emerald-900/40">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -68,8 +97,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Simply Connect -->
                 <div class="group bg-blue-600/5 border border-blue-500/20 rounded-[2.5rem] p-8 hover:bg-blue-600/10 hover:border-blue-500/40 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute top-4 right-6">
-                        <span class="bg-blue-500 text-[10px] text-white font-black px-2 py-1 rounded-md tracking-widest italic uppercase">New Release</span>
+                    <div class="absolute top-4 right-6 hidden">
+                        <span id="live-count-connect" class="bg-blue-500 text-[10px] text-white font-black px-2 py-1 rounded-md tracking-widest italic uppercase">Needs Testers</span>
                     </div>
                     <div class="flex flex-col items-center text-center space-y-4">
                         <div class="w-24 h-24 rounded-3xl bg-[#0a0a0c] border border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-2xl">
@@ -86,7 +115,10 @@
                 </div>
 
                 <!-- Simply Sip -->
-                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
+                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-6 hidden">
+                        <span id="live-count-sip" class="bg-emerald-500 text-[10px] text-white font-black px-2 py-1 rounded-md tracking-widest italic uppercase">Needs Testers</span>
+                    </div>
                     <div class="flex flex-col items-center text-center space-y-4">
                         <img src="images/sip_icon.png" alt="Simply Sip" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
                         <div class="space-y-1">
@@ -100,7 +132,10 @@
                 </div>
 
                 <!-- Simply Minesweeper -->
-                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
+                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-4 right-6 hidden">
+                        <span id="live-count-minesweeper" class="bg-purple-500 text-[10px] text-white font-black px-2 py-1 rounded-md tracking-widest italic uppercase">Needs Testers</span>
+                    </div>
                     <div class="flex flex-col items-center text-center space-y-4">
                         <img src="images/minesweeper_icon.png" alt="Simply Minesweeper" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
                         <div class="space-y-1">
@@ -110,26 +145,6 @@
                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.minesweeper" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
                             <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
                         </a>
-                    </div>
-                </div>
-
-                <!-- Simply Sudoku -->
-                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute top-7 -right-10 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-12 rotate-45 shadow-lg z-20">
-                        Coming Soon
-                    </div>
-                    <div class="flex flex-col items-center text-center space-y-4 opacity-70 hover:opacity-100 transition-opacity">
-                        <div class="w-24 h-24 rounded-3xl bg-[#111827] border border-white/5 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.15)] relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                            <div class="absolute w-16 h-16 bg-blue-600/30 blur-xl rounded-full"></div>
-                            <img src="images/sudoku_icon.png" alt="Simply Sudoku" class="w-20 h-20 object-contain relative z-10" onerror="this.style.display='none'">
-                        </div>
-                        <div class="space-y-1">
-                            <h3 class="text-xl font-bold text-white tracking-tight">Simply Sudoku</h3>
-                            <p class="text-sm text-slate-500">Pure logic, no distractions.</p>
-                        </div>
-                        <div class="mt-4 opacity-40 cursor-not-allowed">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Coming soon to Google Play" class="h-12 grayscale"/>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -187,37 +202,83 @@
             </div>
         </section>
 
-        <!-- Latest Articles (Developer Insights) -->
-        <div class="mt-24 border-t border-white/5 pt-20">
+        <!-- COMING SOON -->
+        <section>
+            <div class="flex items-center justify-between mb-12 px-2 border-t border-white/5 pt-20">
+                <h2 class="text-3xl font-black text-white italic tracking-tighter uppercase">Coming <span class="text-blue-500/50">Soon</span></h2>
+                <div class="h-px bg-white/10 flex-grow mx-8 hidden md:block"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Simply Sudoku -->
+                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-7 -right-10 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-12 rotate-45 shadow-lg z-20">
+                        Planned
+                    </div>
+                    <div class="flex flex-col items-center text-center space-y-4 opacity-70 hover:opacity-100 transition-opacity">
+                        <div class="w-24 h-24 rounded-3xl bg-[#111827] border border-white/5 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.15)] relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <div class="absolute w-16 h-16 bg-blue-600/30 blur-xl rounded-full"></div>
+                            <img src="images/sudoku_icon.png" alt="Simply Sudoku" class="w-20 h-20 object-contain relative z-10" onerror="this.style.display='none'">
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-bold text-white tracking-tight">Simply Sudoku</h3>
+                            <p class="text-sm text-slate-500">Pure logic, no distractions.</p>
+                        </div>
+                        <div class="mt-4 opacity-40 cursor-not-allowed">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Coming soon to Google Play" class="h-12 grayscale"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEVELOPER INSIGHTS (The Blurbs) -->
+        <section class="mt-24 border-t border-white/5 pt-20">
             <div class="flex items-center justify-between mb-12 px-2">
                 <h2 class="text-3xl font-black text-white italic tracking-tighter">DEVELOPER <span class="text-blue-500">INSIGHTS</span></h2>
                 <div class="h-px bg-white/10 flex-grow mx-8 hidden md:block"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <a href="simply-sip-case-study.html" class="group bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-blue-500/50 transition-all">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Manifesto Blurb -->
+                <a href="developer-manifesto.html" class="group bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-blue-500/50 transition-all">
                     <div class="space-y-4">
-                        <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest">Case Study</p>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Building Simply Sip: Why Privacy is the Ultimate Feature</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">A deep dive into the development of Simply Sip and the philosophy behind distraction-free personal finance tracking.</p>
+                        <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest">Philosophy</p>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">The Developer Manifesto</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">A rebellion against bloated apps. Why purpose, privacy, and performance are the core of the Simply Collection.</p>
+                        <div class="pt-4 flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest gap-2">
+                            Read Manifesto <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Simply Sip Blurb -->
+                <a href="simply-sip-case-study.html" class="group bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
+                    <div class="space-y-4">
+                        <p class="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Case Study</p>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Building Simply Sip: Why Privacy is the Ultimate Feature</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">A deep dive into distraction-free personal finance and the technology behind local-only data persistence.</p>
                         <div class="pt-4 flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest gap-2">
                             Read More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </div>
                     </div>
                 </a>
 
-                <div class="group bg-white/5 border border-white/10 rounded-3xl p-8 opacity-50 grayscale cursor-not-allowed">
+                <!-- Sudoku Blurb -->
+                <a href="simply-sudoku-article.html" class="group bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-purple-500/50 transition-all">
                     <div class="space-y-4">
-                        <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Upcoming Article</p>
-                        <h3 class="text-2xl font-bold text-white">Algorithms of Logic: Solving Sudoku in Kotlin</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Coming soon. A breakdown of the backtracking algorithm used to power Simply Sudoku.</p>
+                        <p class="text-[10px] font-black text-purple-500 uppercase tracking-widest">Technical Article</p>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">Algorithms of Logic: Solving Sudoku in Kotlin</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">A breakdown of the backtracking algorithm and recursive logic used to generate perfect puzzles instantly.</p>
+                        <div class="pt-4 flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest gap-2">
+                            Read More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-        </div>
+        </section>
 
-        <!-- Philosophy Grid -->
-        <section class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24">
+        <!-- Philosophy Grid (Quick Points) -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24">
             <div class="space-y-4">
                 <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
@@ -261,7 +322,7 @@
                 <p class="text-xs font-medium text-slate-600 tracking-widest">
                     © 2026 IAmChrisJalbert | Built in Gloucester, MA
                 </p>
-                <!-- Secret Link to Stats (Stealth Mode) -->
+                <!-- Secret Link to Stats Dashboard (Stealth Mode) -->
                 <a href="stats.html" class="cursor-default" style="cursor: default !important;">
                     <img src="https://api.visitorbadge.io/api/visitors?path=iamchrisjalbert_index&label=&labelColor=%230a0a0c&countColor=%231e293b" class="h-4 opacity-30 grayscale pointer-events-none">
                 </a>
