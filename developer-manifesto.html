@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1387580026325751" crossorigin="anonymous"></script>
 </head>
-<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30">
+<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
 
     <!-- Navigation -->
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
@@ -17,11 +17,11 @@
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
-                <a href="index.html" class="text-blue-500 transition-colors">Apps</a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
                 <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
-                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -57,9 +57,19 @@
         </div>
     </article>
 
+    <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <p class="text-xs font-medium text-slate-600 uppercase tracking-widest">© 2026 IAmChrisJalbert</p>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs font-medium text-slate-600 tracking-widest">
+                © 2026 IAmChrisJalbert | Built in Gloucester, MA
+            </p>
+            <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-white transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
         </div>
     </footer>
 </body>
