@@ -30,25 +30,44 @@
         <header class="space-y-6 mb-16">
             <p class="text-xs font-black text-purple-500 uppercase tracking-widest">Technical Deep Dive</p>
             <h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter italic uppercase">Algorithms of Logic: <span class="text-purple-500">Sudoku</span></h1>
-            <p class="text-xl text-slate-400 leading-relaxed font-medium">How recursive backtracking enables Simply Sudoku to generate unique, solvable puzzles in milliseconds.</p>
+            <p class="text-xl text-slate-400 leading-relaxed font-medium">An exploration of recursive backtracking, constraint satisfaction, and the engineering behind a perfect puzzle engine.</p>
         </header>
 
         <div class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-400 text-lg leading-relaxed">
-            <p>Sudoku is more than a game—it's a perfect playground for computer science. When I set out to build **Simply Sudoku**, I wanted to ensure that every puzzle was generated on-device, 100% unique, and guaranteed to be solvable with pure logic.</p>
+            <p>Sudoku is more than a game—it's a perfect playground for computer science. When I set out to build **Simply Sudoku**, I wanted to ensure that every puzzle was generated on-device, 100% unique, and guaranteed to be solvable with pure logic. This required moving beyond simple random placement and into the realm of formal algorithmic design.</p>
             
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">The Engine: Backtracking Algorithm</h2>
-            <p>At the heart of the app is a recursive backtracking algorithm. This approach works by attempting to place a number in a cell and then recursively trying to fill the rest of the board. If it hits a dead end (where no valid number can be placed), it "backtracks" and changes the previous number.</p>
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">The Core: Recursive Backtracking</h2>
+            <p>At the heart of the app is a recursive backtracking algorithm. Sudoku is essentially a **Constraint Satisfaction Problem (CSP)**. The rules are simple: no repeating numbers in a row, column, or 3x3 grid. However, the search space for a 9x9 grid is massive.</p>
+            
+            <p>The backtracking approach works by attempting to place a number in a cell and then recursively trying to fill the rest of the board. If it hits a dead end (where no valid number can be placed), it "backtracks" and changes the previous number. To optimize this for mobile, I implemented **Bitmasking**. By representing the "used" numbers in each row and column as bits in an integer, the engine can check the validity of a move in constant time ($O(1)$), allowing it to solve or generate boards in milliseconds.</p>
 
             <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Generating the Challenge</h2>
-            <p>Generating a board is a two-step process. First, we generate a "Perfect Board"—a fully solved Sudoku grid. Then, we start removing numbers. The difficulty setting (Easy, Medium, Hard) determines how many "holes" are punched into the grid.</p>
+            <p>Generating a board is actually more difficult than solving one. To create a high-quality user experience, the generation process follows a two-step "Reductionist" workflow. First, we generate a "Perfect Board"—a fully solved, valid Sudoku grid using our backtracking engine with randomized seeds to ensure variety.</p>
             
-            <p>To keep the gameplay fair, the engine runs a solve check after every number is removed to ensure that the board still has one, and only one, unique solution.</p>
+            <p>Then, we start the removal phase. Simply picking numbers to delete isn't enough; we must ensure that the resulting puzzle has **exactly one unique solution**. After every number is removed, the engine runs a dual-path solver check. If the solver finds that removing a specific digit creates multiple possible ways to finish the board, that digit is put back, and we try another. This ensures that the player never feels cheated by an "unsolvable" or "ambiguous" puzzle.</p>
 
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Performance on Mobile</h2>
-            <p>While recursive functions can be memory-heavy, Kotlin's efficient handle of stack operations allows Simply Sudoku to solve or generate a board in less than 20ms on most modern Android devices. This ensures that when a user taps "New Game," the board is ready before the screen transition finishes.</p>
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">UI/UX Challenges in Logic Games</h2>
+            <p>Technical logic is only half the battle. On Android, providing a fluid input method for Sudoku is notoriously difficult. In keeping with the "Simply" philosophy, I avoided the standard "floating keypad" which often obscures the board. Instead, Simply Sudoku uses a reactive selector that highlights the active constraints (row, column, and block) to help the player's brain process the logic faster.</p>
+            
+            <p>By sticking to native Kotlin and modern Jetpack Compose, I ensured that these heavy recursive operations never cause a "jank" in the UI thread. The result is a utility that feels as fast as a system-native tool while providing the deep mental workout Sudoku fans expect.</p>
 
             <div class="my-12 p-8 bg-purple-900/20 border border-purple-500/20 rounded-3xl">
-                <p class="text-white font-medium italic text-center">"Code should be as elegant as the logic it seeks to solve. Simply Sudoku is a celebration of that principle."</p>
+                <p class="text-white font-medium italic text-center">"Building Simply Sudoku taught me that even the simplest classic games require sophisticated engineering to feel truly 'simple' to the user."</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Looking Ahead: Optimization</h2>
+            <p>While the current engine is fast, there is always room for more efficiency. In future updates, I'm exploring **Knuth’s Algorithm X** (Dancing Links) to handle even larger grid sizes. My goal remains consistent: providing the most performant, battery-friendly logic games in the Gloucester development scene.</p>
+        </div>
+
+        <!-- Ad Space in Article -->
+        <div class="mt-20 flex justify-center w-full">
+            <div class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                <p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold mb-2">Advertisement</p>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:100%;height:90px"
+                     data-ad-client="ca-pub-1387580026325751"
+                     data-ad-slot="5333806087"></ins>
+                <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
             </div>
         </div>
 
