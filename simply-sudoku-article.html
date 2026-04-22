@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms of Logic | IAmChrisJalbert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1387580026325751" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
+                <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center font-black text-white italic shadow-lg shadow-purple-500/30 border border-white/20 group-hover:rotate-12 transition-transform duration-300 tracking-tighter">CJ</div>
+                <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
+            </a>
+            <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
+                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
+                <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-24">
+        <header class="space-y-6 mb-16">
+            <p class="text-xs font-black text-purple-500 uppercase tracking-widest">Technical Deep Dive</p>
+            <h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter italic uppercase">Algorithms of Logic: <span class="text-purple-500">Sudoku</span></h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-medium">How recursive backtracking enables Simply Sudoku to generate unique, solvable puzzles in milliseconds.</p>
+        </header>
+
+        <div class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-400 text-lg leading-relaxed">
+            <p>Sudoku is more than a game—it's a perfect playground for computer science. When I set out to build **Simply Sudoku**, I wanted to ensure that every puzzle was generated on-device, 100% unique, and guaranteed to be solvable with pure logic.</p>
+            
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">The Engine: Backtracking Algorithm</h2>
+            <p>At the heart of the app is a recursive backtracking algorithm. This approach works by attempting to place a number in a cell and then recursively trying to fill the rest of the board. If it hits a dead end (where no valid number can be placed), it "backtracks" and changes the previous number.</p>
+
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Generating the Challenge</h2>
+            <p>Generating a board is a two-step process. First, we generate a "Perfect Board"—a fully solved Sudoku grid. Then, we start removing numbers. The difficulty setting (Easy, Medium, Hard) determines how many "holes" are punched into the grid.</p>
+            
+            <p>To keep the gameplay fair, the engine runs a solve check after every number is removed to ensure that the board still has one, and only one, unique solution.</p>
+
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Performance on Mobile</h2>
+            <p>While recursive functions can be memory-heavy, Kotlin's efficient handle of stack operations allows Simply Sudoku to solve or generate a board in less than 20ms on most modern Android devices. This ensures that when a user taps "New Game," the board is ready before the screen transition finishes.</p>
+
+            <div class="my-12 p-8 bg-purple-900/20 border border-purple-500/20 rounded-3xl">
+                <p class="text-white font-medium italic text-center">"Code should be as elegant as the logic it seeks to solve. Simply Sudoku is a celebration of that principle."</p>
+            </div>
+        </div>
+
+        <div class="mt-20 pt-12 border-t border-white/5 flex justify-between items-center">
+            <a href="index.html" class="text-sm font-bold text-purple-500 flex items-center gap-2 hover:text-purple-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> Back to Home
+            </a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 px-6 mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs font-medium text-slate-600 tracking-widest">
+                © 2026 IAmChrisJalbert | Built in Gloucester, MA
+            </p>
+            <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-white transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
