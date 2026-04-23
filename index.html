@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAmChrisJalbert | Chris Jalbert Android Developer | Gloucester, MA</title>
-    <meta name="description" content="Portfolio of Chris Jalbert (Christopher Jalbert), an Android Developer in Gloucester, MA. Creator of Simply Connect, Simply Sip, and Simply Sudoku. Build clean, private apps.">
-    <meta name="keywords" content="Chris Jalbert, IAmChrisJalbert, Christopher Jalbert, Android Developer Gloucester, Simply Collection, Kotlin Developer, Mobile Privacy, Simply Sip, Simply Connect, Simply Sudoku">
+    <title>IAmChrisJalbert | Android Developer | Gloucester, MA</title>
+    <meta name="description" content="Official portfolio of IAmChrisJalbert (Christopher Jalbert), a professional Android Developer in Gloucester, MA. Creator of the Simply Collection: Sip, Connect, and Sudoku.">
+    <meta name="keywords" content="IAmChrisJalbert, Chris Jalbert, Christopher Jalbert, Android Developer Gloucester, Simply Collection, Kotlin Developer, Privacy Apps, Simply Sip, Simply Connect, Simply Sudoku">
     
     <!-- Open Graph / Facebook (Background SEO) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://iamchrisjalbert.com/index.html">
-    <meta property="og:title" content="IAmChrisJalbert | Chris Jalbert Portfolio">
+    <meta property="og:title" content="IAmChrisJalbert | Android Developer Portfolio">
     <meta property="og:description" content="Building fast, focused, and private Android apps. Based in Gloucester, MA.">
     <meta property="og:image" content="https://iamchrisjalbert.com/images/connect_icon.png">
 
     <!-- Twitter (Background SEO) -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://iamchrisjalbert.com/index.html">
-    <meta property="twitter:title" content="IAmChrisJalbert | Chris Jalbert Android Developer">
+    <meta property="twitter:title" content="IAmChrisJalbert | Android Developer Portfolio">
     <meta property="twitter:description" content="Building fast, focused, and private Android apps. Based in Gloucester, MA.">
 
-    <!-- Structured Data (The "Identity" Bridge - Unified Person Entity) -->
+    <!-- Structured Data (The "Identity" Bridge - Essential for beating the doctor) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,6 +28,7 @@
       "name": "Chris Jalbert",
       "alternateName": ["IAmChrisJalbert", "Christopher Jalbert"],
       "url": "https://iamchrisjalbert.com",
+      "image": "https://iamchrisjalbert.com/images/profile.jpg",
       "jobTitle": "Android Developer",
       "description": "Android Developer based in Gloucester, MA, specializing in the Simply Collection of apps.",
       "address": {
@@ -79,8 +80,7 @@
                     snapshot.forEach((doc) => {
                         const countEl = document.getElementById(`live-count-${doc.id}`);
                         if (countEl) {
-                            const countValue = doc.data().count ?? 0;
-                            countEl.innerText = `${countValue} / 14 Testers Found`;
+                            countEl.innerText = `${doc.data().count} / 14 Testers Found`;
                             countEl.parentElement.classList.remove('hidden');
                         }
                     });
@@ -101,11 +101,11 @@
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
-                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
+                <a href="index.html" class="text-blue-500 transition-colors">Apps</a>
                 <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
-                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -145,14 +145,14 @@
                     </div>
                     <div class="flex flex-col items-center text-center space-y-4">
                         <div class="w-24 h-24 rounded-3xl bg-[#0a0a0c] border border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-2xl">
-                            <img src="images/connect_icon.png" alt="Simply Connect" class="w-20 h-20 object-contain">
+                            <img src="images/connect_icon.png" alt="Simply Connect Android App by Chris Jalbert" title="Simply Connect by Chris Jalbert" class="w-20 h-20 object-contain">
                         </div>
                         <div class="space-y-1">
                             <h3 class="text-xl font-bold text-white">Simply Connect</h3>
                             <p class="text-sm text-slate-500">Secure. Ephemeral. Family.</p>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplyconnect.public" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Simply Connect by Chris Jalbert on Google Play" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -163,13 +163,13 @@
                         <span id="live-count-sip" class="bg-emerald-500 text-[10px] text-white font-black px-2 py-1 rounded-md tracking-widest italic uppercase">Needs Testers</span>
                     </div>
                     <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="images/sip_icon.png" alt="Simply Sip" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
+                        <img src="images/sip_icon.png" alt="Simply Sip Android App by Chris Jalbert" title="Simply Sip by Chris Jalbert" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
                         <div class="space-y-1">
                             <h3 class="text-xl font-bold text-white">Simply Sip</h3>
                             <p class="text-sm text-slate-500">Skip the drink. Fund the fun.</p>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplysip" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Simply Sip by Chris Jalbert on Google Play" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -180,13 +180,13 @@
                         <span id="live-count-minesweeper" class="bg-purple-500 text-[10px] text-white font-black px-2 py-1 rounded-md tracking-widest italic uppercase">Needs Testers</span>
                     </div>
                     <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="images/minesweeper_icon.png" alt="Simply Minesweeper" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
+                        <img src="images/minesweeper_icon.png" alt="Simply Minesweeper Android App by Chris Jalbert" title="Simply Minesweeper by Chris Jalbert" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
                         <div class="space-y-1">
                             <h3 class="text-xl font-bold text-white">Simply Minesweeper</h3>
                             <p class="text-sm text-slate-500">Clear the board, avoid the boom.</p>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.minesweeper" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Simply Minesweeper by Chris Jalbert on Google Play" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -204,13 +204,13 @@
                 <!-- Simply Tic Tac Toe -->
                 <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
                     <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="images/tictactoe_icon.png" alt="Simply Tic Tac Toe" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
+                        <img src="images/tictactoe_icon.png" alt="Simply Tic Tac Toe Android App by Chris Jalbert" title="Simply Tic Tac Toe by Chris Jalbert" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
                         <div class="space-y-1">
                             <h3 class="text-xl font-bold text-white">Simply Tic Tac Toe</h3>
                             <p class="text-sm text-slate-500">The classic game, clutter-free.</p>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.tictactoe" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Simply Tic Tac Toe by Chris Jalbert on Google Play" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -218,13 +218,13 @@
                 <!-- Simply Dots and Boxes -->
                 <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
                     <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="images/dotsandboxes_icon.png" alt="Simply Dots and Boxes" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
+                        <img src="images/dotsandboxes_icon.png" alt="Simply Dots and Boxes Android App by Chris Jalbert" title="Simply Dots and Boxes by Chris Jalbert" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
                         <div class="space-y-1">
                             <h3 class="text-xl font-bold text-white">Simply Dots and Boxes</h3>
                             <p class="text-sm text-slate-500">Connect the dots, claim your space.</p>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.dotsandboxes" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Simply Dots and Boxes by Chris Jalbert on Google Play" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -232,13 +232,13 @@
                 <!-- Simply Solitaire -->
                 <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300">
                     <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="images/solitaire_icon.png" alt="Simply Solitaire" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
+                        <img src="images/solitaire_icon.png" alt="Simply Solitaire Android App by Chris Jalbert" title="Simply Solitaire by Chris Jalbert" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'">
                         <div class="space-y-1">
                             <h3 class="text-xl font-bold text-white">Simply Solitaire</h3>
                             <p class="text-sm text-slate-500">Relaxing cards, classic gameplay.</p>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.solitare" target="_blank" rel="noopener noreferrer" class="mt-4 opacity-80 hover:opacity-100 transition-opacity">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Simply Solitaire by Chris Jalbert on Google Play" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                     <div class="flex flex-col items-center text-center space-y-4 opacity-70 hover:opacity-100 transition-opacity">
                         <div class="w-24 h-24 rounded-3xl bg-[#111827] border border-white/5 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.15)] relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                             <div class="absolute w-16 h-16 bg-blue-600/30 blur-xl rounded-full"></div>
-                            <img src="images/sudoku_icon.png" alt="Simply Sudoku" class="w-20 h-20 object-contain relative z-10" onerror="this.style.display='none'">
+                            <img src="images/sudoku_icon.png" alt="Simply Sudoku Android App by Chris Jalbert" title="Simply Sudoku by Chris Jalbert" class="w-20 h-20 object-contain relative z-10" onerror="this.style.display='none'">
                         </div>
                         <div class="space-y-1">
                             <h3 class="text-xl font-bold text-white tracking-tight">Simply Sudoku</h3>
@@ -367,7 +367,7 @@
                 </p>
                 <!-- Secret Link to Stats Dashboard (Stealth Mode) -->
                 <a href="stats.html" class="cursor-default" style="cursor: default !important;">
-                    <img src="https://api.visitorbadge.io/api/visitors?path=iamchrisjalbert_index&label=&labelColor=%230a0a0c&countColor=%231e293b" class="h-4 opacity-30 grayscale pointer-events-none">
+                    <img src="https://api.visitorbadge.io/api/visitors?path=iamchrisjalbert_index&label=&labelColor=%230a0a0c&countColor=%231e293b" class="h-4 opacity-30 grayscale pointer-events-none" alt="Chris Jalbert Website Traffic">
                 </a>
             </div>
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
