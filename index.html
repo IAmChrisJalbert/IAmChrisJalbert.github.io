@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAmChrisJalbert | Android Developer | Gloucester, MA</title>
-    <meta name="description" content="Official portfolio of IAmChrisJalbert (Christopher Jalbert), a professional Android Developer in Gloucester, MA. Creator of the Simply Collection: Sip, Connect, and Sudoku.">
-    <meta name="keywords" content="IAmChrisJalbert, Chris Jalbert, Christopher Jalbert, Android Developer Gloucester, Simply Collection, Kotlin Developer, Privacy Apps, Simply Sip, Simply Connect, Simply Sudoku">
+    <title>IAmChrisJalbert | Chris Jalbert Android Developer | Gloucester, MA</title>
+    <meta name="description" content="Portfolio of Chris Jalbert (Christopher Jalbert), an Android Developer in Gloucester, MA. Creator of Simply Connect, Simply Sip, and Simply Sudoku. Build clean, private apps.">
+    <meta name="keywords" content="Chris Jalbert, IAmChrisJalbert, Christopher Jalbert, Android Developer Gloucester, Simply Collection, Kotlin Developer, Mobile Privacy, Simply Sip, Simply Connect, Simply Sudoku">
     
     <!-- Open Graph / Facebook (Background SEO) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://iamchrisjalbert.com/index.html">
-    <meta property="og:title" content="IAmChrisJalbert | Android Developer Portfolio">
+    <meta property="og:title" content="IAmChrisJalbert | Chris Jalbert Portfolio">
     <meta property="og:description" content="Building fast, focused, and private Android apps. Based in Gloucester, MA.">
     <meta property="og:image" content="https://iamchrisjalbert.com/images/connect_icon.png">
 
     <!-- Twitter (Background SEO) -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://iamchrisjalbert.com/index.html">
-    <meta property="twitter:title" content="IAmChrisJalbert | Android Developer Portfolio">
+    <meta property="twitter:title" content="IAmChrisJalbert | Chris Jalbert Android Developer">
     <meta property="twitter:description" content="Building fast, focused, and private Android apps. Based in Gloucester, MA.">
 
-    <!-- Structured Data (The "Identity" Bridge - Essential for beating the doctor) -->
+    <!-- Structured Data (The "Identity" Bridge - Unified Person Entity) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,9 +37,11 @@
         "addressCountry": "US"
       },
       "sameAs": [
-        "https://groups.google.com/g/IAmChrisJalbert"
+        "https://groups.google.com/g/IAmChrisJalbert",
+        "https://www.reddit.com/user/IAmChrisJalbert",
+        "https://www.linkedin.com/pub/dir/Chris/Jalbert"
       ],
-      "knowsAbout": ["Android Development", "Kotlin", "Jetpack Compose", "Mobile Privacy"]
+      "knowsAbout": ["Android Development", "Kotlin", "Jetpack Compose", "Mobile Privacy", "Freight Forwarding"]
     }
     </script>
 
@@ -77,7 +79,8 @@
                     snapshot.forEach((doc) => {
                         const countEl = document.getElementById(`live-count-${doc.id}`);
                         if (countEl) {
-                            countEl.innerText = `${doc.data().count} / 14 Testers Found`;
+                            const countValue = doc.data().count ?? 0;
+                            countEl.innerText = `${countValue} / 14 Testers Found`;
                             countEl.parentElement.classList.remove('hidden');
                         }
                     });
