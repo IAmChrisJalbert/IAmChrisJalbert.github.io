@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Connect™ | Ephemeral Privacy | IAmChrisJalbert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
+
+    <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center gap-2 transition-all">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">IAmChrisJalbert.com</span>
+            </a>
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-24">
+        <header class="space-y-6 mb-16">
+            <p class="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em]">In Internal Testing</p>
+            <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic uppercase">Simply <span class="text-blue-500">Connect™</span></h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-medium italic">Secure. Ephemeral. Family. Re-imagining messaging as a transitory tool.</p>
+        </header>
+
+        <div class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-400 text-lg leading-relaxed">
+            <p><strong>Simply Connect™</strong> was born from a simple question: "Why does our data need to live forever?" For family conversations, simple logistics, or private check-ins, the modern chat archive is a liability. Simply Connect™ solves this by applying a strict 24-hour expiration policy to every byte of data generated.</p>
+
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">The "Janitor" Architecture</h2>
+            <p>Using <strong>Firebase Realtime Database</strong>, we implemented a server-side "Janitor" script. Every message is timestamped upon creation. Our logic engine continuously scans for any data exceeding the 24-hour mark and wipes it from the active nodes. This means your communication is transitory by nature—it exists only as long as it is useful.</p>
+
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Anonymity by Design</h2>
+            <p>Simply Connect™ does not require an email, phone number, or social media link. We utilize <strong>Firebase Anonymous Authentication</strong> to generate a secure session tied strictly to your hardware. Users communicate using "Secret Room Codes," which act as the private gateways for family or project groups. This removes the barrier to entry while maximizing the privacy of the participants.</p>
+
+            <div class="my-12 p-10 bg-blue-500/5 border border-blue-500/20 rounded-[2.5rem] relative overflow-hidden">
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/5 blur-3xl rounded-full"></div>
+                <p class="text-white font-medium italic text-center relative z-10">
+                    "We don't want your life story. We just want to give you a private space to talk today, and a clean slate to start tomorrow."
+                </p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic underline decoration-blue-500/20">Safety and Ethics</h2>
+            <p>In adherence to our strict <strong>Child Safety Standards</strong>, Simply Connect™ is architected as a text-only platform. By disabling media uploads at the source-code level, we eliminate the primary vector for inappropriate content exchange, making it a safe, efficient environment for families and professional teams alike.</p>
+        </div>
+
+        <div class="mt-20 pt-12 border-t border-white/5 flex justify-between items-center">
+            <a href="index.html" class="text-sm font-bold text-blue-500 flex items-center gap-2 hover:text-blue-400 uppercase tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> Back to Collection
+            </a>
+            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest">Gloucester Operations ⚓</p>
+        </div>
+    </article>
+
+    <footer class="border-t border-white/5 py-12 px-6 mt-auto">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-xs font-medium text-slate-600 tracking-widest uppercase">
+                © 2026 IAmChrisJalbert | The Simply Collection™
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
