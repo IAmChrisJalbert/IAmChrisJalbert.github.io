@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simply Connect™ | Ephemeral Privacy | IAmChrisJalbert</title>
+    <title>Simply Connect™ | Ephemeral Privacy | Case Study | IAmChrisJalbert</title>
+    <meta name="description" content="Technical deep-dive into Simply Connect™: An ephemeral Android messaging app built with Firebase. Featuring anonymous authentication and 24-hour data purging in Gloucester, MA.">
+    <link rel="canonical" href="https://iamchrisjalbert.com/simply-connect-case-study.html">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
@@ -12,11 +14,11 @@
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
-                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="IAmChrisJalbert - Professional Android Developer Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
-                <a href="index.html" class="text-blue-500 transition-colors">Apps</a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
                 <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
@@ -27,50 +29,76 @@
 
     <article class="max-w-3xl mx-auto px-6 py-24">
         <header class="space-y-6 mb-16">
-            <p class="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em]">In Internal Testing</p>
-            <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic ">Simply <span class="text-blue-500">Connect™</span></h1>
-            <p class="text-xl text-slate-400 leading-relaxed font-medium italic">Secure. Ephemeral. Family. Re-imagining messaging as a transitory tool.</p>
+            <p class="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em]">Internal Testing Phase</p>
+            <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic uppercase leading-tight">
+                Simply <span class="text-blue-500 underline decoration-blue-500/20 underline-offset-8">Connect™</span>
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-medium italic">
+                Secure. Ephemeral. Family. Re-imagining messaging as a transitory tool for the modern age.
+            </p>
         </header>
 
-        <div class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-400 text-lg leading-relaxed">
-            <p><strong>Simply Connect™</strong> was born from a simple question: "Why does our data need to live forever?" For family conversations, simple logistics, or private check-ins, the modern chat archive is a liability. Simply Connect™ solves this by applying a strict 24-hour expiration policy to every byte of data generated.</p>
+        <div class="prose prose-invert prose-slate max-w-none space-y-12 text-slate-400 text-lg leading-relaxed">
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The Problem: Data Permanence</h2>
+                <p><strong>Simply Connect™</strong> was born from a simple question: "Why does our data need to live forever?" For family logistics or private check-ins, the permanent chat archive is a liability. We solve this with a strict 24-hour expiration policy applied to every byte of data generated.</p>
+            </section>
 
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">The "Janitor" Architecture</h2>
-            <p>Using <strong>Firebase Realtime Database</strong>, we implemented a server-side "Janitor" script. Every message is timestamped upon creation. Our logic engine continuously scans for any data exceeding the 24-hour mark and wipes it from the active nodes. This means your communication is transitory by nature—it exists only as long as it is useful.</p>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The "Janitor" Architecture</h2>
+                <p>Utilizing the <strong>Firebase Realtime Database</strong>, we implemented a server-side "Janitor" script. Every message is timestamped upon creation. Our logic engine continuously scans and wipes data exceeding the 24-hour mark. This ensures communication is transitory—it exists only as long as it is useful.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white/5 p-6 rounded-2xl border border-white/10 my-8">
+                    <ul class="space-y-2 text-sm font-bold uppercase tracking-widest text-blue-400">
+                        <li>• Firebase Anonymous Auth</li>
+                        <li>• Realtime Data Purge</li>
+                    </ul>
+                    <ul class="space-y-2 text-sm font-bold uppercase tracking-widest text-emerald-400">
+                        <li>• Secret Room Gateways</li>
+                        <li>• Text-Only Architecture</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Anonymity by Design</h2>
-            <p>Simply Connect™ does not require an email, phone number, or social media link. We utilize <strong>Firebase Anonymous Authentication</strong> to generate a secure session tied strictly to your hardware. Users communicate using "Secret Room Codes," which act as the private gateways for family or project groups. This removes the barrier to entry while maximizing the privacy of the participants.</p>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Anonymity by Design</h2>
+                <p>Simply Connect™ requires no email or phone number. We utilize <strong>Firebase Anonymous Authentication</strong> to tie sessions strictly to hardware. Access is managed via "Secret Room Codes," acting as private gateways for family or project groups—maximizing privacy while removing barriers to entry.</p>
+            </section>
 
-            <div class="my-12 p-10 bg-blue-500/5 border border-blue-500/20 rounded-[2.5rem] relative overflow-hidden">
+            <blockquote class="my-12 p-10 bg-blue-500/5 border border-blue-500/20 rounded-[2rem] relative overflow-hidden text-center">
                 <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/5 blur-3xl rounded-full"></div>
-                <p class="text-white font-medium italic text-center relative z-10">
+                <p class="text-white font-medium italic relative z-10 text-xl">
                     "We don't want your life story. We just want to give you a private space to talk today, and a clean slate to start tomorrow."
                 </p>
-            </div>
+            </blockquote>
 
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic underline decoration-blue-500/20">Safety and Ethics</h2>
-            <p>In adherence to our strict <strong>Child Safety Standards</strong>, Simply Connect™ is architected as a text-only platform. By disabling media uploads at the source-code level, we eliminate the primary vector for inappropriate content exchange, making it a safe, efficient environment for families and professional teams alike.</p>
+            <!-- Safety Link Section -->
+            <section class="space-y-4 p-8 bg-blue-500/5 border border-blue-500/20 rounded-3xl">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Safety & Compliance</h2>
+                <p>Protecting the digital footprint of our users is our highest priority. Simply Connect™ is architected as a media-free environment, disabling pictures and videos at the source code level to maintain a secure communication space.</p>
+                <div class="pt-4">
+                    <a href="safety.html" class="inline-flex items-center gap-2 text-blue-400 font-black uppercase tracking-widest text-sm hover:text-white transition-colors group">
+                        Review our Child Safety Standards
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </section>
         </div>
 
-        <div class="mt-20 pt-12 border-t border-white/5 flex justify-between items-center">
-            <a href="index.html" class="text-sm font-bold text-blue-500 flex items-center gap-2 hover:text-blue-400 uppercase tracking-widest">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> Back to Collection
+        <div class="mt-20 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="index.html" class="text-sm font-bold text-blue-500 flex items-center gap-2 hover:text-blue-400 transition-colors uppercase tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> 
+                Back to Collection
             </a>
-            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest">Gloucester Operations ⚓</p>
+            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic">Updated: May 2026 | Gloucester Ops ⚓</p>
         </div>
     </article>
 
-     <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex flex-col md:flex-row items-center gap-4">
-                <p class="text-xs font-medium text-slate-600 tracking-widest">
-                    © 2026 IAmChrisJalbert | Built in Gloucester, MA ⚓
-                </p>
-                <a href="stats.html" class="cursor-default" style="cursor: default !important;">
-                    <img src="https://api.visitorbadge.io/api/visitors?path=iamchrisjalbert_index&label=&labelColor=%230a0a0c&countColor=%231e293b" class="h-4 opacity-30 grayscale pointer-events-none" alt="Traffic Badge">
-                </a>
-            </div>
+            <p class="text-xs font-medium text-slate-600 tracking-widest">
+                © 2026 IAmChrisJalbert | Privacy-First Apps | Built in Gloucester, MA ⚓
+            </p>
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-white transition-colors">Apps</a>
                 <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
@@ -80,6 +108,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
