@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | IAmChrisJalbert</title>
+    <meta name="description" content="Get in touch with Christopher Jalbert, Android Developer based in Gloucester, MA. Support and feedback for the Simply Collection™.">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
 
     <!-- Navigation -->
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="group flex items-center gap-2 transition-all">
-                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center font-black text-white italic shadow-lg shadow-purple-500/30 border border-white/20 group-hover:rotate-12 transition-transform duration-300 tracking-tighter">CJ</div>
-                <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">IAmChrisJalbert.com</span>
+        <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
-            <div class="flex gap-6 text-sm font-medium items-center">
+            <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
                 <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
                 <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
@@ -27,72 +28,76 @@
 
     <!-- Contact Form Content -->
     <main class="flex-grow max-w-3xl mx-auto px-6 py-24 w-full">
-        <section class="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl">
-            <h1 class="text-3xl md:text-4xl font-black text-white mb-2 tracking-tighter italic">GET IN <span class="text-blue-500">TOUCH</span></h1>
-            <p class="text-slate-400 mb-8">Have a question about the "Simply" collection or want to reach out? Drop a message below.</p>
+        <section class="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <!-- Ambient Brand Glow -->
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-600/5 blur-[100px] pointer-events-none"></div>
             
-            <!-- 
-              IMPORTANT: To make this form work:
-              1. Go to https://formspree.io/ and create a free account.
-              2. Create a "New Form" and it will give you a special URL endpoint.
-              3. Replace "YOUR_FORMSPREE_ENDPOINT_HERE" below with that URL.
-            -->
-            <form action="https://formspree.io/f/xzdkqdoy" method="POST" class="space-y-6">
+            <header class="mb-10 space-y-2">
+                <p class="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em]">Support & Inquiries</p>
+                <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic uppercase leading-tight">
+                    Get in <span class="text-blue-500 underline decoration-blue-500/30 underline-offset-8">Touch</span>
+                </h1>
+                <p class="text-slate-400 text-lg font-medium italic">Have a question about the Simply Collection™? Drop a message below.</p>
+            </header>
+            
+            <form action="https://formspree.io/f/xzdkqdoy" method="POST" class="space-y-6 relative z-10">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Name Field -->
                     <div class="space-y-2">
-                        <label for="name" class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Your Name</label>
+                        <label for="name" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Your Name</label>
                         <input type="text" id="name" name="name" required
-                            class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700"
                             placeholder="e.g. John Doe">
                     </div>
                     
                     <!-- Email Field -->
                     <div class="space-y-2">
-                        <label for="email" class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Your Email</label>
+                        <label for="email" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Your Email</label>
                         <input type="email" id="email" name="email" required
-                            class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700"
                             placeholder="e.g. hello@example.com">
                     </div>
                 </div>
 
                 <!-- Subject Field -->
                 <div class="space-y-2">
-                    <label for="subject" class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Subject</label>
+                    <label for="subject" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Subject</label>
                     <input type="text" id="subject" name="subject" required
-                        class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                        placeholder="App support, feedback, etc.">
+                        class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700"
+                        placeholder="App support, testing feedback, etc.">
                 </div>
 
                 <!-- Message Field -->
                 <div class="space-y-2">
-                    <label for="message" class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Message</label>
+                    <label for="message" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Message</label>
                     <textarea id="message" name="message" rows="5" required
-                        class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
+                        class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none placeholder:text-slate-700"
                         placeholder="How can I help you?"></textarea>
                 </div>
 
                 <!-- Submit Button -->
                 <button type="submit" 
-                    class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 mt-4 flex justify-center items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-5 rounded-2xl transition-all shadow-lg shadow-blue-900/20 mt-4 flex justify-center items-center gap-3 uppercase tracking-widest text-sm group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     Send Message
                 </button>
             </form>
         </section>
-    </main>
+
+        </main>
 
     <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-xs font-medium text-slate-600 uppercase tracking-widest">
-                © 2026 IAmChrisJalbert | Built in Gloucester, MA
+            <p class="text-xs font-medium text-slate-600 tracking-widest ">
+                © 2026 IAmChrisJalbert | Built in Gloucester, MA ⚓
             </p>
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-white transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
                 <a href="about.html" class="hover:text-white transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
-                <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
                 <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
