@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About IAmChrisJalbert | Android Developer | Gloucester, MA</title>
-    <meta name="description" content="Learn more about IAmChrisJalbert (Christopher Jalbert), the Gloucester-based developer behind the Simply Collection™. Focused on privacy, performance, and family-first tech.">
+    <title>About IAmChrisJalbert | Chris Jalbert | Android Developer | Gloucester, MA</title>
+    <meta name="description" content="Learn more about IAmChrisJalbert (Christopher Jalbert), the Gloucester-based developer behind the Simply Collection™. Specializing in native Kotlin and privacy-first Android apps.">
+    
+    <!-- Schema for the About Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Christopher Jalbert",
+      "alternateName": "IAmChrisJalbert",
+      "jobTitle": "Android Developer",
+      "description": "Android Developer specializing in Kotlin and Jetpack Compose, creator of the Simply Collection.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gloucester",
+        "addressRegion": "MA"
+      },
+      "url": "https://iamchrisjalbert.com/about.html"
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
@@ -13,7 +32,7 @@
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
-                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="IAmChrisJalbert - Professional Android Developer Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
@@ -21,45 +40,45 @@
                 <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
                 <a href="about.html" class="text-blue-500 transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
-                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-
     <main class="flex-grow max-w-4xl mx-auto px-6 py-24 w-full">
         <section class="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <!-- Background glow for depth -->
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full"></div>
+            
             <div class="relative z-10 flex flex-col md:flex-row gap-10 items-center md:items-start">
                 
-                <!-- Profile Image with Safe Fallback Styling -->
-                <div class="w-40 h-40 md:w-56 md:h-56 bg-slate-900 rounded-full border-4 border-slate-800 shadow-xl flex-shrink-0 flex items-center justify-center overflow-hidden relative group">
+                <!-- Profile Image -->
+                <div class="w-40 h-40 md:w-56 md:h-56 bg-slate-900 rounded-3xl border border-white/10 shadow-2xl flex-shrink-0 flex items-center justify-center overflow-hidden relative group">
                     <img 
                         src="images/chris-jalbert-android-developer.jpg" 
-                        alt="IAmChrisJalbert" 
+                        alt="Christopher Jalbert - Android Developer and Creator of the Simply Collection in Gloucester, MA" 
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onerror="this.style.opacity='0'; this.parentElement.classList.add('bg-blue-600/10')"
                     >
-                    <!-- Visual placeholder if image is missing -->
                     <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
                         <span class="text-4xl font-black italic">CJ</span>
                     </div>
                 </div>
 
                 <div class="space-y-6 text-center md:text-left flex-1 min-w-0 w-full">
-                    <!-- Fixed Responsive Header -->
                     <h1 class="flex flex-col tracking-tighter italic leading-tight">
                         <span class="text-3xl sm:text-4xl md:text-5xl font-black text-white">Meet</span>
-                        <span class="text-2xl sm:text-4xl md:text-6xl font-black text-blue-500 underline decoration-blue-500/30 underline-offset-8 break-all sm:break-normal">IAmChrisJalbert</span>
+                        <span class="text-2xl sm:text-4xl md:text-6xl font-black text-blue-500 underline decoration-blue-500/30 underline-offset-8">IAmChrisJalbert</span>
                     </h1>
 
-                    <div class="space-y-4 text-lg text-slate-400 leading-relaxed">
-                        <p><strong>IAmChrisJalbert</strong> (also known as <strong>Christopher Jalbert</strong>). I am an Android Developer based out of Gloucester, Massachusetts. By day, I navigate the fast-paced and complex world of freight forwarding. By night, I build clean, fast, and private mobile applications for Android. I specialize in building native applications using Kotlin and Jetpack Compose.</p>
+                    <div class="space-y-4 text-lg text-slate-400 leading-relaxed font-medium">
+                        <p>I am <strong>Christopher Jalbert</strong>, an Android Developer based in <strong>Gloucester, Massachusetts</strong>. By day, I navigate the logistical complexities of global freight forwarding. By night, I translate that need for efficiency into native mobile applications built with <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>.</p>
                         
-                        <p>I started the <strong>Simply Collection™</strong> because I was tired of mobile apps filled with bloated menus, intrusive tracking, and unnecessary data hoarding. I wanted tools and games that just work—apps designed specifically to respect your time, battery life, and privacy.</p>
+                        <p>I launched the <strong>Simply Collection™</strong> as a direct response to "app-bloat." In an era of intrusive tracking and heavy data hoarding, I believe software should be a lightweight tool that respects your privacy, your battery life, and your time.</p>
                         
-                        <p>My development philosophy is centered on privacy and utility. I believe that apps should be tools that enhance your life, not traps designed to steal your time or your data. This led to the creation of the <strong>Simply Collection™</strong>, a suite of distraction-free tools for modern living.</p>
+                        <p>My philosophy is <strong>Local-First</strong>. Whether it's a finance tracker like Simply Sip™ or a utility for the family, your data stays where it belongs: on your device. No cloud accounts, no shadow-tracking, no noise.</p>
                         
-                        <p>Outside of code, I’m a family man. I live on the North Shore with my wife, Amber (often referred to as "Pizza"), and my two children, Lorelai (Ace) and Emersyn. Whether it's listening to the Foo Fighters, and the occasional ICP, or exploring local Gloucester engineering, I draw inspiration from the practical and the permanent.</p>
+                        <p>When I'm not in <strong>Android Studio</strong>, I'm a family man. I live on the North Shore with my wife, Amber ("Pizza"), and my two daughters, Lorelai (Ace) and Emersyn. I find my inspiration in things that are practical, permanent, and fast—much like a good line of code or a Foo Fighters riff.</p>
                     </div>
                 </div>
             </div>
@@ -70,7 +89,7 @@
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <p class="text-xs font-medium text-slate-600 tracking-widest">
-                © 2026 IAmChrisJalbert | Built in Gloucester, MA ⚓
+                © 2026 IAmChrisJalbert | Privacy-First Apps | Built in Gloucester, MA ⚓
             </p>
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-white transition-colors">Apps</a>
@@ -81,7 +100,5 @@
             </div>
         </div>
     </footer>
-
-
 </body>
 </html>
