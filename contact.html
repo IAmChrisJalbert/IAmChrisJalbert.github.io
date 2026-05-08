@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | IAmChrisJalbert</title>
-    <meta name="description" content="Get in touch with Christopher Jalbert, Android Developer based in Gloucester, MA. Support and feedback for the Simply Collection™.">
+    <title>Contact IAmChrisJalbert | Android App Support | Gloucester, MA</title>
+    <meta name="description" content="Contact Christopher Jalbert for support and feedback on the Simply Collection™. Professional Android developer specializing in native Kotlin and privacy-first apps.">
+    
+    <!-- Contact Page Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Christopher Jalbert",
+        "alternateName": "IAmChrisJalbert",
+        "jobTitle": "Android Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gloucester",
+          "addressRegion": "MA"
+        }
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
@@ -13,7 +33,7 @@
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
-                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="IAmChrisJalbert - Professional Android Developer Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
@@ -37,7 +57,7 @@
                 <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic uppercase leading-tight">
                     Get in <span class="text-blue-500 underline decoration-blue-500/30 underline-offset-8">Touch</span>
                 </h1>
-                <p class="text-slate-400 text-lg font-medium italic">Have a question about the Simply Collection™? Drop a message below.</p>
+                <p class="text-slate-400 text-lg font-medium italic">Feedback, support, or developer inquiries for the <strong>Simply Collection™</strong>.</p>
             </header>
             
             <form action="https://formspree.io/f/xzdkqdoy" method="POST" class="space-y-6 relative z-10">
@@ -47,7 +67,7 @@
                     <div class="space-y-2">
                         <label for="name" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Your Name</label>
                         <input type="text" id="name" name="name" required
-                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700"
+                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700 font-medium"
                             placeholder="e.g. John Doe">
                     </div>
                     
@@ -55,7 +75,7 @@
                     <div class="space-y-2">
                         <label for="email" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Your Email</label>
                         <input type="email" id="email" name="email" required
-                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700"
+                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700 font-medium"
                             placeholder="e.g. hello@example.com">
                     </div>
                 </div>
@@ -64,7 +84,7 @@
                 <div class="space-y-2">
                     <label for="subject" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Subject</label>
                     <input type="text" id="subject" name="subject" required
-                        class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700"
+                        class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-700 font-medium"
                         placeholder="App support, testing feedback, etc.">
                 </div>
 
@@ -72,7 +92,7 @@
                 <div class="space-y-2">
                     <label for="message" class="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Message</label>
                     <textarea id="message" name="message" rows="5" required
-                        class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none placeholder:text-slate-700"
+                        class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none placeholder:text-slate-700 font-medium"
                         placeholder="How can I help you?"></textarea>
                 </div>
 
@@ -84,14 +104,13 @@
                 </button>
             </form>
         </section>
-
-        </main>
+    </main>
 
     <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-xs font-medium text-slate-600 tracking-widest ">
-                © 2026 IAmChrisJalbert | Built in Gloucester, MA ⚓
+            <p class="text-xs font-medium text-slate-600 tracking-widest">
+                © 2026 IAmChrisJalbert | Privacy-First Apps | Built in Gloucester, MA ⚓
             </p>
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-white transition-colors">Apps</a>
