@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Simply Sip™ | Case Study | IAmChrisJalbert</title>
-    <meta name="description" content="A technical deep-dive into the development of Simply Sip™. Exploring native Kotlin performance and local-first privacy standards.">
+    <meta name="description" content="A technical case study on Simply Sip™. Exploring native Kotlin development, Jetpack Compose UI, and local-first data privacy by Chris Jalbert in Gloucester, MA.">
+    <link rel="canonical" href="https://iamchrisjalbert.com/simply-sip-case-study.html">
     <script src="https://cdn.tailwindcss.com"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1387580026325751" crossorigin="anonymous"></script>
 </head>
@@ -14,7 +15,7 @@
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
-                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="IAmChrisJalbert - Professional Android Developer Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
@@ -38,35 +39,45 @@
             </p>
         </header>
 
-        <div class="prose prose-invert prose-slate max-w-none space-y-10 text-slate-400 text-lg leading-relaxed">
-            <div class="space-y-4">
+        <div class="prose prose-invert prose-slate max-w-none space-y-12 text-slate-400 text-lg leading-relaxed">
+            <section class="space-y-4">
                 <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The "Aha" Moment</h2>
-                <p>We've all been there. You look at your bank statement at the end of the month and wonder where that $300 went. For many of us, it isn't the rent or the car payment—it's the $6 energy drink every morning or the craft beer on Friday night. I wanted to build a way to visualize those tiny leaks in my budget and turn them into something meaningful. For me, that meant saving up for Foo Fighters tickets to surprise my wife, Amber (also known as "Pizza").</p>
-            </div>
+                <p>We've all been there. You look at your bank statement and wonder where that $300 went. For many of us, it isn't the rent—it's the $6 energy drink every morning. I wanted to build a way to visualize those tiny leaks and turn them into something meaningful. For me, that meant saving up for <strong>Foo Fighters</strong> tickets to surprise my wife, <strong>Amber ("Pizza")</strong>.</p>
+            </section>
 
-            <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The Tech Stack: Kotlin & Jetpack Compose</h2>
-                <p><strong>Simply Sip™</strong> was built natively for Android using <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>. Choosing a native stack was intentional. While cross-platform tools like React Native are great, they often add a layer of bloat that contradicts the "Simply" philosophy. By going native, I was able to ensure that the app uses almost zero background resources and stays lightning-fast even on older devices.</p>
-                <p>Jetpack Compose allowed for a declarative UI that feels "at home" on modern Android. The dark theme isn't just an aesthetic choice; it’s designed to be easy on the eyes and save battery life on OLED screens.</p>
-            </div>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The Tech Stack: Native Excellence</h2>
+                <p><strong>Simply Sip™</strong> was built natively for Android using <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>. Choosing a native stack was intentional. While cross-platform tools are popular, they often add bloat that contradicts the "Simply" philosophy. By going native, I ensured the app uses nearly zero background resources and stays lightning-fast.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white/5 p-6 rounded-2xl border border-white/10 my-8">
+                    <ul class="space-y-2 text-sm font-bold uppercase tracking-widest text-blue-400">
+                        <li>• Kotlin Coroutines</li>
+                        <li>• Jetpack Compose UI</li>
+                    </ul>
+                    <ul class="space-y-2 text-sm font-bold uppercase tracking-widest text-emerald-400">
+                        <li>• Room Data Persistence</li>
+                        <li>• Local-First Architecture</li>
+                    </ul>
+                </div>
+            </section>
 
-            <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Zero Cloud, Zero Clutter</h2>
-                <p>The most important decision I made was to keep 100% of user data <strong>local</strong>. Most finance apps want you to create an account, link your bank, and sync your data to their cloud. This creates a privacy nightmare. In <strong>Simply Sip™</strong>, your drink history, your budget, and your goals live strictly on your device. If you delete the app, the data is gone. That's true ownership.</p>
-            </div>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Data Sovereignty</h2>
+                <p>The most critical decision was <strong>local-only storage</strong>. Most finance apps demand a cloud sync, creating a privacy nightmare. In Simply Sip™, your data lives strictly on your device. This <strong>Data Sovereignty</strong> ensures that your financial habits are never tracked by advertisers or stored on external servers.</p>
+            </section>
 
-            <div class="my-12 p-10 bg-blue-500/5 border border-blue-500/20 rounded-[2rem] relative overflow-hidden text-center">
+            <blockquote class="my-12 p-10 bg-blue-500/5 border border-blue-500/20 rounded-[2rem] relative overflow-hidden text-center">
                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
-                <h4 class="text-blue-400 font-black uppercase tracking-widest text-[10px] mb-3 relative z-10">Key Takeaway</h4>
-                <p class="text-white font-medium italic relative z-10">
-                    "An app should do one thing perfectly without asking for your life story. Simply Sip™ is built to help you save, not to track your habits for advertisers."
+                <h4 class="text-blue-400 font-black uppercase tracking-widest text-[10px] mb-3 relative z-10">The Simply™ Standard</h4>
+                <p class="text-white font-medium italic relative z-10 text-xl">
+                    "An app should do one thing perfectly without asking for your life story. Simply Sip™ is built to help you save, not to track your habits."
                 </p>
-            </div>
+            </blockquote>
 
-            <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The Roadmap Ahead</h2>
-                <p>As I continue to expand the <strong>Simply Collection™</strong>, the focus remains the same: utility over fluff. <strong>Simply Sip™</strong> is currently helping testers worldwide hit their savings goals, and the feedback has been incredible. Whether you're saving for a vacation or just trying to cut back on caffeine, the path to financial clarity shouldn't be complicated.</p>
-            </div>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The Roadmap</h2>
+                <p>Currently, Simply Sip™ is helping testers worldwide hit their savings goals. Whether you're cutting back on caffeine or saving for a North Shore vacation, the path to financial clarity shouldn't be cluttered with ads or data-mining loops.</p>
+            </section>
         </div>
 
         <div class="mt-20 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -74,15 +85,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> 
                 Back to Apps
             </a>
-            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic">Article Updated: May 2026 | Gloucester Ops ⚓</p>
+            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic">Updated: May 2026 | Gloucester Ops ⚓</p>
         </div>
     </article>
 
-    <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-xs font-medium text-slate-600 tracking-widest ">
-                © 2026 IAmChrisJalbert | Built in Gloucester, MA ⚓
+            <p class="text-xs font-medium text-slate-600 tracking-widest">
+                © 2026 IAmChrisJalbert | Privacy-First Apps | Built in Gloucester, MA ⚓
             </p>
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-white transition-colors">Apps</a>
