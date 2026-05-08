@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simply Tic Tac Toe™ | Project Breakdown | IAmChrisJalbert</title>
+    <title>Simply Tic Tac Toe™ | Minimax AI | Case Study | IAmChrisJalbert</title>
+    <meta name="description" content="Technical project breakdown of Simply Tic Tac Toe™. Exploring Minimax AI implementation, Material 3 design, and battery-optimized Kotlin development in Gloucester, MA.">
+    <link rel="canonical" href="https://iamchrisjalbert.com/simply-tictactoe-case-study.html">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
@@ -12,11 +14,11 @@
     <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
-                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="IAmChrisJalbert - Professional Android Developer Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
                 <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
             </a>
             <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
-                <a href="index.html" class="text-blue-500 transition-colors">Apps</a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
                 <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
@@ -28,49 +30,68 @@
     <article class="max-w-3xl mx-auto px-6 py-24">
         <header class="space-y-6 mb-16">
             <p class="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em]">Live in Production</p>
-            <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic">Simply <span class="text-blue-500">Tic Tac Toe™</span></h1>
-            <p class="text-xl text-slate-400 leading-relaxed font-medium italic">Refining a classic into a modern, distraction-free utility for Android.</p>
+            <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic uppercase leading-tight">
+                Simply <span class="text-blue-500 underline decoration-blue-500/20 underline-offset-8">Tic Tac Toe™</span>
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-medium italic">
+                Refining a classic into a modern, distraction-free utility for Android.
+            </p>
         </header>
 
-        <div class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-400 text-lg leading-relaxed">
-            <p><strong>Simply Tic Tac Toe™</strong> was the foundational project of the Simply Collection™. The goal was to prove that even the most basic digital interactions can be elevated through high-precision engineering and a commitment to zero intrusive advertising.</p>
+        <div class="prose prose-invert prose-slate max-w-none space-y-12 text-slate-400 text-lg leading-relaxed">
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Engineering Foundation</h2>
+                <p><strong>Simply Tic Tac Toe™</strong> was the foundational project of the Simply Collection™. The goal was to prove that even the most basic digital interactions can be elevated through high-precision engineering and a commitment to zero intrusive advertising.</p>
+            </section>
 
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">The AI Engine: Minimax Implementation</h2>
-            <p>Despite being a simple game, the "Hard" difficulty in Simply Tic Tac Toe™ uses a recursive <strong>Minimax algorithm</strong>. This ensures that the computer never makes a suboptimal move, creating a "perfect play" environment for the user. We optimized the algorithm for mobile by implementing a depth-limiting check and pruning the search tree to ensure the CPU remains cool and battery usage is negligible.</p>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The AI Engine: Minimax</h2>
+                <p>Despite the simple game board, the "Hard" difficulty utilizes a recursive <strong>Minimax algorithm</strong>. This ensures "perfect play" from the computer. We optimized the implementation for mobile by pruning the search tree and limiting depth, ensuring battery usage remains negligible during gameplay.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white/5 p-6 rounded-2xl border border-white/10 my-8">
+                    <ul class="space-y-2 text-sm font-bold uppercase tracking-widest text-blue-400">
+                        <li>• Minimax AI Algorithm</li>
+                        <li>• Recursive Logic Pruning</li>
+                    </ul>
+                    <ul class="space-y-2 text-sm font-bold uppercase tracking-widest text-emerald-400">
+                        <li>• Material 3 UI/UX</li>
+                        <li>• Dynamic Theme Engine</li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight">Visual Identity & Personalization</h2>
-            <p>We built the UI using <strong>Material 3</strong> standards, focusing on high-contrast neon elements against a navy backdrop. We integrated a custom theme engine that allows users to swap between palettes like "Electric Orange" and "Charcoal Neon" instantly, without reloading the activity. This level of customization is rarely found in "simple" games, but it's part of our commitment to the end-user experience.</p>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Visual Identity</h2>
+                <p>Built using <strong>Material 3</strong> standards, the UI focuses on high-contrast neon elements against a navy backdrop. We integrated a custom theme engine, allowing for instant palette swaps—like "Electric Orange"—without reloading the activity, enhancing the end-user experience.</p>
+            </section>
 
-            <div class="my-12 p-8 bg-blue-500/5 border border-blue-500/20 rounded-3xl relative overflow-hidden">
+            <blockquote class="my-12 p-8 bg-blue-500/5 border border-blue-500/20 rounded-3xl relative overflow-hidden text-center">
                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
-                <p class="text-white font-medium italic text-center relative z-10">
+                <p class="text-white font-medium italic relative z-10 text-xl">
                     "Clutter is the enemy of focus. We stripped away the menus and kept the grid, proving that less is always more in mobile design."
                 </p>
-            </div>
+            </blockquote>
 
-            <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic underline decoration-blue-500/20">Future Roadmap</h2>
-            <p>Moving forward, we are exploring Bluetooth-based local multiplayer to facilitate off-grid play, further cementing Simply Tic Tac Toe™ as a tool for any environment. This app remains a benchmark for the Gloucester Operations engineering standard: Build for the user, protect the battery, respect the privacy.</p>
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Future Roadmap</h2>
+                <p>Looking ahead, we are exploring Bluetooth-based local multiplayer to facilitate off-grid play. This app remains a benchmark for the Gloucester Ops standard: Build for the user, protect the battery, and respect privacy.</p>
+            </section>
         </div>
 
-        <div class="mt-20 pt-12 border-t border-white/5 flex justify-between items-center">
-            <a href="index.html" class="text-sm font-bold text-blue-500 flex items-center gap-2 hover:text-blue-400 uppercase tracking-widest">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> Back to Collection
+        <div class="mt-20 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="index.html" class="text-sm font-bold text-blue-500 flex items-center gap-2 hover:text-blue-400 transition-colors uppercase tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> 
+                Back to Collection
             </a>
-            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest">Gloucester, MA ⚓</p>
+            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic">Gloucester, MA ⚓</p>
         </div>
     </article>
 
-     <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex flex-col md:flex-row items-center gap-4">
-                <p class="text-xs font-medium text-slate-600 tracking-widest">
-                    © 2026 IAmChrisJalbert | Built in Gloucester, MA ⚓
-                </p>
-                <a href="stats.html" class="cursor-default" style="cursor: default !important;">
-                    <img src="https://api.visitorbadge.io/api/visitors?path=iamchrisjalbert_index&label=&labelColor=%230a0a0c&countColor=%231e293b" class="h-4 opacity-30 grayscale pointer-events-none" alt="Traffic Badge">
-                </a>
-            </div>
+            <p class="text-xs font-medium text-slate-600 tracking-widest">
+                © 2026 IAmChrisJalbert | Privacy-First Apps | Built in Gloucester, MA ⚓
+            </p>
             <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-white transition-colors">Apps</a>
                 <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
