@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Minesweeper™ | Technical Article | IAmChrisJalbert</title>
+    <meta name="description" content="A technical deep-dive into Simply Minesweeper™. Exploring recursive flood-fill algorithms, Kotlin Flow state management, and zero-latency input.">
+    <link rel="canonical" href="https://iamchrisjalbert.com/simply-minesweeper-article.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRW2SR2KL5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WRW2SR2KL5');
+    </script>
+</head>
+<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="IAmChrisJalbert Logo" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
+            </a>
+            <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
+                <a href="index.html" class="hover:text-blue-400 transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-blue-400 transition-colors">Safety</a>
+                <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-24">
+        <header class="space-y-6 mb-16">
+            <p class="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em]">Technical Article</p>
+            <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter italic uppercase leading-tight">
+                Simply <span class="text-blue-500 underline decoration-blue-500/20 underline-offset-8">Minesweeper™</span>
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-medium italic">
+                Logic over luck. Engineering a lightweight, high-performance puzzle engine that respects player focus.
+            </p>
+        </header>
+
+        <div class="prose prose-invert prose-slate max-w-none space-y-12 text-slate-400 text-lg leading-relaxed">
+            
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">The Mission</h2>
+                <p>Simply Minesweeper™ was engineered to provide the classic puzzle experience without the distractions of modern mobile gaming. The goal was to create a responsive interface built on a rock-solid logical foundation, adhering strictly to the privacy-first standards of the Simply Collection™.</p>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tight italic">Technical Architecture</h2>
+                <p>The core challenge of Minesweeper isn't just placing mines; it’s the logic required when a player clicks an empty square. This requires complex state management and recursive checks to ensure every click is handled with zero lag.</p>
+                
+                <ul class="space-y-4 list-none pl-0 mt-6">
+                    <li class="border-l-2 border-blue-500/30 pl-6">
+                        <strong class="text-white block mb-1">Recursive Flood-Fill Engine</strong> 
+                        Built using a high-efficiency recursion algorithm that calculates and reveals adjacent empty cells instantly. This ensures that even on large grids, the "ripple effect" of clearing space is perceived as instantaneous.
+                    </li>
+                    <li class="border-l-2 border-emerald-500/30 pl-6">
+                        <strong class="text-white block mb-1">State Management with Kotlin Flow</strong> 
+                        Leveraging modern Android architecture, the entire game board state is managed through an observable data stream. This allows for seamless UI updates during intense gameplay without unnecessary recompositions in Jetpack Compose.
+                    </li>
+                    <li class="border-l-2 border-purple-500/30 pl-6">
+                        <strong class="text-white block mb-1">Zero-Latency Input</strong> 
+                        The touch-and-hold logic for flagging mines was tuned to match the tactile feedback of native Android components, ensuring a "zero-jank" experience.
+                    </li>
+                </ul>
+            </section>
+
+            <blockquote class="my-12 p-10 bg-blue-500/5 border border-blue-500/20 rounded-[2rem] relative overflow-hidden text-center">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
+                <h4 class="text-blue-400 font-black uppercase tracking-widest text-[10px] mb-3 relative z-10">Data Sovereignty</h4>
+                <p class="text-white font-medium italic relative z-10 text-xl">
+                    "Like all Simply apps, the game requires zero permissions. Your best times and statistics are stored strictly in a local SQLite database on your device."
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="mt-20 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="index.html" class="text-sm font-bold text-blue-500 flex items-center gap-2 hover:text-blue-400 transition-colors uppercase tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> 
+                Back to Collection
+            </a>
+            <p class="text-[10px] text-slate-600 font-black uppercase tracking-widest italic tracking-wider">Status: Live Release | Gloucester Ops ⚓</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 px-6 mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <p class="text-xs font-medium text-slate-600 tracking-widest">
+                    © 2026 IAmChrisJalbert | Privacy-First Apps | Built in Gloucester, MA ⚓
+                </p>
+                <a href="stats.html" class="cursor-default">
+                    <img src="https://api.visitorbadge.io/api/visitors?path=iamchrisjalbert_index&label=&labelColor=%230a0a0c&countColor=%231e293b" class="h-4 opacity-30 grayscale pointer-events-none" alt="Traffic Badge">
+                </a>
+            </div>
+            <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500 italic">
+                <a href="index.html" class="hover:text-white transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
