@@ -47,34 +47,6 @@
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1387580026325751" crossorigin="anonymous"></script>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-
-        const firebaseConfig = JSON.parse(__firebase_config);
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                const statsCol = collection(db, 'artifacts', appId, 'public', 'data', 'tester_stats');
-                onSnapshot(statsCol, (snapshot) => {
-                    snapshot.forEach((doc) => {
-                        const countEl = document.getElementById(`live-count-${doc.id}`);
-                        if (countEl) {
-                            countEl.innerText = `${doc.data().count} / 14 Testers Found`;
-                            countEl.parentElement.classList.remove('hidden');
-                        }
-                    });
-                }, (err) => {});
-            } else {
-                signInAnonymously(auth);
-            }
-        });
-    </script>
 </head>
 <body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
 
@@ -105,68 +77,7 @@
 
     <main class="flex-grow max-w-6xl mx-auto px-6 pb-24 w-full space-y-24">
 
-        <section id="testing">
-            <div class="flex flex-col md:flex-row items-center justify-between mb-12 px-2 bg-emerald-500/10 border border-emerald-500/20 py-10 rounded-[2.5rem] gap-8 shadow-2xl relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 blur-3xl rounded-full"></div>
-                <div class="space-y-2 md:ml-10 text-center md:text-left z-10">
-                    <h2 class="text-4xl font-black text-emerald-400 italic tracking-tighter uppercase">Mutual Testing <span class="text-white">Swap</span></h2>
-                    <p class="text-lg text-emerald-200/60 font-medium italic">I need 14 testers to hit production. 1-for-1 strict 14-day trade! ⚓</p>
-                </div>
-                <a href="https://groups.google.com/g/IAmChrisJalbert" target="_blank" class="group flex items-center gap-4 px-10 py-5 md:mr-10 bg-emerald-600 hover:bg-emerald-500 rounded-2xl transition-all font-black text-white shadow-xl shadow-emerald-900/40 uppercase tracking-widest text-lg">
-                    Join Testing Group
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group bg-blue-600/5 border border-blue-500/20 rounded-[2.5rem] p-8 hover:bg-blue-600/10 transition-all duration-300 relative overflow-hidden">
-                    <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="images/connect_icon.png" alt="Simply Connect™" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/5 group-hover:scale-105 transition-transform duration-500">
-                        <div class="space-y-1">
-                            <h3 class="text-xl font-bold text-white">Simply Connect™</h3>
-                            <p class="text-sm text-slate-500 italic">Secure. Ephemeral. Family.™</p>
-                        </div>
-                        <div class="flex flex-col gap-2 w-full pt-4">
-                            <div class="hidden bg-blue-500/20 py-1 rounded-full mb-2 border border-blue-500/20">
-                                <span id="live-count-connect" class="text-[10px] font-black text-blue-400 uppercase tracking-widest">0 / 14 Testers Found</span>
-                            </div>
-                            <a href="simply-connect-case-study.html" class="text-[10px] font-black uppercase tracking-widest text-blue-400 hover:text-white transition-colors mb-2 italic">View App Details</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplyconnect.public" class="opacity-80 hover:opacity-100 transition-opacity mx-auto">
-                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] transition-all duration-300 relative overflow-hidden">
-                    <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="images/sip_icon.png" alt="Simply Sip™" class="w-24 h-24 rounded-3xl shadow-2xl object-cover border border-white/10 group-hover:scale-105 transition-transform duration-500">
-                        <div class="space-y-1">
-                            <h3 class="text-xl font-bold text-white">Simply Sip™</h3>
-                            <p class="text-sm text-slate-500 italic">Skip the drink. Fund the fun.™</p>
-                        </div>
-                        <div class="flex flex-col gap-2 w-full pt-4">
-                            <div class="hidden bg-emerald-500/20 py-1 rounded-full mb-2 border border-emerald-500/20">
-                                <span id="live-count-sip" class="text-[10px] font-black text-emerald-400 uppercase tracking-widest">0 / 14 Testers Found</span>
-                            </div>
-                            <a href="simply-sip-case-study.html" class="text-[10px] font-black uppercase tracking-widest text-emerald-400 hover:text-white transition-colors mb-2 italic">View App Details</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplysip" class="opacity-80 hover:opacity-100 transition-opacity mx-auto">
-                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] transition-all duration-300 relative overflow-hidden text-center">
-                    <img src="images/minesweeper_icon.png" alt="Simply Minesweeper™" class="w-24 h-24 rounded-3xl mx-auto mb-4 border border-white/10 group-hover:scale-105 transition-transform duration-500">
-                    <h3 class="text-xl font-bold text-white">Simply Minesweeper™</h3>
-                    <p class="text-sm text-slate-500 italic mb-4">Clear the board, avoid the boom.™</p>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-purple-400 animate-pulse block mb-4">Closed Testing Active</span>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.minesweeper" class="opacity-80 hover:opacity-100 transition-opacity mx-auto">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        <!-- Engineering Principles -->
         <section class="py-24 border-y border-white/5 relative overflow-hidden">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none"></div>
             <div class="max-w-4xl mx-auto space-y-12 relative z-10">
@@ -189,53 +100,102 @@
             </div>
         </section>
 
+        <!-- Production -->
         <section id="production">
-            <div class="flex flex-col md:flex-row items-center justify-between mb-12 px-2 border-t border-white/5 pt-20">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-12 px-2 border-t border-white/5 pt-20 text-center md:text-left">
                 <h2 class="text-4xl font-black text-white italic tracking-tighter uppercase text-blue-500 underline decoration-blue-500/20 underline-offset-8">Production</h2>
                 <div class="h-px bg-white/10 flex-grow mx-8 hidden md:block"></div>
-                <span class="text-[10px] font-black text-slate-600 uppercase tracking-widest italic tracking-wider">Live Release ⚓</span>
+                <span class="text-[10px] font-black text-slate-600 uppercase tracking-widest">Live Release ⚓</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <!-- Connect -->
+                <div class="group bg-blue-600/5 border border-blue-500/20 rounded-[2.5rem] p-8 hover:bg-blue-600/10 transition-all duration-300 relative overflow-hidden">
+                    <img src="images/connect_icon.png" alt="Simply Connect™" class="w-24 h-24 rounded-3xl shadow-2xl mx-auto mb-4 border border-white/5 group-hover:scale-105 transition-transform duration-500">
+                    <h3 class="text-xl font-bold text-white">Simply Connect™</h3>
+                    <p class="text-sm text-slate-500 italic mb-4">Secure. Ephemeral. Family.™</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="simply-connect-case-study.html" class="text-[10px] font-black uppercase tracking-widest text-blue-400 hover:text-white transition-colors">View Case Study</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplyconnect.public" class="opacity-80 hover:opacity-100 transition-opacity mx-auto">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10">
+                        </a>
+                    </div>
+                </div>
+                <!-- Sip -->
+                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] transition-all duration-300 relative overflow-hidden">
+                    <img src="images/sip_icon.png" alt="Simply Sip™" class="w-24 h-24 rounded-3xl shadow-2xl mx-auto mb-4 border border-white/10 group-hover:scale-105 transition-transform duration-500">
+                    <h3 class="text-xl font-bold text-white">Simply Sip™</h3>
+                    <p class="text-sm text-slate-500 italic mb-4">Skip the drink. Fund the fun.™</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="simply-sip-case-study.html" class="text-[10px] font-black uppercase tracking-widest text-emerald-400 hover:text-white transition-colors">View Case Study</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplysip" class="opacity-80 hover:opacity-100 transition-opacity mx-auto">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10">
+                        </a>
+                    </div>
+                </div>
+                <!-- Minesweeper -->
+                <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/[0.08] transition-all duration-300 relative overflow-hidden text-center">
+                    <img src="images/minesweeper_icon.png" alt="Simply Minesweeper™" class="w-24 h-24 rounded-3xl mx-auto mb-4 border border-white/10 group-hover:scale-105 transition-transform duration-500">
+                    <h3 class="text-xl font-bold text-white">Simply Minesweeper™</h3>
+                    <p class="text-sm text-slate-500 italic mb-4">Clear the board, avoid the boom.™</p>
+                    <div class="flex flex-col gap-2">
+                         <a href="simply-minesweeper-case-study.html" class="text-[10px] font-black uppercase tracking-widest text-purple-400 hover:text-white transition-colors">View Case Study</a>
+                         <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.minesweeper" class="opacity-80 hover:opacity-100 transition-opacity mx-auto">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
+                        </a>
+                    </div>
+                </div>
+                <!-- Tic Tac Toe -->
                 <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8">
                     <img src="images/tictactoe_icon.png" class="w-24 h-24 rounded-3xl mx-auto mb-4 border border-white/10 group-hover:scale-105 transition-transform duration-500">
                     <h3 class="text-xl font-bold text-white tracking-tight">Simply Tic Tac Toe™</h3>
                     <p class="text-sm text-slate-500 italic mb-4">The classic game, clutter-free.™</p>
                     <div class="flex flex-col gap-2">
-                        <a href="simply-tictactoe-case-study.html" class="text-[10px] font-black uppercase tracking-widest text-blue-400 hover:text-white italic">View Case Study</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.tictactoe" class="opacity-80 hover:opacity-100 transition-opacity mx-auto">
+                        <a href="simply-tictactoe-case-study.html" class="text-[10px] font-black uppercase tracking-widest text-blue-400 hover:text-white">View Case Study</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.tictactoe" class="opacity-80 hover:opacity-100 transition-opacity inline-block mx-auto">
                             <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10">
                         </a>
                     </div>
                 </div>
+                <!-- Dots & Boxes -->
                 <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8">
                     <img src="images/dotsandboxes_icon.png" class="w-24 h-24 rounded-3xl mx-auto mb-4 border border-white/10">
                     <h3 class="text-xl font-bold text-white tracking-tight">Simply Dots & Boxes™</h3>
                     <p class="text-sm text-slate-500 italic mb-4">Connect the dots, claim your space.™</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.dotsandboxes" class="opacity-80 hover:opacity-100 transition-opacity mx-auto block">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
-                    </a>
+                    <div class="flex flex-col gap-2">
+                        <!-- Placeholder link to be updated later -->
+                        <a href="#" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-white cursor-not-allowed">Case Study Coming Soon</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.dotsandboxes" class="opacity-80 hover:opacity-100 transition-opacity inline-block mx-auto">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
+                        </a>
+                    </div>
                 </div>
+                <!-- Solitaire -->
                 <div class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8">
                     <img src="images/solitaire_icon.png" class="w-24 h-24 rounded-3xl mx-auto mb-4 border border-white/10">
                     <h3 class="text-xl font-bold text-white tracking-tight">Simply Solitaire™</h3>
                     <p class="text-sm text-slate-500 italic mb-4">Relaxing cards, classic gameplay.™</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.solitare" class="opacity-80 hover:opacity-100 transition-opacity mx-auto block">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
-                    </a>
+                    <div class="flex flex-col gap-2">
+                         <!-- Placeholder link to be updated later -->
+                         <a href="#" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-white cursor-not-allowed">Case Study Coming Soon</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.solitare" class="opacity-80 hover:opacity-100 transition-opacity inline-block mx-auto">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Active Engineering -->
         <section id="active-eng">
             <div class="flex items-center justify-between mb-12 px-2 border-t border-white/5 pt-20">
                 <h2 class="text-3xl font-black text-white italic tracking-tighter uppercase">Active <span class="text-blue-500/50">Engineering</span></h2>
                 <div class="h-px bg-white/10 flex-grow mx-8 hidden md:block"></div>
                 <span class="text-[10px] font-black text-slate-600 uppercase tracking-widest italic">Technical Preview ⚓</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
                 <a href="simply-spin-case-study.html" class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-10 hover:border-blue-500/50 transition-all relative overflow-hidden">
                     <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full"></div>
-                    <div class="flex flex-col md:flex-row gap-8 items-center z-10 relative text-center md:text-left">
+                    <div class="flex flex-col md:flex-row gap-8 items-center z-10 relative">
                         <img src="images/spin_icon.png" alt="Simply Spin™" class="w-20 h-20 rounded-2xl border border-white/10 group-hover:scale-110 transition-transform duration-500 mx-auto md:mx-0">
                         <div class="space-y-2">
                             <h3 class="text-2xl font-bold text-white tracking-tight italic uppercase leading-none">Simply <span class="text-blue-500">Spin™</span></h3>
@@ -246,7 +206,7 @@
                 </a>
                 <a href="simply-sudoku-article.html" class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-10 hover:border-blue-500/50 transition-all relative overflow-hidden">
                     <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full"></div>
-                    <div class="flex flex-col md:flex-row gap-8 items-center z-10 relative text-center md:text-left">
+                    <div class="flex flex-col md:flex-row gap-8 items-center z-10 relative">
                         <img src="images/sudoku_icon.png" alt="Simply Sudoku™" class="w-20 h-20 rounded-2xl border border-white/10 group-hover:scale-110 transition-transform duration-500 mx-auto md:mx-0">
                         <div class="space-y-2">
                             <h3 class="text-2xl font-bold text-white tracking-tight italic uppercase leading-none">Simply <span class="text-blue-500">Sudoku™</span></h3>
@@ -258,23 +218,24 @@
             </div>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24">
+        <!-- Feature Pillars -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24 text-center md:text-left">
             <div class="space-y-4">
-                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 mx-auto md:mx-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                 </div>
                 <h4 class="text-lg font-bold text-white uppercase tracking-wider italic">Fast & Focused</h4>
                 <p class="text-sm text-slate-500 leading-relaxed">No bloat. No long loading screens. Every Simply app is designed to let you do what you need and get on with your day.</p>
             </div>
             <div class="space-y-4">
-                <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 mx-auto md:mx-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </div>
                 <h4 class="text-lg font-bold text-white uppercase tracking-wider italic">Private by Design</h4>
                 <p class="text-sm text-slate-500 leading-relaxed">Your data belongs to you. Simply apps keep your logs and habits strictly on your own device.</p>
             </div>
             <div class="space-y-4">
-                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500 mx-auto md:mx-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                 </div>
                 <h4 class="text-lg font-bold text-white uppercase tracking-wider italic">Modern Interface</h4>
@@ -294,14 +255,14 @@
         </div>
     </main>
 
-    <!-- Updated Non-Tacky Footer -->
+    <!-- Footer -->
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <p class="text-xs font-medium text-slate-600 tracking-widest">
                     © 2026 IAmChrisJalbert | Privacy-First Apps | Built in Gloucester, MA ⚓
                 </p>
-                <a href="stats.html" class="cursor-default">
+                <a href="stats.html" class="cursor-default" style="cursor: default !important;">
                     <img src="https://api.visitorbadge.io/api/visitors?path=iamchrisjalbert_index&label=&labelColor=%230a0a0c&countColor=%231e293b" class="h-4 opacity-30 grayscale pointer-events-none" alt="Traffic Badge">
                 </a>
             </div>
