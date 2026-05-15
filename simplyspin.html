@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Spin™ Web Demo | CALE | Gloucester, MA</title>
+    <meta name="description" content="Try the web demo of Simply Spin™. A fast, clutter-free randomizer built by CALE.">
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="canonical" href="https://iamchrisjalbert.com/simplyspin.html">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-blue-500/30 flex flex-col">
+
+    <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="group flex items-center gap-2 transition-all flex-shrink-0 mr-4">
+                <img src="images/IAmChrisJalbert_WebLogo_300.png" alt="Christopher Jalbert - CALE Developer" class="w-10 h-10 flex-shrink-0 group-hover:rotate-6 transition-transform duration-300 object-contain">
+                <span class="font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors hidden sm:block">IAmChrisJalbert.com</span>
+            </a>
+            <div class="flex gap-4 sm:gap-6 text-sm font-medium justify-end items-center">
+                <a href="index.html" class="hover:text-white transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-12 w-full space-y-12">
+        
+        <header class="text-center space-y-4">
+            <h1 class="text-4xl sm:text-5xl font-black text-white italic tracking-tighter uppercase">
+                Simply <span class="text-blue-500">Spin™</span> Web Demo
+            </h1>
+            <p class="text-slate-400 font-medium">Physics-driven decisions right in your browser. Perfect for giveaways and quick choices.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <div class="relative bg-white/5 border border-white/10 rounded-[2.5rem] p-8 flex flex-col items-center justify-center overflow-hidden shadow-2xl">
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+                
+                <div class="absolute top-8 z-10 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="rotate-180 text-blue-500"><path d="M12 2L2 22h20L12 2z"/></svg>
+                </div>
+
+                <div class="relative w-full max-w-[400px] aspect-square">
+                    <canvas id="wheelCanvas" width="400" height="400" class="w-full h-full rounded-full shadow-[0_0_40px_rgba(59,130,246,0.15)]"></canvas>
+                </div>
+                
+                <div id="winnerDisplay" class="mt-8 text-2xl font-black text-emerald-400 italic uppercase tracking-widest min-h-[2.5rem]">
+                    </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <label class="block text-sm font-bold text-white uppercase tracking-widest italic mb-4">Enter Options (One per line)</label>
+                    <textarea id="optionsInput" rows="6" class="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-slate-300 focus:outline-none focus:border-blue-500/50 transition-colors resize-none font-medium">Christopher
+Amber
+Ace
+Emersyn</textarea>
+                    
+                    <button id="spinButton" class="w-full mt-4 bg-blue-600 hover:bg-blue-500 text-white font-black italic uppercase tracking-widest py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 active:scale-[0.98]">
+                        Spin the Wheel
+                    </button>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-3xl p-8 text-center space-y-4">
+    <img src="images/spin_icon.png" alt="Simply Spin App" class="w-16 h-16 rounded-xl mx-auto border border-white/10 shadow-lg">
+    <h3 class="text-xl font-bold text-white italic tracking-tight">Want the full Native experience?</h3>
+    <p class="text-sm text-slate-400 mb-4">The Android app features zero ads, fully offline functionality, and advanced randomization algorithms.</p>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplyspin" class="opacity-80 hover:opacity-100 transition-opacity mx-auto block mb-4">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
+    </a>
+    
+    <a href="simply-spin-article.html" class="inline-block text-[10px] font-black text-blue-400 uppercase tracking-widest hover:text-white transition-colors">Read the Tech Breakdown →</a>
+</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-12 px-6 mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs font-medium text-slate-600 tracking-widest text-center md:text-left">
+                © 2026 Christopher Jalbert (IAmChrisJalbert) | Privacy-First Apps | Built in Gloucester, MA ⚓
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-white transition-colors">Apps</a>
+                <a href="safety.html" class="hover:text-white transition-colors">Safety</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('wheelCanvas');
+        const ctx = canvas.getContext('2d');
+        const input = document.getElementById('optionsInput');
+        const spinBtn = document.getElementById('spinButton');
+        const winnerDisplay = document.getElementById('winnerDisplay');
+
+        // CALE Brand Colors
+        const colors = ["#3b82f6", "#10b981", "#8b5cf6", "#f59e0b", "#0ea5e9", "#f43f5e", "#14b8a6", "#c026d3"];
+        
+        let options = [];
+        let currentAngle = 0;
+        let isSpinning = false;
+        let spinVelocity = 0;
+        let animationFrameId;
+
+        function updateOptions() {
+            options = input.value.split('\n').map(opt => opt.trim()).filter(opt => opt !== "");
+            if(options.length === 0) options = ["Add Options"];
+            drawWheel();
+        }
+
+        function drawWheel() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = Math.min(centerX, centerY) - 10;
+            const arc = (2 * Math.PI) / options.length;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < options.length; i++) {
+                const angle = currentAngle + i * arc;
+                
+                // Draw slice
+                ctx.beginPath();
+                ctx.fillStyle = colors[i % colors.length];
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, angle, angle + arc, false);
+                ctx.lineTo(centerX, centerY);
+                ctx.fill();
+                ctx.stroke();
+
+                // Draw text
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(angle + arc / 2);
+                ctx.textAlign = "right";
+                ctx.fillStyle = "#ffffff";
+                ctx.font = "bold 18px sans-serif";
+                ctx.shadowColor = "rgba(0,0,0,0.5)";
+                ctx.shadowBlur = 4;
+                
+                // Truncate long text
+                let text = options[i];
+                if (text.length > 15) text = text.substring(0, 15) + "...";
+                
+                ctx.fillText(text, radius - 20, 5);
+                ctx.restore();
+            }
+
+            // Draw Center Hub
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 30, 0, 2 * Math.PI);
+            ctx.fillStyle = "#0a0a0c";
+            ctx.fill();
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = "#3b82f6";
+            ctx.stroke();
+        }
+
+        function spin() {
+            if (isSpinning || options.length < 2) return;
+            isSpinning = true;
+            winnerDisplay.innerText = "SPINNING...";
+            winnerDisplay.classList.remove('animate-pulse');
+            
+            // Randomize starting velocity for unpredictability
+            spinVelocity = Math.random() * 0.2 + 0.4; 
+            animateSpin();
+        }
+
+        function animateSpin() {
+            currentAngle += spinVelocity;
+            
+            // Friction/Easing (Slows down over time)
+            spinVelocity *= 0.985; 
+
+            drawWheel();
+
+            if (spinVelocity > 0.002) {
+                animationFrameId = requestAnimationFrame(animateSpin);
+            } else {
+                isSpinning = false;
+                determineWinner();
+            }
+        }
+
+        function determineWinner() {
+            // The pointer is at the top (which is -90 degrees, or 3*PI/2)
+            // Calculate which slice is currently at the top pointer
+            const arc = (2 * Math.PI) / options.length;
+            const normalizedAngle = currentAngle % (2 * Math.PI);
+            
+            // The pointer is at 270 degrees (1.5 PI) visually
+            let winningAngle = (1.5 * Math.PI) - normalizedAngle;
+            if (winningAngle < 0) winningAngle += 2 * Math.PI;
+
+            const winningIndex = Math.floor(winningAngle / arc);
+            winnerDisplay.innerText = options[winningIndex] + " WINS!";
+            winnerDisplay.classList.add('animate-pulse');
+        }
+
+        // Event Listeners
+        input.addEventListener('input', updateOptions);
+        spinBtn.addEventListener('click', spin);
+
+        // Initial Draw
+        updateOptions();
+    </script>
+</body>
+</html>
