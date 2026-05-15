@@ -191,17 +191,18 @@ Emersyn</textarea>
             const finalRotation = currentAngle + baseRotations + distanceToTarget;
             
             const startAngle = currentAngle;
-            const duration = 5000; // 5 seconds of suspense
+            // Increased from 5000 to 7500 (7.5 seconds)
+            const duration = 7500; 
             const startTime = performance.now();
 
-            // 2. The Friction Curve (OutQuint Easing)
+            // 2. The Friction Curve (Adjusted)
             function animate(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 
-                // OutQuint Easing Formula: 1 - (1 - x)^5
-                // This accelerates instantly, coasts, and then drags to a crawling halt
-                const easeProgress = 1 - Math.pow(1 - progress, 5);
+                // Changed from power of 5 to power of 3.5
+                // This softens the curve so it visibly crawls for much longer before stopping
+                const easeProgress = 1 - Math.pow(1 - progress, 3.5);
 
                 currentAngle = startAngle + (finalRotation - startAngle) * easeProgress;
                 drawWheel();
