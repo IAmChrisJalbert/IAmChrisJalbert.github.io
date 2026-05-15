@@ -111,8 +111,6 @@ Emersyn</textarea>
         let options = [];
         let currentAngle = 0;
         let isSpinning = false;
-        let spinVelocity = 0;
-        let animationFrameId;
 
         function updateOptions() {
             options = input.value.split('\n').map(opt => opt.trim()).filter(opt => opt !== "");
@@ -150,7 +148,6 @@ Emersyn</textarea>
                 ctx.shadowColor = "rgba(0,0,0,0.5)";
                 ctx.shadowBlur = 4;
                 
-                // Truncate long text
                 let text = options[i];
                 if (text.length > 15) text = text.substring(0, 15) + "...";
                 
@@ -173,41 +170,52 @@ Emersyn</textarea>
             isSpinning = true;
             winnerDisplay.innerText = "SPINNING...";
             winnerDisplay.classList.remove('animate-pulse');
-            
-            // Randomize starting velocity for unpredictability
-            spinVelocity = Math.random() * 0.2 + 0.4; 
-            animateSpin();
-        }
 
-        function animateSpin() {
-            currentAngle += spinVelocity;
-            
-            // Friction/Easing (Slows down over time)
-            spinVelocity *= 0.985; 
-
-            drawWheel();
-
-            if (spinVelocity > 0.002) {
-                animationFrameId = requestAnimationFrame(animateSpin);
-            } else {
-                isSpinning = false;
-                determineWinner();
-            }
-        }
-
-        function determineWinner() {
-            // The pointer is at the top (which is -90 degrees, or 3*PI/2)
-            // Calculate which slice is currently at the top pointer
+            // 1. The Pre-Calculation
+            const winningIndex = Math.floor(Math.random() * options.length);
             const arc = (2 * Math.PI) / options.length;
-            const normalizedAngle = currentAngle % (2 * Math.PI);
             
-            // The pointer is at 270 degrees (1.5 PI) visually
-            let winningAngle = (1.5 * Math.PI) - normalizedAngle;
-            if (winningAngle < 0) winningAngle += 2 * Math.PI;
+            // Randomize where the pointer lands inside the winning slice so it's not dead-center every time
+            const randomOffsetInsideSlice = (Math.random() * 0.8 + 0.1) * arc; 
+            
+            // The pointer sits at the top (1.5 * PI visually in Canvas). Calculate distance needed.
+            const targetVisualAngle = (1.5 * Math.PI) - (winningIndex * arc) - randomOffsetInsideSlice;
+            
+            // Normalize current angle and calculate distance to the target
+            const currentNormalized = currentAngle % (2 * Math.PI);
+            let distanceToTarget = targetVisualAngle - currentNormalized;
+            if (distanceToTarget < 0) distanceToTarget += (2 * Math.PI);
 
-            const winningIndex = Math.floor(winningAngle / arc);
-            winnerDisplay.innerText = options[winningIndex] + " WINS!";
-            winnerDisplay.classList.add('animate-pulse');
+            // Add the "Base Rotation" (10 full spins)
+            const baseRotations = 10 * 2 * Math.PI;
+            const finalRotation = currentAngle + baseRotations + distanceToTarget;
+            
+            const startAngle = currentAngle;
+            const duration = 5000; // 5 seconds of suspense
+            const startTime = performance.now();
+
+            // 2. The Friction Curve (OutQuint Easing)
+            function animate(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // OutQuint Easing Formula: 1 - (1 - x)^5
+                // This accelerates instantly, coasts, and then drags to a crawling halt
+                const easeProgress = 1 - Math.pow(1 - progress, 5);
+
+                currentAngle = startAngle + (finalRotation - startAngle) * easeProgress;
+                drawWheel();
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    isSpinning = false;
+                    winnerDisplay.innerText = options[winningIndex] + " WINS!";
+                    winnerDisplay.classList.add('animate-pulse');
+                }
+            }
+
+            requestAnimationFrame(animate);
         }
 
         // Event Listeners
