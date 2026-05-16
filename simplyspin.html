@@ -68,19 +68,31 @@ Emersyn</textarea>
                     </button>
                 </div>
 
-<div class="bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-3xl p-8 text-center space-y-4">
-    <img src="images/spin_icon.png" alt="Simply Spin App" class="w-16 h-16 rounded-xl mx-auto border border-white/10 shadow-lg">
-    <h3 class="text-xl font-bold text-white italic tracking-tight">Want the full Native experience?</h3>
-    <p class="text-sm text-slate-400 mb-4">The Android app features a clean interface with zero intrusive pop-ups, fully offline functionality, and advanced randomization algorithms.</p>
-    
-    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplyspin" class="opacity-80 hover:opacity-100 transition-opacity mx-auto block mb-4">
-        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
-    </a>
-    
-    <a href="simply-spin-article.html" class="inline-block text-[10px] font-black text-blue-400 uppercase tracking-widest hover:text-white transition-colors">Read the Tech Breakdown →</a>
-</div>
+                <div class="bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-3xl p-8 text-center space-y-4">
+                    <img src="images/spin_icon.png" alt="Simply Spin App" class="w-16 h-16 rounded-xl mx-auto border border-white/10 shadow-lg">
+                    <h3 class="text-xl font-bold text-white italic tracking-tight">Want the full Native experience?</h3>
+                    <p class="text-sm text-slate-400 mb-4">The Android app features a clean interface with zero intrusive pop-ups, fully offline functionality, and advanced randomization algorithms.</p>
+                    
+                    <a href="https://play.google.com/store/apps/details?id=com.iamchrisjalbert.simplyspin" class="opacity-80 hover:opacity-100 transition-opacity mx-auto block mb-4">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-10 mx-auto">
+                    </a>
+                    
+                    <a href="simply-spin-article.html" class="inline-block text-[10px] font-black text-blue-400 uppercase tracking-widest hover:text-white transition-colors">Read the Tech Breakdown →</a>
+                </div>
             </div>
         </div>
+
+        <div class="mt-20 flex flex-col items-center justify-center w-full">
+            <div class="w-full max-w-3xl bg-white/5 border border-white/10 rounded-[2.5rem] p-6 flex flex-col items-center justify-center shadow-xl">
+                <p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold mb-4 italic">Sponsor Link</p>
+                
+                <div id="frame" style="width: 100%; margin: auto; position: relative; z-index: 99998;">
+                    <iframe data-aa='2437869' src='//acceptable.a-ads.com/2437869/?size=Adaptive&background_color=0a0a0c&text_color=94a3b8'
+                            style='border:0; padding:0; width:100%; height:90px; overflow:hidden; display: block; margin: auto'></iframe>
+                </div>
+                </div>
+        </div>
+
     </main>
 
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
@@ -105,7 +117,6 @@ Emersyn</textarea>
         const spinBtn = document.getElementById('spinButton');
         const winnerDisplay = document.getElementById('winnerDisplay');
 
-        // CALE Brand Colors
         const colors = ["#3b82f6", "#10b981", "#8b5cf6", "#f59e0b", "#0ea5e9", "#f43f5e", "#14b8a6", "#c026d3"];
         
         let options = [];
@@ -129,7 +140,6 @@ Emersyn</textarea>
             for (let i = 0; i < options.length; i++) {
                 const angle = currentAngle + i * arc;
                 
-                // Draw slice
                 ctx.beginPath();
                 ctx.fillStyle = colors[i % colors.length];
                 ctx.moveTo(centerX, centerY);
@@ -138,7 +148,6 @@ Emersyn</textarea>
                 ctx.fill();
                 ctx.stroke();
 
-                // Draw text
                 ctx.save();
                 ctx.translate(centerX, centerY);
                 ctx.rotate(angle + arc / 2);
@@ -155,7 +164,6 @@ Emersyn</textarea>
                 ctx.restore();
             }
 
-            // Draw Center Hub
             ctx.beginPath();
             ctx.arc(centerX, centerY, 30, 0, 2 * Math.PI);
             ctx.fillStyle = "#0a0a0c";
@@ -171,37 +179,28 @@ Emersyn</textarea>
             winnerDisplay.innerText = "SPINNING...";
             winnerDisplay.classList.remove('animate-pulse');
 
-            // 1. The Pre-Calculation
             const winningIndex = Math.floor(Math.random() * options.length);
             const arc = (2 * Math.PI) / options.length;
             
-            // Randomize where the pointer lands inside the winning slice so it's not dead-center every time
             const randomOffsetInsideSlice = (Math.random() * 0.8 + 0.1) * arc; 
             
-            // The pointer sits at the top (1.5 * PI visually in Canvas). Calculate distance needed.
             const targetVisualAngle = (1.5 * Math.PI) - (winningIndex * arc) - randomOffsetInsideSlice;
             
-            // Normalize current angle and calculate distance to the target
             const currentNormalized = currentAngle % (2 * Math.PI);
             let distanceToTarget = targetVisualAngle - currentNormalized;
             if (distanceToTarget < 0) distanceToTarget += (2 * Math.PI);
 
-            // Add the "Base Rotation" (10 full spins)
             const baseRotations = 10 * 2 * Math.PI;
             const finalRotation = currentAngle + baseRotations + distanceToTarget;
             
             const startAngle = currentAngle;
-            // Increased from 5000 to 7500 (7.5 seconds)
             const duration = 7500; 
             const startTime = performance.now();
 
-            // 2. The Friction Curve (Adjusted)
             function animate(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 
-                // Changed from power of 5 to power of 3.5
-                // This softens the curve so it visibly crawls for much longer before stopping
                 const easeProgress = 1 - Math.pow(1 - progress, 3.5);
 
                 currentAngle = startAngle + (finalRotation - startAngle) * easeProgress;
@@ -219,11 +218,9 @@ Emersyn</textarea>
             requestAnimationFrame(animate);
         }
 
-        // Event Listeners
         input.addEventListener('input', updateOptions);
         spinBtn.addEventListener('click', spin);
 
-        // Initial Draw
         updateOptions();
     </script>
 </body>
