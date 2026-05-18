@@ -51,42 +51,98 @@
         </div>
     </nav>
 
-    <main class="flex-grow max-w-4xl mx-auto px-6 py-24 w-full">
-        <section class="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
-            <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full"></div>
-            
-            <div class="relative z-10 flex flex-col md:flex-row gap-10 items-center md:items-start">
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-24 w-full space-y-16">
+        
+        <div class="max-w-4xl mx-auto w-full">
+            <section class="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full"></div>
                 
-                <div class="w-40 h-40 md:w-56 md:h-56 bg-slate-900 rounded-3xl border border-white/10 shadow-2xl flex-shrink-0 flex items-center justify-center overflow-hidden relative group">
-                    <img 
-                        src="images/christopher-jalbert-android-developer.jpg" 
-                        alt="Christopher Jalbert - Android Developer and Creator of the Simply Collection in Gloucester, MA" 
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        onerror="this.style.opacity='0'; this.parentElement.classList.add('bg-blue-600/10')"
-                    >
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                        <span class="text-4xl font-black italic">CJ</span>
+                <div class="relative z-10 flex flex-col md:flex-row gap-10 items-center md:items-start">
+                    
+                    <div class="w-40 h-40 md:w-56 md:h-56 bg-slate-900 rounded-3xl border border-white/10 shadow-2xl flex-shrink-0 flex items-center justify-center overflow-hidden relative group">
+                        <img 
+                            src="images/christopher-jalbert-android-developer.jpg" 
+                            alt="Christopher Jalbert - Android Developer and Creator of the Simply Collection in Gloucester, MA" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            onerror="this.style.opacity='0'; this.parentElement.classList.add('bg-blue-600/10')"
+                        >
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+                            <span class="text-4xl font-black italic">CJ</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-center md:text-left flex-1 min-w-0 w-full">
+                        <h1 class="flex flex-col tracking-tighter italic leading-tight">
+                            <span class="text-3xl sm:text-4xl md:text-5xl font-black text-white">Meet</span>
+                            <span class="text-2xl sm:text-4xl md:text-6xl font-black text-blue-500 underline decoration-blue-500/30 underline-offset-8">IAmChrisJalbert</span>
+                        </h1>
+
+                        <div class="space-y-4 text-lg text-slate-400 leading-relaxed font-medium">
+                            <p>I am <strong>Christopher Jalbert</strong>, an Android Developer based in <strong>Gloucester, Massachusetts</strong>. By day, I navigate the logistical complexities of global freight forwarding. By night, I translate that need for efficiency into native mobile applications built with <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>.</p>
+                            
+                            <p>I launched the <strong>Simply Collection™</strong> as a direct response to "app-bloat." In an era of intrusive tracking and heavy data hoarding, I believe software should be a lightweight tool that respects your privacy, your battery life, and your time.</p>
+                            
+                            <p>My philosophy is <strong>Local-First</strong>. Whether it's a finance tracker like Simply Sip™ or a utility for the family, your data stays where it belongs: on your device. No cloud accounts, no shadow-tracking, no noise.</p>
+                            
+                            <p>When I'm not in <strong>Android Studio</strong>, I'm a family man. I live on the North Shore with my wife, Amber ("Pizza"), and my two daughters, Ace (Lorelai) and Emersyn. I find my inspiration in things that are practical, permanent, and fast—much like a good line of code or a Foo Fighters riff.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
+        </div>
 
-                <div class="space-y-6 text-center md:text-left flex-1 min-w-0 w-full">
-                    <h1 class="flex flex-col tracking-tighter italic leading-tight">
-                        <span class="text-3xl sm:text-4xl md:text-5xl font-black text-white">Meet</span>
-                        <span class="text-2xl sm:text-4xl md:text-6xl font-black text-blue-500 underline decoration-blue-500/30 underline-offset-8">IAmChrisJalbert</span>
-                    </h1>
+        <section class="max-w-6xl mx-auto py-12 border-t border-white/5">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-2xl font-bold tracking-tight text-white mb-3">The Team Behind the Code</h2>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    While I handle the programming, compiler errors, and late-night logic sessions, the Simply Collection™ wouldn't exist without my household masterminds. Meet the ultimate calibration and support crew.
+                </p>
+            </div>
 
-                    <div class="space-y-4 text-lg text-slate-400 leading-relaxed font-medium">
-                        <p>I am <strong>Christopher Jalbert</strong>, an Android Developer based in <strong>Gloucester, Massachusetts</strong>. By day, I navigate the logistical complexities of global freight forwarding. By night, I translate that need for efficiency into native mobile applications built with <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>.</p>
-                        
-                        <p>I launched the <strong>Simply Collection™</strong> as a direct response to "app-bloat." In an era of intrusive tracking and heavy data hoarding, I believe software should be a lightweight tool that respects your privacy, your battery life, and your time.</p>
-                        
-                        <p>My philosophy is <strong>Local-First</strong>. Whether it's a finance tracker like Simply Sip™ or a utility for the family, your data stays where it belongs: on your device. No cloud accounts, no shadow-tracking, no noise.</p>
-                        
-                        <p>When I'm not in <strong>Android Studio</strong>, I'm a family man. I live on the North Shore with my wife, Amber ("Pizza"), and my two daughters, Lorelai (Ace) and Emersyn. I find my inspiration in things that are practical, permanent, and fast—much like a good line of code or a Foo Fighters riff.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center backdrop-blur-sm hover:border-white/10 transition-all duration-300 group">
+                    <div class="w-24 h-24 rounded-full overflow-hidden mb-5 border-2 border-white/10 bg-slate-800 flex-shrink-0 group-hover:border-white/20 transition-colors">
+                        <img src="assets/images/crew-amber.jpg" alt="Amber" class="w-full h-full object-cover" />
                     </div>
+                    <h3 class="text-base font-bold text-white">Amber</h3>
+                    <span class="text-[9px] uppercase tracking-widest text-slate-500 font-black bg-white/5 px-2 py-0.5 rounded-full mb-4">
+                        The Anchor
+                    </span>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        The ultimate sounding board for app design logic and the foundation of the studio. She provides the critical, objective perspective needed to ensure our utilities stay clean, focused, and tailored to real-world utility.
+                    </p>
                 </div>
+
+                <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center backdrop-blur-sm hover:border-white/10 transition-all duration-300 group">
+                    <div class="w-24 h-24 rounded-full overflow-hidden mb-5 border-2 border-white/10 bg-slate-800 flex-shrink-0 group-hover:border-white/20 transition-colors">
+                        <img src="assets/images/crew-lorelai.jpg" alt="Lorelai" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-base font-bold text-white">Ace (Lorelai)</h3>
+                    <span class="text-[9px] uppercase tracking-widest text-slate-500 font-black bg-white/5 px-2 py-0.5 rounded-full mb-4">
+                        Lead Beta Tester
+                    </span>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Keeping user interface layouts completely honest. With absolute zero tolerance for sluggish mechanics, confusing menus, or flawed design elements, she serves as the perfect high-stakes checkpoint for responsiveness.
+                    </p>
+                </div>
+
+                <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center backdrop-blur-sm hover:border-white/10 transition-all duration-300 group">
+                    <div class="w-24 h-24 rounded-full overflow-hidden mb-5 border-2 border-white/10 bg-slate-800 flex-shrink-0 group-hover:border-white/20 transition-colors">
+                        <img src="assets/images/crew-emersyn.jpg" alt="Emersyn" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-base font-bold text-white">Emersyn</h3>
+                    <span class="text-[9px] uppercase tracking-widest text-slate-500 font-black bg-white/5 px-2 py-0.5 rounded-full mb-4">
+                        Quality Assurance
+                    </span>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        The true calibration engine for intuitive design. If a game dynamic or interactive element isn't instantly clear, rewarding, and easy to navigate from the very first tap, she calls it out immediately.
+                    </p>
+                </div>
+
             </div>
         </section>
+
     </main>
 
     <footer class="border-t border-white/5 py-12 px-6 mt-auto">
