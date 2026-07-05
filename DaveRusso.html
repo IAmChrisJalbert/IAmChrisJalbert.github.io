@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dave Russo | The Entertainer</title>
+    <title>Dave Russo | Official Portfolio</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #000; color: #fff; }
+        /* Modern reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #050505; color: #f4f4f4; line-height: 1.5; }
+
+        /* Full-bleed hero */
         .hero { 
-            height: 80vh; 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/dave.jpeg'); 
+            height: 100vh; 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('images/dave.jpeg') no-repeat center center; 
             background-size: cover; 
-            background-position: center 20%; 
             display: flex; 
             flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
+            justify-content: flex-end; 
+            padding: 0 10% 10vh; 
         }
-        .container { max-width: 800px; margin: 50px auto; padding: 20px; }
-        h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; }
-        .cta { background: #e74c3c; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; margin-top: 20px; display: inline-block; }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0; background: #222; border: 1px solid #444; color: #fff; }
+        .hero h1 { font-size: clamp(3rem, 10vw, 7rem); text-transform: uppercase; line-height: 1; margin-bottom: 1rem; }
+        .hero p { font-size: clamp(1.2rem, 3vw, 2rem); color: #e74c3c; font-weight: 600; }
+
+        /* Trust Bar Styling */
+        .trust-bar { background: #111; padding: 40px 5%; text-align: center; }
+        .trust-label { font-size: 0.8rem; letter-spacing: 2px; color: #666; margin-bottom: 20px; }
+        .logo-row { display: flex; justify-content: center; gap: 40px; align-items: center; }
+        .logo-row img { height: 40px; opacity: 0.6; filter: grayscale(100%); }
+
+        /* Content */
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        h2 { font-size: 2rem; margin-bottom: 2rem; color: #fff; }
+        p { margin-bottom: 1.5rem; color: #999; font-size: 1.1rem; }
+        footer { padding: 50px 5%; border-top: 1px solid #222; text-align: center; color: #666; }
     </style>
 </head>
 <body>
@@ -27,21 +41,29 @@
     <header class="hero">
         <h1>DAVE RUSSO</h1>
         <p>THE ENTERTAINER</p>
-        <a href="#book" class="cta">BOOK NOW</a>
     </header>
 
-    <div class="container">
-        <h2>ABOUT DAVE</h2>
-        <p>From the Boston Comedy Festival to Wayne Newton's <em>The Entertainer</em>, Dave Russo is a powerhouse of comedy. A seasoned TV personality, emcee, and performer, Dave brings high-energy, quick wit, and artful storytelling to every stage.</p>
-        
-        <h2 id="book">BOOK DAVE</h2>
-        <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Event Details" rows="5" required></textarea>
-            <button type="submit" style="background:#e74c3c; color:white; border:none; padding:15px; width:100%; cursor:pointer;">SUBMIT</button>
-        </form>
-    </div>
+    <section class="trust-bar">
+        <p class="trust-label">AS SEEN ON</p>
+        <div class="logo-row">
+            <img src="images/nbc.png" alt="NBC">
+            <img src="images/espn.png" alt="ESPN">
+        </div>
+    </section>
+
+    <main class="container">
+        <section>
+            <h2>BEYOND THE STAGE</h2>
+            <div class="grid">
+                <p>Dave Russo has redefined the role of a modern entertainer. From headlining the Boston Comedy Festival to becoming a staple of New England television and corporate events, Dave provides a high-energy, immersive experience that transcends the standard stand-up set.</p>
+                <p>His work has bridged the gap between national media networks and local grassroots charity initiatives, proving his versatility across platforms. He is not just a performer; he is a brand that understands how to command a room, whether in a club, a theater, or on a cruise.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DAVE RUSSO MEDIA. ALL RIGHTS RESERVED.</p>
+    </footer>
 
 </body>
 </html>
