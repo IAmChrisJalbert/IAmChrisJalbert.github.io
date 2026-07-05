@@ -3,39 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dave Russo | Official Entertainer Portfolio</title>
+    <title>Dave Russo | Official Portfolio</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background: #000; color: #fff; line-height: 1.5; }
+        /* Efficient Reset */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #000; color: #fff; }
 
-        /* HERO - THE AUTHORITY SHOT */
-        .hero { 
-            height: 90vh; 
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('images/dave.jpeg') no-repeat center center; 
-            background-size: cover; 
-            display: flex; flex-direction: column; justify-content: flex-end; 
-            padding: 0 5% 5vh; 
-        }
-        .hero h1 { font-size: clamp(3rem, 10vw, 7rem); text-transform: uppercase; line-height: 1; }
-        .hero p { font-size: clamp(1.2rem, 3vw, 2rem); color: #e74c3c; font-weight: 700; margin-bottom: 20px; }
-
-        /* TRUST BAR */
-        .trust-bar { background: #0a0a0a; padding: 30px 5%; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; text-align: center; }
-        .trust-label { font-size: 0.7rem; letter-spacing: 3px; color: #444; margin-bottom: 15px; text-transform: uppercase; }
-        .logo-row { display: flex; justify-content: center; gap: 50px; align-items: center; }
-        .logo-row img { height: 30px; filter: grayscale(100%) brightness(2); opacity: 0.7; }
-
-        /* CONTENT GRID */
-        .content { max-width: 1200px; margin: 0 auto; padding: 80px 5%; }
-        .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .video-box { width: 100%; aspect-ratio: 16/9; background: #111; border: 1px solid #222; }
+        /* Hero */
+        .hero { height: 85vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)), url('hero.jpg') center/cover; display: flex; flex-direction: column; justify-content: flex-end; padding: 50px; }
+        h1 { font-size: clamp(3rem, 10vw, 6rem); text-transform: uppercase; }
         
-        /* BOOKING FORM */
-        .form-section { max-width: 600px; margin: 80px auto; padding: 40px; background: #111; }
-        input, textarea { width: 100%; padding: 15px; margin: 10px 0; background: #000; border: 1px solid #333; color: #fff; }
-        button { background: #e74c3c; color: #fff; padding: 15px; border: none; cursor: pointer; width: 100%; font-weight: bold; text-transform: uppercase; }
+        /* Media Strip */
+        .media-strip { background: #111; padding: 20px; display: flex; justify-content: center; gap: 40px; align-items: center; border-bottom: 2px solid #e74c3c; }
+        .media-strip img { height: 30px; filter: grayscale(100%) brightness(2); opacity: 0.7; }
 
-        @media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; } }
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
+        .video-wrapper { aspect-ratio: 16/9; background: #222; }
+
+        /* Booking */
+        .booking { max-width: 600px; margin: 40px auto; padding: 40px; background: #0a0a0a; }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 10px; background: #1a1a1a; border: 1px solid #333; color: #fff; }
+        button { width: 100%; padding: 15px; background: #e74c3c; color: #fff; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -45,36 +34,24 @@
         <p>THE ENTERTAINER</p>
     </header>
 
-    <section class="trust-bar">
-        <p class="trust-label">Media Appearances</p>
-        <div class="logo-row">
-            <img src="images/nbc.png" alt="NBC">
-            <img src="images/espn.png" alt="ESPN">
-        </div>
+    <section class="media-strip">
+        <img src="nbc.png" alt="NBC">
+        <img src="espn.png" alt="ESPN">
     </section>
 
-    <main class="content">
-        <div class="portfolio-grid">
-            <div class="video-box">
-                <!-- Replace with YouTube Embed 1 -->
-                <iframe width="100%" height="100%" src="YOUR_YOUTUBE_URL_1" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="video-box">
-                <!-- Replace with YouTube Embed 2 -->
-                <iframe width="100%" height="100%" src="YOUR_YOUTUBE_URL_2" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <section class="form-section" id="book">
-            <h2 style="text-align: center; margin-bottom: 20px;">BOOK DAVE FOR YOUR EVENT</h2>
-            <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" placeholder="Event Date, Location, and Details" rows="4" required></textarea>
-                <button type="submit">Send Inquiry</button>
-            </form>
-        </section>
+    <main class="grid">
+        <div class="video-wrapper"><iframe src="YOUR_URL_1" width="100%" height="100%" allowfullscreen></iframe></div>
+        <div class="video-wrapper"><iframe src="YOUR_URL_2" width="100%" height="100%" allowfullscreen></iframe></div>
     </main>
+
+    <section class="booking">
+        <form action="https://formspree.io/f/YOUR_ID" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Event Details"></textarea>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </section>
 
 </body>
 </html>
