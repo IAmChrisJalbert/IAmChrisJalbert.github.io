@@ -5,14 +5,29 @@
     <title>Dave Russo | Book Now</title>
 </head>
 <body>
-    <nav>...</nav>
-    <main class="container" style="max-width: 600px;">
-        <h1>Book Dave</h1>
-        <form style="display: grid; gap: 20px;">
-            <input type="text" placeholder="Your Name" style="padding: 15px; background: #111; border: 1px solid #333; color: #fff;">
-            <textarea placeholder="Event Details" style="padding: 15px; background: #111; border: 1px solid #333; color: #fff; height: 150px;"></textarea>
-            <button type="button" class="btn">Send Inquiry</button>
-        </form>
-    </main>
+    <nav>
+    <div class="logo">Dave Russo</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="bio.html">Bio</a>
+        <a href="booknow.html">Book Now</a>
+    </div>
+</nav>
+    <main class="container" style="max-width: 600px; padding-top: 50px;">
+    <h1 style="text-align: center;">SECURE YOUR DATE</h1>
+    <p style="text-align: center; color: #888; margin-bottom: 40px;">Professional entertainment is limited. Fill out the details below, and we will get back to you within 24 hours.</p>
+    
+    <form style="display: grid; gap: 20px;">
+        <input type="text" placeholder="Full Name / Organization" style="padding: 15px; background: #111; border: 1px solid #333; color: #fff;">
+        <input type="email" placeholder="Email Address" style="padding: 15px; background: #111; border: 1px solid #333; color: #fff;">
+        <select style="padding: 15px; background: #111; border: 1px solid #333; color: #fff;">
+            <option>Event Type: Corporate</option>
+            <option>Event Type: Private Event</option>
+            <option>Event Type: Club / Venue</option>
+        </select>
+        <textarea placeholder="Event Date & Location" style="padding: 15px; background: #111; border: 1px solid #333; color: #fff; height: 120px;"></textarea>
+        <button type="submit" class="btn" style="width: 100%; border: none;">SEND INQUIRY</button>
+    </form>
+</main>
 </body>
 </html>
