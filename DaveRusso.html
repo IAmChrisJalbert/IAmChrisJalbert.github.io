@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dave Russo | Official Portfolio</title>
+    <title>Dave Russo | Official Entertainer Portfolio</title>
     <style>
-        /* Modern reset */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background: #050505; color: #f4f4f4; line-height: 1.5; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #000; color: #fff; line-height: 1.5; }
 
-        /* Full-bleed hero */
+        /* HERO - THE AUTHORITY SHOT */
         .hero { 
-            height: 100vh; 
+            height: 90vh; 
             background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('images/dave.jpeg') no-repeat center center; 
             background-size: cover; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: flex-end; 
-            padding: 0 10% 10vh; 
+            display: flex; flex-direction: column; justify-content: flex-end; 
+            padding: 0 5% 5vh; 
         }
-        .hero h1 { font-size: clamp(3rem, 10vw, 7rem); text-transform: uppercase; line-height: 1; margin-bottom: 1rem; }
-        .hero p { font-size: clamp(1.2rem, 3vw, 2rem); color: #e74c3c; font-weight: 600; }
+        .hero h1 { font-size: clamp(3rem, 10vw, 7rem); text-transform: uppercase; line-height: 1; }
+        .hero p { font-size: clamp(1.2rem, 3vw, 2rem); color: #e74c3c; font-weight: 700; margin-bottom: 20px; }
 
-        /* Trust Bar Styling */
-        .trust-bar { background: #111; padding: 40px 5%; text-align: center; }
-        .trust-label { font-size: 0.8rem; letter-spacing: 2px; color: #666; margin-bottom: 20px; }
-        .logo-row { display: flex; justify-content: center; gap: 40px; align-items: center; }
-        .logo-row img { height: 40px; opacity: 0.6; filter: grayscale(100%); }
+        /* TRUST BAR */
+        .trust-bar { background: #0a0a0a; padding: 30px 5%; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; text-align: center; }
+        .trust-label { font-size: 0.7rem; letter-spacing: 3px; color: #444; margin-bottom: 15px; text-transform: uppercase; }
+        .logo-row { display: flex; justify-content: center; gap: 50px; align-items: center; }
+        .logo-row img { height: 30px; filter: grayscale(100%) brightness(2); opacity: 0.7; }
 
-        /* Content */
-        .container { max-width: 1200px; margin: 0 auto; padding: 100px 5%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        h2 { font-size: 2rem; margin-bottom: 2rem; color: #fff; }
-        p { margin-bottom: 1.5rem; color: #999; font-size: 1.1rem; }
-        footer { padding: 50px 5%; border-top: 1px solid #222; text-align: center; color: #666; }
+        /* CONTENT GRID */
+        .content { max-width: 1200px; margin: 0 auto; padding: 80px 5%; }
+        .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .video-box { width: 100%; aspect-ratio: 16/9; background: #111; border: 1px solid #222; }
+        
+        /* BOOKING FORM */
+        .form-section { max-width: 600px; margin: 80px auto; padding: 40px; background: #111; }
+        input, textarea { width: 100%; padding: 15px; margin: 10px 0; background: #000; border: 1px solid #333; color: #fff; }
+        button { background: #e74c3c; color: #fff; padding: 15px; border: none; cursor: pointer; width: 100%; font-weight: bold; text-transform: uppercase; }
+
+        @media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -44,26 +46,35 @@
     </header>
 
     <section class="trust-bar">
-        <p class="trust-label">AS SEEN ON</p>
+        <p class="trust-label">Media Appearances</p>
         <div class="logo-row">
             <img src="images/nbc.png" alt="NBC">
             <img src="images/espn.png" alt="ESPN">
         </div>
     </section>
 
-    <main class="container">
-        <section>
-            <h2>BEYOND THE STAGE</h2>
-            <div class="grid">
-                <p>Dave Russo has redefined the role of a modern entertainer. From headlining the Boston Comedy Festival to becoming a staple of New England television and corporate events, Dave provides a high-energy, immersive experience that transcends the standard stand-up set.</p>
-                <p>His work has bridged the gap between national media networks and local grassroots charity initiatives, proving his versatility across platforms. He is not just a performer; he is a brand that understands how to command a room, whether in a club, a theater, or on a cruise.</p>
+    <main class="content">
+        <div class="portfolio-grid">
+            <div class="video-box">
+                <!-- Replace with YouTube Embed 1 -->
+                <iframe width="100%" height="100%" src="YOUR_YOUTUBE_URL_1" frameborder="0" allowfullscreen></iframe>
             </div>
+            <div class="video-box">
+                <!-- Replace with YouTube Embed 2 -->
+                <iframe width="100%" height="100%" src="YOUR_YOUTUBE_URL_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <section class="form-section" id="book">
+            <h2 style="text-align: center; margin-bottom: 20px;">BOOK DAVE FOR YOUR EVENT</h2>
+            <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" placeholder="Event Date, Location, and Details" rows="4" required></textarea>
+                <button type="submit">Send Inquiry</button>
+            </form>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 DAVE RUSSO MEDIA. ALL RIGHTS RESERVED.</p>
-    </footer>
 
 </body>
 </html>
