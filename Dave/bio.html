@@ -1,28 +1,40 @@
-<link rel="stylesheet" href="assets/css/layout.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/layout.css">
     <title>Dave Russo | Bio</title>
     <style>
         .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .bio-photo { width: 100%; aspect-ratio: 4/5; background: #222; }
+        /* This ensures the image looks professional and fits the grid */
+        .bio-image { width: 100%; height: auto; border-radius: 8px; object-fit: cover; }
     </style>
 </head>
 <body>
-    <nav>...</nav> <!-- Same nav as above -->
+    <nav>
+        <div class="logo">Dave Russo</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="booknow.html">Book Now</a>
+        </div>
+    </nav>
     
     <main class="container bio-grid">
-        <div class="bio-photo"></div> <!-- Add your hero image here -->
+        <!-- REPLACE 'your-photo-name.jpg' with your actual file name in the images folder -->
+        <img src="images/your-photo-name.jpg" alt="Dave Russo" class="bio-image">
+        
         <div>
             <h1>The Entertainer</h1>
             <p>Dave Russo isn't just a comic; he's a brand. With decades of experience across NESN and national stages, he brings high-octane energy to every event.</p>
             <ul style="margin-top: 20px; list-style: none;">
-                <li>✓ NESN Comedy All-Star</li>
-                <li>✓ Professional Event MC</li>
-                <li>✓ Cruise Line Headliner</li>
+                <li style="margin-bottom: 10px;">✓ NESN Comedy All-Star</li>
+                <li style="margin-bottom: 10px;">✓ Professional Event MC</li>
+                <li style="margin-bottom: 10px;">✓ Cruise Line Headliner</li>
             </ul>
         </div>
     </main>
+
+    <footer>&copy; 2026 DAVE RUSSO MEDIA. ALL RIGHTS RESERVED.</footer>
 </body>
 </html>
