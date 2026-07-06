@@ -7,8 +7,7 @@
     <style>
         .hero { text-align: center; padding: 100px 20px; background: #000; }
         .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 40px 0; }
-        .schedule { background: #111; padding: 40px; border-radius: 8px; }
-        .schedule-item { padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+        .teaser-section { background: #111; padding: 40px; border-radius: 8px; text-align: center; margin: 40px 0; }
     </style>
 </head>
 <body>
@@ -17,6 +16,8 @@
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="bio.html">Bio</a>
+            <!-- New Schedule tab added here -->
+            <a href="schedule.html">Schedule</a>
             <a href="booknow.html">Book Now</a>
         </div>
     </nav>
@@ -39,34 +40,14 @@
             </div>
         </section>
 
-        <!-- Schedule Section -->
-       <section class="schedule" style="margin-top: 50px;">
-    <h2 style="text-align: center; margin-bottom: 30px;">TOUR SCHEDULE</h2>
-    <div style="max-width: 800px; margin: 0 auto; background: #111; border-radius: 8px; overflow: hidden;">
-        
-        <!-- Schedule Header -->
-        <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; padding: 15px; background: #222; font-weight: bold;">
-            <div>DATE</div>
-            <div>EVENT / LOCATION</div>
-            <div>ACTION</div>
-        </div>
-
-        <!-- Schedule Row 1 -->
-        <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; padding: 15px; border-bottom: 1px solid #333;">
-            <div>Aug 15</div>
-            <div>Boston Comedy Festival</div>
-            <a href="booknow.html" style="color: #e74c3c;">Tickets</a>
-        </div>
-
-        <!-- Schedule Row 2 -->
-        <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; padding: 15px; border-bottom: 1px solid #333;">
-            <div>Sept 02</div>
-            <div>Corporate Event – New York</div>
-            <a href="booknow.html" style="color: #e74c3c;">Inquire</a>
-        </div>
-        
-    </div>
-</section>
+        <!-- New Teaser Section -->
+        <section class="teaser-section">
+            <h2>CATCH DAVE LIVE</h2>
+            <p>From international cruise stages to the New England comedy circuit, Dave Russo is currently touring. Check out his upcoming dates and vineyard comedy series.</p>
+            <div style="margin-top: 20px;">
+                <a href="schedule.html" class="btn">View Full Tour Schedule</a>
+            </div>
+        </section>
     </main>
 
     <footer>
