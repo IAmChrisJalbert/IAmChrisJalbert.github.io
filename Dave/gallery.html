@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <title>Dave Russo | Gallery</title>
+    <style>
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
+        .gallery-item { width: 100%; border-radius: 8px; transition: transform 0.3s; }
+        .gallery-item:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Dave Russo</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="booknow.html">Book Now</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>PHOTO GALLERY</h1>
+        <div class="gallery-grid">
+            <!-- Add your saved images here -->
+            <img src="images/dave-stage.jpg" class="gallery-item" alt="Dave performing">
+            <img src="images/dave-cruise.jpg" class="gallery-item" alt="Dave on a ship">
+            <!-- Add as many as you like -->
+        </div>
+    </main>
+</body>
+</html>
