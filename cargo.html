@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simply Air Cargo Lookup</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #121212; color: #fff; padding: 20px; max-width: 600px; margin: auto; }
+        input, select, button { width: 100%; padding: 10px; margin-top: 10px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; }
+        button { background: #007acc; cursor: pointer; font-weight: bold; }
+        button:hover { background: #005999; }
+        .card { background: #1e1e1e; padding: 15px; margin-top: 15px; border-radius: 6px; border-left: 4px solid #007acc; }
+    </style>
+</head>
+<body>
+
+    <h2>Simply Air Cargo</h2>
+    <p>Global Lane & ULD Constraint Lookup</p>
+
+    <label>Origin Airport (e.g., ORD)</label>
+    <input type="text" id="origin" placeholder="Type 3-letter code...">
+
+    <label>Destination Airport (e.g., FRA)</label>
+    <input type="text" id="dest" placeholder="Type 3-letter code...">
+
+    <button onclick="searchRoutes()">Search Lanes</button>
+
+    <div id="results"></div>
+
+    <script>
+        const cargoRoutes = [
+            { origin: "ORD", dest: "FRA", airline: "Lufthansa Cargo", aircraft: "777F", type: "Freighter", maxHeight: 118 },
+            { origin: "ORD", dest: "FRA", airline: "Lufthansa", aircraft: "747-8I", type: "Passenger Belly", maxHeight: 63 },
+            { origin: "NRT", dest: "LAX", airline: "ANA Cargo", aircraft: "767-300BCF", type: "Freighter", maxHeight: 112 },
+            { origin: "MIA", dest: "VCP", airline: "Latam Cargo", aircraft: "767-300F", type: "Freighter", maxHeight: 110 }
+        ];
+
+        function searchRoutes() {
+            const org = document.getElementById('origin').value.toUpperCase().trim();
+            const dst = document.getElementById('dest').value.toUpperCase().trim();
+            const resultsDiv = document.getElementById('results');
+            
+            resultsDiv.innerHTML = "";
+
+            const matches = cargoRoutes.filter(r => r.origin === org && r.dest === dst);
+
+            if (matches.length === 0) {
+                resultsDiv.innerHTML = "<p style='margin-top:20px; color:#888;'>No direct routing found in database for this lane.</p>";
+                return;
+            }
+
+            matches.forEach(r => {
+                resultsDiv.innerHTML += `
+                    <div class="card">
+                        <strong>${r.airline}</strong> (${r.aircraft})<br>
+                        Type: ${r.type}<br>
+                        Max Contour Height: <strong>${r.maxHeight} inches</strong>
+                    </div>
+                `;
+            });
+        }
+    </script>
+
+</body>
+</html>
