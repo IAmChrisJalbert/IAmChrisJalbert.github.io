@@ -2,63 +2,146 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simply Air Cargo Lookup</title>
+    <title>Simply Air Cargo - Global Routing Lookup</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #121212; color: #fff; padding: 20px; max-width: 600px; margin: auto; }
-        input, select, button { width: 100%; padding: 10px; margin-top: 10px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; }
-        button { background: #007acc; cursor: pointer; font-weight: bold; }
+        body { font-family: Arial, sans-serif; background: #121212; color: #fff; padding: 20px; max-width: 800px; margin: auto; }
+        .box { background: #1e1e1e; padding: 20px; border-radius: 8px; border: 1px solid #333; margin-top: 15px; position: relative; z-index: 10; }
+        input, button, label { width: 100%; padding: 10px; margin-top: 8px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; box-sizing: border-box; }
+        button { background: #007acc; cursor: pointer; font-weight: bold; margin-top: 15px; }
         button:hover { background: #005999; }
-        .card { background: #1e1e1e; padding: 15px; margin-top: 15px; border-radius: 6px; border-left: 4px solid #007acc; }
+        .route-card { background: #252525; padding: 15px; margin-top: 12px; border-radius: 6px; border-left: 4px solid #4CAF50; }
+        .airline-name { font-size: 16px; font-weight: bold; color: #4CAF50; }
+        .plane-type { font-size: 13px; color: #aaa; margin-top: 4px; }
+        .dest-label { font-size: 14px; color: #ffeb3b; font-weight: bold; }
+        
+        /* Status Banner cleanly separated so it never hides */
+        #status { 
+            background: #2a2a2a; 
+            border-left: 4px solid #00bcd4; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            font-size: 14px; 
+        }
+        .error-link { color: #ff8a80; text-decoration: underline; font-weight: bold; }
     </style>
+    <!-- Include SheetJS to read Excel files in the browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 
-    <h2>Simply Air Cargo</h2>
-    <p>Global Lane & ULD Constraint Lookup</p>
+    <h2>Simply Air Cargo Global Routing Lookup</h2>
+    <p>Direct & Hub-Routing Master Database (Auto-Syncs with Master_Routes.xlsx)</p>
 
-    <label>Origin Airport (e.g., ORD)</label>
-    <input type="text" id="origin" placeholder="Type 3-letter code...">
+    <div class="box">
+        <!-- Status warning/success banner positioned clearly at the top -->
+        <div id="status">Loading master routes from server...</div>
 
-    <label>Destination Airport (e.g., FRA)</label>
-    <input type="text" id="dest" placeholder="Type 3-letter code...">
+        <label style="margin-top:15px;">Origin Airport Code (e.g., BOS, JFK, LAX)</label>
+        <input type="text" id="origin" value="BOS">
 
-    <button onclick="searchRoutes()">Search Lanes</button>
+        <label>Destination Airport Code (e.g., FRA, DUB, NRT, LHR)</label>
+        <input type="text" id="dest" placeholder="Type 3-letter code (e.g., DUB)...">
+
+        <button onclick="searchMasterRoutes()" id="searchBtn" disabled>Loading Database...</button>
+    </div>
 
     <div id="results"></div>
 
     <script>
-        const cargoRoutes = [
-            { origin: "ORD", dest: "FRA", airline: "Lufthansa Cargo", aircraft: "777F", type: "Freighter", maxHeight: 118 },
-            { origin: "ORD", dest: "FRA", airline: "Lufthansa", aircraft: "747-8I", type: "Passenger Belly", maxHeight: 63 },
-            { origin: "NRT", dest: "LAX", airline: "ANA Cargo", aircraft: "767-300BCF", type: "Freighter", maxHeight: 112 },
-            { origin: "MIA", dest: "VCP", airline: "Latam Cargo", aircraft: "767-300F", type: "Freighter", maxHeight: 110 }
-        ];
+        let masterRoutingDb = {};
 
-        function searchRoutes() {
+        // Automatically fetch Master_Routes.xlsx from your server on page load
+        async function initServerDatabase() {
+            const statusEl = document.getElementById('status');
+            const btnEl = document.getElementById('searchBtn');
+
+            try {
+                const response = await fetch('Master_Routes.xlsx');
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const arrayBuffer = await response.arrayBuffer();
+                const data = new Uint8Array(arrayBuffer);
+                const workbook = XLSX.read(data, { type: 'array' });
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+                const rows = XLSX.utils.sheet_to_json(worksheet);
+
+                masterRoutingDb = {};
+
+                rows.forEach(row => {
+                    const org = String(row['Origin'] || '').trim().toUpperCase();
+                    const destRaw = String(row['Destination'] || '').trim();
+                    const airline = String(row['Airline'] || '').trim();
+                    const plane = String(row['Plane Type'] || '').trim();
+
+                    // Extract 3-letter code from destination (e.g., 'Dublin (DUB)' -> 'DUB', or 'ACC via DXB' -> 'ACC')
+                    let destCode = destRaw.substring(0, 3).toUpperCase();
+                    const match = destRaw.match(/\(([A-Z]{3})\)/);
+                    if (match) {
+                        destCode = match[1];
+                    }
+
+                    if (org && destCode) {
+                        if (!masterRoutingDb[org]) masterRoutingDb[org] = {};
+                        if (!masterRoutingDb[org][destCode]) masterRoutingDb[org][destCode] = [];
+
+                        masterRoutingDb[org][destCode].push({
+                            airline: airline,
+                            destinationFull: destRaw,
+                            planeType: plane
+                        });
+                    }
+                });
+
+                statusEl.innerText = `Database synchronized! (${rows.length.toLocaleString()} routes loaded from Master_Routes.xlsx).`;
+                statusEl.style.borderLeftColor = "#4CAF50";
+                btnEl.disabled = false;
+                btnEl.innerText = "Search Routes & Aircraft";
+
+            } catch (err) {
+                console.error(err);
+                // Replace 'contact.html' with the actual path to your contact page
+                statusEl.innerHTML = `⚠️ Failed to load Master_Routes.xlsx from server. If this issue persists, please <a href="contact.html" class="error-link">contact support</a>.`;
+                statusEl.style.borderLeftColor = "#ff6b6b";
+            }
+        }
+
+        function searchMasterRoutes() {
             const org = document.getElementById('origin').value.toUpperCase().trim();
             const dst = document.getElementById('dest').value.toUpperCase().trim();
             const resultsDiv = document.getElementById('results');
-            
             resultsDiv.innerHTML = "";
 
-            const matches = cargoRoutes.filter(r => r.origin === org && r.dest === dst);
-
-            if (matches.length === 0) {
-                resultsDiv.innerHTML = "<p style='margin-top:20px; color:#888;'>No direct routing found in database for this lane.</p>";
+            if (!org || !dst) {
+                resultsDiv.innerHTML = "<p style='color:#ff6b6b; margin-top:15px;'>Please enter both Origin and Destination codes.</p>";
                 return;
             }
 
-            matches.forEach(r => {
+            if (!masterRoutingDb[org] || !masterRoutingDb[org][dst]) {
+                resultsDiv.innerHTML = `<p style='margin-top:20px; color:#ff8a80;'>No routes found from <strong>${org}</strong> to destination code <strong>${dst}</strong>.</p>`;
+                return;
+            }
+
+            const routes = masterRoutingDb[org][dst];
+
+            routes.forEach(r => {
                 resultsDiv.innerHTML += `
-                    <div class="card">
-                        <strong>${r.airline}</strong> (${r.aircraft})<br>
-                        Type: ${r.type}<br>
-                        Max Contour Height: <strong>${r.maxHeight} inches</strong>
+                    <div class="route-card">
+                        <div class="airline-name">${r.airline}</div>
+                        <div class="dest-label">Routing: ${org} ➔ ${r.destinationFull}</div>
+                        <div class="plane-type">Aircraft / Equipment: ${r.planeType}</div>
                     </div>
                 `;
             });
         }
-    </script>
 
+        // Run auto-loader when page opens
+        window.onload = initServerDatabase;
+
+        document.getElementById('origin').addEventListener('keypress', function(e) { if(e.key === 'Enter') searchMasterRoutes(); });
+        document.getElementById('dest').addEventListener('keypress', function(e) { if(e.key === 'Enter') searchMasterRoutes(); });
+    </script>
 </body>
 </html>
