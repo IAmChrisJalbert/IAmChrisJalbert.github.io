@@ -1,0 +1,47 @@
+[
+  {
+    "Aircraft Type / Equipment": "Airbus A350-900",
+    "Max Dimensions / Cargo Door Size": "Lower Deck Cargo Door: 141 x 66 in (3.58 x 1.68 m)",
+    "Max Weight Capacity": "52,000 kg",
+    "Max Volume Capacity": "175.0 m³ / 6,180 cu ft",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 64
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-300ER",
+    "Max Dimensions / Cargo Door Size": "Lower Deck Cargo Door: 107 x 66 in (2.72 x 1.68 m)",
+    "Max Weight Capacity": "55,000 kg",
+    "Max Volume Capacity": "201.0 m³ / 7,098 cu ft",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 64
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777F",
+    "Max Dimensions / Cargo Door Size": "Main Deck Side Door: 146 x 120 in (3.71 x 3.05 m)",
+    "Max Weight Capacity": "102,000 kg / 224,800 lbs",
+    "Max Volume Capacity": "653.0 m³ / 23,059 cu ft",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A380",
+    "Max Dimensions / Cargo Door Size": "Lower Deck Cargo Door: 141 x 66 in (3.58 x 1.68 m)",
+    "Max Weight Capacity": "65,000 kg",
+    "Max Volume Capacity": "184.0 m³ / 6,500 cu ft",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 64
+  },
+  {
+    "Aircraft Type / Equipment": "Surface Equipment - Road Feeder Service (Truck)",
+    "Max Dimensions / Cargo Door Size": "Standard Box Truck Rear Doors: 90 x 96 in (2.28 x 2.44 m)",
+    "Max Weight Capacity": "15,000 kg / 33,000 lbs",
+    "Max Volume Capacity": "45.0 m³ / 1,589 cu ft",
+    "Max Cargo Length (in)": 470,
+    "Max Cargo Width (in)": 92,
+    "Max Cargo Height (in)": 100
+  }
+]
