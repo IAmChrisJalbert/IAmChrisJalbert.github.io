@@ -1,44 +1,38 @@
-{
-  "B737P": {
-    "Aircraft Code": "B737P",
-    "Aircraft Type": "Boeing 737 Passenger / Lower Deck Cargo",
-    "Max Length (in)": 48,
-    "Max Width (in)": 40,
-    "Max Height (in)": 32,
-    "Max Weight per Piece (kg)": 150,
-    "Max Weight per Piece (ORD/YUL/ZRH) (kg)": 180,
-    "Door Size": "Standard Lower Deck Door",
-    "Notes": "Known Shipper / GCR lower deck cargo limits. For dims over MAX, refer to dimensional chart."
+[
+  {
+    "Aircraft Type / Equipment": "B737P",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door (150-180 kg/pc max)",
+    "Max Weight Capacity": "150 kg - 180 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
   },
-  "B787P": {
-    "Aircraft Code": "B787P",
-    "Aircraft Type": "Boeing 787 Passenger / Widebody Lower Deck Cargo",
-    "Max Length (in)": 125,
-    "Max Width (in)": 96,
-    "Max Height (in)": 63,
-    "Max Weight per Piece (kg)": "Standard Widebody Capacity",
-    "Door Size": "Widebody Main/Lower Cargo Door",
-    "Notes": "Widebody lower deck container/pallet limit (125x96x63 in)."
+  {
+    "Aircraft Type / Equipment": "B787P",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Main/Lower Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody Lower Deck / ULD"
   },
-  "E90": {
-    "Aircraft Code": "E90",
-    "Aircraft Type": "Embraer 190 / Regional Jet Lower Deck",
-    "Max Length (in)": 40,
-    "Max Width (in)": 30,
-    "Max Height (in)": 20,
-    "Max Weight per Piece (kg)": 60,
-    "Door Size": "Regional Cargo Compartment Door",
-    "Notes": "Strict regional aircraft dimension limits (40x30x20 in, 60 kg max per piece)."
+  {
+    "Aircraft Type / Equipment": "E90",
+    "Max Cargo Length (in)": 40,
+    "Max Cargo Width (in)": 30,
+    "Max Cargo Height (in)": 20,
+    "Max Dimensions / Cargo Door Size": "Regional Cargo Compartment Door",
+    "Max Weight Capacity": "60 kg per piece",
+    "Max Volume Capacity": "Regional Lower Deck Volume"
   },
-  "RFS": {
-    "Aircraft Code": "RFS",
-    "Aircraft Type": "Road Feeder Service / Surface Equipment (Truck)",
-    "Max Length (in)": 470,
-    "Max Width (in)": 92,
-    "Max Height (in)": 100,
-    "Max Weight (kg)": 24000,
-    "Max Volume (m3)": 80,
-    "Door Size": "Standard Trailer Doors: 93 x 102 in",
-    "Notes": "FTL / LTL Road Feeder Service trailer specifications."
+  {
+    "Aircraft Type / Equipment": "RFS",
+    "Max Cargo Length (in)": 470,
+    "Max Cargo Width (in)": 92,
+    "Max Cargo Height (in)": 100,
+    "Max Dimensions / Cargo Door Size": "Standard Trailer Doors: 93 x 102 in",
+    "Max Weight Capacity": "24,000 kg",
+    "Max Volume Capacity": "80 m3"
   }
-}
+]
