@@ -74,13 +74,14 @@
             const btnEl = document.getElementById('searchBtn');
 
             try {
+                // Updated to fetch the v1 JSON file names
                 const [routesRes, equipRes] = await Promise.all([
-                    fetch('Master_Routes.json'),
-                    fetch('Master_Equipment_Database.json')
+                    fetch('Master_Routes_v1.json'),
+                    fetch('Master_Equipment_Database_v1.json')
                 ]);
 
-                if (!routesRes.ok) throw new Error('Failed to load Master_Routes.json');
-                if (!equipRes.ok) throw new Error('Failed to load Master_Equipment_Database.json');
+                if (!routesRes.ok) throw new Error('Failed to load Master_Routes_v1.json');
+                if (!equipRes.ok) throw new Error('Failed to load Master_Equipment_Database_v1.json');
 
                 const rows = await routesRes.json();
                 const equipRows = await equipRes.json();
@@ -130,7 +131,7 @@
 
             } catch (err) {
                 console.error(err);
-                statusEl.innerHTML = `⚠️ Failed to load database files. Ensure Master_Routes.json and Master_Equipment_Database.json are in your root directory.`;
+                statusEl.innerHTML = `⚠️ Failed to load database files. Ensure Master_Routes_v1.json and Master_Equipment_Database_v1.json are in your root directory.`;
                 statusEl.style.borderLeftColor = "#ff6b6b";
             }
         }
