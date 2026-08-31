@@ -42,16 +42,16 @@
 
     <div style="text-align: center;">
         <h2 style="margin-bottom: 5px;">Simply Air Cargo</h2>
-        <p style="color: #aaa; margin-top: 0;">Direct & Hub-Routing Master Database with Aircraft Limitations</p>
+        <p style="color: #aaa; margin-top: 0;">Direct & Hub-Routing Master Database with Aircraft Cargo Limitations</p>
     </div>
 
     <div class="box">
-        <div id="status">Loading master routes and aircraft specifications...</div>
+        <div id="status">Loading master routes and equipment specifications...</div>
 
         <div class="input-row">
             <div class="input-group">
                 <label for="origin">Origin Airport</label>
-                <input type="text" id="origin" placeholder="e.g., BOS, EWR, DFW, LAX...">
+                <input type="text" id="origin" placeholder="e.g., BOS, EWR, DFW, LAX..." value="BOS">
             </div>
             
             <div class="input-group">
@@ -67,35 +67,35 @@
 
     <script>
         let masterRoutingDb = {};
-        let aircraftLimitsDb = {};
+        let equipmentDb = {};
 
         async function initServerDatabase() {
             const statusEl = document.getElementById('status');
             const btnEl = document.getElementById('searchBtn');
 
             try {
-                // Fetch both JSON databases simultaneously
-                const [routesRes, dimsRes] = await Promise.all([
+                // Fetch route dataset and equipment specs database simultaneously
+                const [routesRes, equipRes] = await Promise.all([
                     fetch('Master_Routes.json'),
-                    fetch('Aircraft_Cargo_Dimensions_Database.json')
+                    fetch('Master_Equipment_Database.json')
                 ]);
 
                 if (!routesRes.ok) throw new Error('Failed to load Master_Routes.json');
-                if (!dimsRes.ok) throw new Error('Failed to load Aircraft_Cargo_Dimensions_Database.json');
+                if (!equipRes.ok) throw new Error('Failed to load Master_Equipment_Database.json');
 
                 const rows = await routesRes.json();
-                const dimsRows = await dimsRes.json();
+                const equipRows = await equipRes.json();
 
-                aircraftLimitsDb = {};
-                dimsRows.forEach(d => {
+                equipmentDb = {};
+                equipRows.forEach(d => {
                     const eqKey = String(d['Aircraft Type / Equipment'] || '').trim().toUpperCase();
-                    aircraftLimitsDb[eqKey] = {
+                    equipmentDb[eqKey] = {
+                        length: d['Max Cargo Length (in)'] ?? 'N/A',
+                        width: d['Max Cargo Width (in)'] ?? 'N/A',
+                        height: d['Max Cargo Height (in)'] ?? 'N/A',
                         door: d['Max Dimensions / Cargo Door Size'] || 'N/A',
                         weight: d['Max Weight Capacity'] || 'N/A',
-                        volume: d['Max Volume Capacity'] || 'N/A',
-                        length: d['Max Cargo Length (in)'] || 'N/A',
-                        width: d['Max Cargo Width (in)'] || 'N/A',
-                        height: d['Max Cargo Height (in)'] || 'N/A'
+                        volume: d['Max Volume Capacity'] || 'N/A'
                     };
                 });
 
@@ -124,36 +124,36 @@
                     }
                 });
 
-                statusEl.innerText = `Database synchronized! (${rows.length.toLocaleString()} routes & ${dimsRows.length} aircraft limitation profiles loaded).`;
+                statusEl.innerText = `Database synchronized! (${rows.length.toLocaleString()} routes & ${equipRows.length} equipment specs loaded).`;
                 statusEl.style.borderLeftColor = "#4CAF50";
                 btnEl.disabled = false;
-                btnEl.innerText = "Search Routes & Aircraft Limitations";
+                btnEl.innerText = "Search Routes & Equipment Specs";
 
             } catch (err) {
                 console.error(err);
-                statusEl.innerHTML = `⚠️ Failed to load database files. Verify that Master_Routes.json and Aircraft_Cargo_Dimensions_Database.json are in your root directory.`;
+                statusEl.innerHTML = `⚠️ Failed to load database files. Ensure Master_Routes.json and Master_Equipment_Database.json are in your root directory.`;
                 statusEl.style.borderLeftColor = "#ff6b6b";
             }
         }
 
-        function findAircraftSpecs(planeName) {
+        function findEquipmentSpecs(planeName) {
             const cleanName = planeName.trim().toUpperCase();
-            if (aircraftLimitsDb[cleanName]) return aircraftLimitsDb[cleanName];
+            if (equipmentDb[cleanName]) return equipmentDb[cleanName];
 
             // Fuzzy match fallback
-            for (let key in aircraftLimitsDb) {
+            for (let key in equipmentDb) {
                 if (cleanName.includes(key) || key.includes(cleanName)) {
-                    return aircraftLimitsDb[key];
+                    return equipmentDb[key];
                 }
             }
 
             return {
-                door: 'Standard Lower Deck Door',
-                weight: 'Standard Commercial Capacity',
-                volume: 'Standard Volume',
                 length: 'N/A',
                 width: 'N/A',
-                height: 'N/A'
+                height: 'N/A',
+                door: 'Standard Door',
+                weight: 'Standard Capacity',
+                volume: 'Standard Volume'
             };
         }
 
@@ -176,12 +176,11 @@
             const routes = masterRoutingDb[org][dst];
 
             routes.forEach(r => {
-                // Split multiple aircraft options separated by '/'
                 const planes = r.planeType.split('/').map(p => p.trim()).filter(p => p.length > 0);
 
                 let planesHtml = "";
                 planes.forEach(p => {
-                    const specs = findAircraftSpecs(p);
+                    const specs = findEquipmentSpecs(p);
                     planesHtml += `
                         <div class="plane-section">
                             <div class="plane-title">✈️ Option: ${p}</div>
