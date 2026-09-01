@@ -285,6 +285,7 @@ s
 
         window.onload = initServerDatabase;
 
+        document.getElementById('searchBtn').addEventListener('click', searchMasterRoutes);
         document.getElementById('origin').addEventListener('keypress', function(e) { if(e.key === 'Enter') searchMasterRoutes(); });
         document.getElementById('dest').addEventListener('keypress', function(e) { if(e.key === 'Enter') searchMasterRoutes(); });
     </script>
