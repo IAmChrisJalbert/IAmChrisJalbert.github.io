@@ -1,38 +1,1595 @@
 [
   {
+    "Aircraft Type / Equipment": "200",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "221",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "223",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "319",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "320",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "321",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "32N",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "32Q",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "330",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "332",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "333",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "339",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "33Y",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "351",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "359",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "35L",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "35M",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "3NE",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "40Ft Dry Box (40Foot Trailer box type for GCR",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "40Ft Reefer (40Foot Refrigerated Trailer for GCR)",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "717",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "738",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "739",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "747",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "74F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "74N",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "74Y",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "75C",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "75D",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "75S",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "764",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "76ER",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "76F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "76K",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "773",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "777",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "77W",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "781",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "788",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "789",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A220",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A319_NAB",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A320",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A320_NAB",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A321",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A321LR_NAB",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A330-300",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A330_WIB",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "A350_WIB",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "ATR72_NBL",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A220",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A220-100",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A220-300",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A300F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A318",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A319",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A319(EW)",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A320",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A320-100",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A320NEOdiv.Typ.",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A320div.Typ.",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A320neo",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A321",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A321-100",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A321LR",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A321NEOdiv.Typ.",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A321T",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A321neo",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A330",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A330-200",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A330-300",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A330-900neo",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A340-300",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A340-313",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A340-600",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A350",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A350-1000",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A350-900",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A380",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A380-800",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Airbus A380-800- ULR",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B-78E)",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B737",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B737 MAX",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B737 MAX 8",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
     "Aircraft Type / Equipment": "B737P",
     "Max Cargo Length (in)": 48,
     "Max Cargo Width (in)": 40,
     "Max Cargo Height (in)": 32,
-    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door (150-180 kg/pc max)",
-    "Max Weight Capacity": "150 kg - 180 kg per piece",
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
     "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B737_NAB",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B744 Freighter",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "B767-300F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "B777-200LR",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B777-300ER",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B787",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B787-8",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "B787-9",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
   },
   {
     "Aircraft Type / Equipment": "B787P",
     "Max Cargo Length (in)": 125,
     "Max Cargo Width (in)": 96,
     "Max Cargo Height (in)": 63,
-    "Max Dimensions / Cargo Door Size": "Widebody Main/Lower Cargo Door",
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
     "Max Weight Capacity": "Standard Widebody Capacity",
-    "Max Volume Capacity": "Widebody Lower Deck / ULD"
+    "Max Volume Capacity": "Widebody ULD Volume"
   },
   {
-    "Aircraft Type / Equipment": "E90",
-    "Max Cargo Length (in)": 40,
-    "Max Cargo Width (in)": 30,
-    "Max Cargo Height (in)": 20,
-    "Max Dimensions / Cargo Door Size": "Regional Cargo Compartment Door",
-    "Max Weight Capacity": "60 kg per piece",
-    "Max Volume Capacity": "Regional Lower Deck Volume"
+    "Aircraft Type / Equipment": "BOEING 737MAX8",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
   },
   {
-    "Aircraft Type / Equipment": "RFS",
+    "Aircraft Type / Equipment": "Boeing 717",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 737",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 737 MAX 8",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 737 MAX 9",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 737-700",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 737-800",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 737-800(winglets)pax",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 737-900ER",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 747-400F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 747-400Freighter",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 747-400pax",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 747-8F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 747-8I",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 747F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 757",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 757-200",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 757-200PF",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767 400 Series",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767-300BCF",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767-300ER",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767-300F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767-300F Freighter",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767-300pax",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 767F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 76F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 773",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-200 (Freighter)",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-200ER",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-200LR High Density",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-300ER",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-300ER High Density",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-300ER Low Density",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-300ER-ULR- Low Density",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-300ERSF  Special Freighter",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777-300pax",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777F",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 777allpaxmodels",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787 9 Series",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-10 (B-78D)",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-8",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-8 Dreamliner",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-9",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-9 (B-78H",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-9 (B-78H)",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-9 Dreamliner",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787-900Sprinter",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 787allpaxmodels",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 63,
+    "Max Dimensions / Cargo Door Size": "Widebody Lower Deck / ULD Cargo Door",
+    "Max Weight Capacity": "Standard Widebody Capacity",
+    "Max Volume Capacity": "Widebody ULD Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 788",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Boeing 789",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "CK",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "CRJ900_NBL",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Cessna 402C",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "CoolTruck",
     "Max Cargo Length (in)": 470,
     "Max Cargo Width (in)": 92,
     "Max Cargo Height (in)": 100,
     "Max Dimensions / Cargo Door Size": "Standard Trailer Doors: 93 x 102 in",
     "Max Weight Capacity": "24,000 kg",
     "Max Volume Capacity": "80 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Dash 8-400",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "De Havilland Dash 8-400",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "E90",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "E95_NBL",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Embraer 175",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Embraer 190",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Embraer E190-E2",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Embraer E195-E2",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Embraer195",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "EmbraerERJ190",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "EmbraerERJ195",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "PAX Widebody",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "RFS",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "RFS Cargo Truck",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "RFS Rollerbed Truck",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "RFS Truck",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Road Feeder Service (Truck)",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Standard Lower Deck Cargo",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Surface Equipment - Road Feeder Service (RRY VAN)",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Surface Equipment - Road Feeder Service (Truck)",
+    "Max Cargo Length (in)": 125,
+    "Max Cargo Width (in)": 96,
+    "Max Cargo Height (in)": 118,
+    "Max Dimensions / Cargo Door Size": "Main Deck Freighter Door / Nose Door",
+    "Max Weight Capacity": "110,000 kg",
+    "Max Volume Capacity": "600 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Tecnam P2012 Traveller",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Truck 4A",
+    "Max Cargo Length (in)": 470,
+    "Max Cargo Width (in)": 92,
+    "Max Cargo Height (in)": 100,
+    "Max Dimensions / Cargo Door Size": "Standard Trailer Doors: 93 x 102 in",
+    "Max Weight Capacity": "24,000 kg",
+    "Max Volume Capacity": "80 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Truck 6A",
+    "Max Cargo Length (in)": 470,
+    "Max Cargo Width (in)": 92,
+    "Max Cargo Height (in)": 100,
+    "Max Dimensions / Cargo Door Size": "Standard Trailer Doors: 93 x 102 in",
+    "Max Weight Capacity": "24,000 kg",
+    "Max Volume Capacity": "80 m3"
+  },
+  {
+    "Aircraft Type / Equipment": "Unassigned",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
+  },
+  {
+    "Aircraft Type / Equipment": "Variable",
+    "Max Cargo Length (in)": 48,
+    "Max Cargo Width (in)": 40,
+    "Max Cargo Height (in)": 32,
+    "Max Dimensions / Cargo Door Size": "Standard Lower Deck Door",
+    "Max Weight Capacity": "150 kg per piece",
+    "Max Volume Capacity": "Standard Lower Deck Volume"
   }
 ]
