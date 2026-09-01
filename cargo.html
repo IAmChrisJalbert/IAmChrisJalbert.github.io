@@ -40,9 +40,13 @@
 </head>
 <body>
 
-    <div style="text-align: center;">
+    <div style="text-align: center; position: relative;">
+        <!-- Contact page link near the top right -->
+        <div style="position: absolute; right: 0; top: 0;">
+            <a href="https://iamchrisjalbert.com/contact" target="_blank" style="color: #00bcd4; font-size: 14px; text-decoration: none; font-weight: bold; background: #1e1e1e; padding: 6px 12px; border: 1px solid #333; border-radius: 4px; transition: background 0.2s;">✉️ Contact</a>
+        </div>
         <h2 style="margin-bottom: 5px;">Simply Air Cargo</h2>
-        <p style="color: #aaa; margin-top: 0;">Resilient Multi-Source Routing Database with Aircraft Limitations</p>
+        <p style="color: #aaa; margin-top: 0;">Resilient Unified Routing Database with Aircraft Limitations</p>
     </div>
 
     <div class="box">
@@ -74,38 +78,15 @@
             const btnEl = document.getElementById('searchBtn');
 
             let rows = [];
-            let loadSourceMsg = "";
 
             try {
-                // 1. Try loading individual airline files first
-                const airlineFiles = [
-                    'Aeromexico_routes.json',
-                    'Emirates_routes.json',
-                    'Lufthansa_routes.json',
-                    'Swiss_routes.json',
-                    'JAL_routes.json'
-                ];
+                // Load directly from the master file
+                const masterRes = await fetch('Master_Routes_v1.json');
+                if (!masterRes.ok) throw new Error('Failed to load Master_Routes_v1.json');
+                rows = await masterRes.json();
+                const loadSourceMsg = `${rows.length.toLocaleString()} routes from master file`;
 
-                try {
-                    const filePromises = airlineFiles.map(file => fetch(file).then(res => {
-                        if (!res.ok) throw new Error(`Missing ${file}`);
-                        return res.json();
-                    }));
-                    
-                    const results = await Promise.all(filePromises);
-                    rows = results.flat();
-                    loadSourceMsg = `${rows.length.toLocaleString()} routes across ${airlineFiles.length} airline files`;
-                } catch (indErr) {
-                    console.warn("Individual airline files not fully found. Falling back to Master_Routes_v1.json...", indErr);
-                    
-                    // 2. Fallback to Master_Routes_v1.json if individual files fail
-                    const masterRes = await fetch('Master_Routes_v1.json');
-                    if (!masterRes.ok) throw new Error('Failed to load Master_Routes_v1.json fallback');
-                    rows = await masterRes.json();
-                    loadSourceMsg = `${rows.length.toLocaleString()} routes from master fallback file`;
-                }
-
-                // 3. Load Equipment Database
+                // Load Equipment Database
                 const equipRes = await fetch('Master_Equipment_Database_v1.json');
                 if (!equipRes.ok) throw new Error('Failed to load Master_Equipment_Database_v1.json');
                 const equipRows = await equipRes.json();
@@ -155,7 +136,7 @@
 
             } catch (err) {
                 console.error(err);
-                statusEl.innerHTML = `⚠️ Failed to load database files. Ensure either individual airline files or Master_Routes_v1.json is present alongside Master_Equipment_Database_v1.json.`;
+                statusEl.innerHTML = `⚠️ Failed to load database files. Ensure Master_Routes_v1.json is present alongside Master_Equipment_Database_v1.json. <br><br>Need assistance? <a href="https://iamchrisjalbert.com/contact" target="_blank" style="color: #00bcd4; text-decoration: underline;">Reach out HERE</a>.`;
                 statusEl.style.borderLeftColor = "#ff6b6b";
             }
         }
