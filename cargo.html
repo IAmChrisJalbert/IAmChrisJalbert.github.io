@@ -245,16 +245,31 @@
                 return;
             }
 
-            if (!masterRoutingDb[org] || !masterRoutingDb[org][dst]) {
-                resultsDiv.innerHTML = `<p style='margin-top:20px; color:#f87171; text-align: center;'>No routes found from <strong>${org}</strong> to destination code <strong>${dst}</strong>.</p>`;
+            // Check if origin exists at all in the database
+            if (!masterRoutingDb[org]) {
+                resultsDiv.innerHTML = `<p style='margin-top:20px; color:#f87171; text-align: center;'>No routes found departing from origin <strong>${org}</strong>.</p>`;
                 return;
             }
 
-            const routes = masterRoutingDb[org][dst];
+            // Search flexibly through available destinations for this origin
+            let matchingRoutes = [];
+            const dests = masterRoutingDb[org];
+            
+            for (let dKey in dests) {
+                // Matches exact code or if the destination string contains the search code
+                if (dKey === dst || dKey.includes(dst)) {
+                    matchingRoutes = matchingRoutes.concat(dests[dKey]);
+                }
+            }
 
-            routes.forEach(r => {
+            if (matchingRoutes.length === 0) {
+                resultsDiv.innerHTML = `<p style='margin-top:20px; color:#f87171; text-align: center;'>No routes found from <strong>${org}</strong> matching destination <strong>${dst}</strong>.</p>`;
+                return;
+            }
+
+            matchingRoutes.forEach(r => {
                 const planes = r.planeType.split('/').map(p => p.trim()).filter(p => p.length > 0);
-s
+
                 let planesHtml = "";
                 planes.forEach(p => {
                     const specs = findEquipmentSpecs(p);
