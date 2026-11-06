@@ -234,6 +234,7 @@
         background: var(--indigo); color: #fff; border: 2px solid var(--indigo);
         padding: 13px 22px; border-radius: 999px; justify-self: start;
       }
+      form.commission button:disabled { opacity: 0.65; cursor: wait; }
       @media (prefers-color-scheme: dark) { form.commission button { color: #171233; } }
       .form-msg { font-weight: 700; color: var(--indigo); min-height: 1.5em; margin: 0; }
 
@@ -445,12 +446,16 @@
             <span class="kicker">want something custom?</span>
             <h2>Request a commission</h2>
             <p class="sub" style="margin-bottom: 22px;">Tell Lorelai what you'd love her to paint — a pet, a place, a favorite color scheme — and which cause it should support.</p>
-            <form class="commission" id="commissionForm" novalidate>
+            <form class="commission" id="commissionForm" action="https://formspree.io/f/xzdkqdoy" method="POST">
+              <input type="hidden" name="_subject" value="Art 4 Charity — New Commission Request" />
               <label>Your name
-                <input type="text" name="name" autocomplete="name" placeholder="e.g. Sam Rivera" />
+                <input type="text" name="name" autocomplete="name" placeholder="e.g. Sam Rivera" required />
+              </label>
+              <label>Your email
+                <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
               </label>
               <label>What would you like painted?
-                <textarea name="idea" rows="3" placeholder="My dog sitting in a field of sunflowers…"></textarea>
+                <textarea name="message" rows="3" placeholder="My dog sitting in a field of sunflowers…" required></textarea>
               </label>
               <label>Cause it should support
                 <select name="cause">
@@ -461,7 +466,7 @@
                   <option>Surprise me, Lorelai picks</option>
                 </select>
               </label>
-              <button type="submit">Send the request</button>
+              <button type="submit" id="commissionSubmit">Send the request</button>
               <p class="form-msg" id="formMsg" role="status"></p>
             </form>
           </div>
@@ -518,20 +523,40 @@
         update();
       })();
 
-      // ---- Commission form ----
+      // ---- Commission form (Formspree, same endpoint as the contact page) ----
       (function () {
         var form = document.getElementById("commissionForm");
         var msg = document.getElementById("formMsg");
+        var btn = document.getElementById("commissionSubmit");
         form.addEventListener("submit", function (e) {
           e.preventDefault();
           var name = form.elements["name"].value.trim();
-          var idea = form.elements["idea"].value.trim();
-          if (!name || !idea) {
-            msg.textContent = "Add your name and your idea first, then send it again.";
+          var email = form.elements["email"].value.trim();
+          var message = form.elements["message"].value.trim();
+          if (!name || !email || !message) {
+            msg.textContent = "Add your name, your email, and your idea first, then send it again.";
             return;
           }
-          msg.textContent = "Thanks, " + name + "! Commission requests aren't being taken through this form just yet — please check back soon, and hold onto that idea.";
-          form.reset();
+          btn.disabled = true;
+          btn.textContent = "Sending…";
+          msg.textContent = "";
+          fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          }).then(function (res) {
+            if (res.ok) {
+              msg.textContent = "Thanks, " + name + "! Your commission request was sent — Lorelai will reply to your email.";
+              form.reset();
+            } else {
+              msg.textContent = "That didn't go through — please try again in a moment.";
+            }
+          }).catch(function () {
+            msg.textContent = "That didn't go through — please check your connection and try again.";
+          }).then(function () {
+            btn.disabled = false;
+            btn.textContent = "Send the request";
+          });
         });
       })();
     </script>
