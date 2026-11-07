@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="data:," />
+    <title>Dad &amp; Lorelai</title>
+    <style>
+      :root {
+        --bg: #fffaf3;
+        --bg-board: #fffdf9;
+        --surface: #ffffff;
+        --surface-soft: #fef1e2;
+        --ink: #2f2118;
+        --ink-soft: #6f5b4c;
+        --ink-faint: #9a8471;
+        --line: #ecdcc8;
+        --accent: #c4512f;
+        --accent-hover: #a93f23;
+        --accent-ink: #ffffff;
+        --bubble-mine: #c4512f;
+        --bubble-mine-ink: #ffffff;
+        --bubble-theirs: #fdeeda;
+        --bubble-theirs-ink: #2f2118;
+        --error-bg: #fdf0ec;
+        --error-ink: #8f2f1a;
+        --error-line: #f0c4b4;
+        --input-bg: #ffffff;
+        --shadow: 0 10px 30px rgba(90, 52, 25, 0.10);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1d1611;
+          --bg-board: #241b15;
+          --surface: #2c2119;
+          --surface-soft: #33261c;
+          --ink: #f7ead9;
+          --ink-soft: #d3bda4;
+          --ink-faint: #a68e74;
+          --line: #453325;
+          --accent: #e07a52;
+          --accent-hover: #ec8a64;
+          --accent-ink: #241208;
+          --bubble-mine: #e07a52;
+          --bubble-mine-ink: #241208;
+          --bubble-theirs: #3a2a1e;
+          --bubble-theirs-ink: #f7ead9;
+          --error-bg: #3d211a;
+          --error-ink: #ffb59f;
+          --error-line: #6b3a2d;
+          --input-bg: #241b15;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: ui-rounded, "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      button, input, textarea { font: inherit; color: inherit; }
+      button { cursor: pointer; }
+      button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+      .serif { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; }
+
+      /* ---------- Sign-in ---------- */
+      .auth-wrap {
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 18px;
+      }
+      .auth-card {
+        width: 100%;
+        max-width: 400px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 32px 28px 28px;
+      }
+      .auth-card h1 {
+        margin: 0 0 6px;
+        font-size: 2rem;
+        line-height: 1.1;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .auth-card .sub {
+        margin: 0 0 24px;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+        line-height: 1.45;
+      }
+      .field { margin-bottom: 16px; }
+      .field label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 6px;
+      }
+      .field input {
+        width: 100%;
+        padding: 13px 14px;
+        border: 1.5px solid var(--line);
+        border-radius: 12px;
+        background: var(--input-bg);
+        font-size: 1rem;
+        outline: none;
+      }
+      .field input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+      }
+      .btn-primary {
+        width: 100%;
+        padding: 13px 16px;
+        border: none;
+        border-radius: 12px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      .btn-primary:hover { background: var(--accent-hover); }
+      .error-box {
+        display: none;
+        margin: 0 0 16px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: var(--error-bg);
+        border: 1px solid var(--error-line);
+        color: var(--error-ink);
+        font-size: 0.93rem;
+        line-height: 1.45;
+      }
+      .error-box.show { display: block; }
+      .auth-note {
+        margin: 18px 0 0;
+        text-align: center;
+        color: var(--ink-faint);
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+      .who-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .btn-who {
+        width: 100%;
+        padding: 16px;
+        border: 1.5px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface-soft);
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .btn-who:hover { border-color: var(--accent); }
+
+      /* ---------- Board ---------- */
+      .board-wrap {
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        max-width: 760px;
+        margin: 0 auto;
+        background: var(--bg-board);
+      }
+      @media (min-width: 820px) {
+        .board-wrap {
+          border-left: 1px solid var(--line);
+          border-right: 1px solid var(--line);
+        }
+      }
+      .board-head {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 16px calc(14px + env(safe-area-inset-top, 0px) * 0);
+        padding-top: max(14px, env(safe-area-inset-top));
+        border-bottom: 1px solid var(--line);
+        background: var(--surface);
+      }
+      .board-head h1 {
+        margin: 0;
+        font-size: 1.35rem;
+        line-height: 1.15;
+      }
+      .board-head .who {
+        margin: 2px 0 0;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+      .btn-ghost {
+        flex: 0 0 auto;
+        padding: 9px 14px;
+        border-radius: 999px;
+        border: 1.5px solid var(--line);
+        background: transparent;
+        color: var(--ink-soft);
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+      .btn-ghost:hover { border-color: var(--ink-faint); color: var(--ink); }
+
+      .messages {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 18px 14px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .empty-state {
+        margin: auto;
+        text-align: center;
+        max-width: 300px;
+        padding: 24px 10px;
+        color: var(--ink-soft);
+      }
+      .empty-state .big {
+        font-size: 1.2rem;
+        color: var(--ink);
+        margin: 0 0 8px;
+      }
+      .empty-state p { margin: 0; line-height: 1.55; font-size: 0.95rem; }
+      .loading-state {
+        margin: auto;
+        color: var(--ink-faint);
+        font-size: 0.95rem;
+      }
+
+      .msg { display: flex; flex-direction: column; max-width: 82%; }
+      .msg.mine { align-self: flex-end; align-items: flex-end; }
+      .msg.theirs { align-self: flex-start; align-items: flex-start; }
+      .msg-meta {
+        font-size: 0.78rem;
+        color: var(--ink-faint);
+        margin: 0 4px 4px;
+        font-weight: 600;
+      }
+      .msg-meta .name { color: var(--ink-soft); font-weight: 700; }
+      .bubble {
+        padding: 11px 15px;
+        border-radius: var(--radius);
+        font-size: 1rem;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
+      }
+      .msg.mine .bubble {
+        background: var(--bubble-mine);
+        color: var(--bubble-mine-ink);
+        border-bottom-right-radius: 6px;
+      }
+      .msg.theirs .bubble {
+        background: var(--bubble-theirs);
+        color: var(--bubble-theirs-ink);
+        border: 1px solid var(--line);
+        border-bottom-left-radius: 6px;
+      }
+
+      .composer {
+        flex: 0 0 auto;
+        border-top: 1px solid var(--line);
+        background: var(--surface);
+        padding: 12px 12px max(12px, env(safe-area-inset-bottom));
+      }
+      .composer-row {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+      }
+      .composer textarea {
+        flex: 1 1 auto;
+        resize: none;
+        max-height: 120px;
+        min-height: 46px;
+        padding: 12px 14px;
+        border: 1.5px solid var(--line);
+        border-radius: 14px;
+        background: var(--input-bg);
+        font-size: 1rem;
+        line-height: 1.4;
+        outline: none;
+      }
+      .composer textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+      }
+      .btn-send {
+        flex: 0 0 auto;
+        height: 46px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 14px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        font-weight: 700;
+        font-size: 0.98rem;
+      }
+      .btn-send:hover { background: var(--accent-hover); }
+      .composer-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+        padding: 0 2px;
+      }
+      .composer-foot .hint { font-size: 0.8rem; color: var(--ink-faint); }
+      .char-count { font-size: 0.8rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+      .send-error {
+        display: none;
+        margin: 0 0 10px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: var(--error-bg);
+        border: 1px solid var(--error-line);
+        color: var(--error-ink);
+        font-size: 0.9rem;
+        line-height: 1.45;
+      }
+      .send-error.show { display: block; }
+
+      .hidden { display: none !important; }
+    </style>
+  </head>
+  <body>
+
+    <!-- Passcode view -->
+    <div id="authView" class="auth-wrap">
+      <div class="auth-card">
+        <h1 class="serif">Dad &amp; Lorelai</h1>
+        <p class="sub">This board is just for Dad and Lorelai. Enter the secret word to come in.</p>
+
+        <div id="authError" class="error-box" role="alert"></div>
+
+        <form id="passcodeForm" novalidate>
+          <div class="field">
+            <label for="passcodeInput">Secret word</label>
+            <input id="passcodeInput" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="The secret word" required />
+          </div>
+          <button id="passcodeBtn" class="btn-primary" type="submit">Come in</button>
+        </form>
+
+        <p class="auth-note">No accounts, no passwords &mdash;<br />just the word you two share.</p>
+      </div>
+    </div>
+
+    <!-- Who's posting view -->
+    <div id="whoView" class="auth-wrap hidden">
+      <div class="auth-card">
+        <h1 class="serif">Who&rsquo;s posting?</h1>
+        <p class="sub">Pick your name so your messages show up as you. This device will remember your pick.</p>
+
+        <div class="who-buttons">
+          <button id="whoDad" class="btn-who" type="button">I&rsquo;m Dad</button>
+          <button id="whoLorelai" class="btn-who" type="button">I&rsquo;m Lorelai</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Board view -->
+    <div id="boardView" class="board-wrap hidden">
+      <header class="board-head">
+        <div>
+          <h1 class="serif">Dad &amp; Lorelai</h1>
+          <p class="who" id="signedInAs">Signed in</p>
+        </div>
+        <div style="display:flex; gap:8px; flex:0 0 auto;">
+          <button id="switchBtn" class="btn-ghost" type="button">Switch</button>
+          <button id="signOutBtn" class="btn-ghost" type="button">Sign out</button>
+        </div>
+      </header>
+
+      <main id="messagesEl" class="messages" aria-live="polite">
+        <div class="loading-state" id="loadingState">Loading messages&hellip;</div>
+      </main>
+
+      <div class="composer">
+        <div id="sendError" class="send-error" role="alert"></div>
+        <div class="composer-row">
+          <textarea id="messageInput" rows="1" maxlength="1000" placeholder="Write a message&hellip;" aria-label="Write a message"></textarea>
+          <button id="sendBtn" class="btn-send" type="button">Send</button>
+        </div>
+        <div class="composer-foot">
+          <span class="hint">Press Enter to send &middot; Shift+Enter for a new line</span>
+          <span class="char-count" id="charCount">0 / 1000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase v10 SDK (compat builds) from the gstatic CDN — classic
+         scripts exposing the global `firebase` namespace, so this page's
+         own script stays a classic script too. -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        var firebaseConfig = {
+          apiKey: "AIzaSyCV5ANtfh-AE1hQPTaybFuoQH49i0B9jNA",
+          authDomain: "jalbert-family-board.firebaseapp.com",
+          databaseURL: "https://jalbert-family-board-default-rtdb.firebaseio.com",
+          projectId: "jalbert-family-board",
+          storageBucket: "jalbert-family-board.firebasestorage.app",
+          messagingSenderId: "849855568702",
+          appId: "1:849855568702:web:93ede9cb7b45006b19ea6f"
+        };
+
+        var PASSCODE = "eevee";
+        var NAME_KEY = "dlb-poster-name";
+
+        function savedName() {
+          try {
+            var n = window.localStorage.getItem(NAME_KEY);
+            return (n === "Dad" || n === "Lorelai") ? n : null;
+          } catch (e) { return null; }
+        }
+        function saveName(n) {
+          try { window.localStorage.setItem(NAME_KEY, n); } catch (e) { /* board still works for this visit */ }
+        }
+        function clearName() {
+          try { window.localStorage.removeItem(NAME_KEY); } catch (e) { /* nothing to clear */ }
+        }
+
+        var authView = document.getElementById("authView");
+        var whoView = document.getElementById("whoView");
+        var boardView = document.getElementById("boardView");
+        var authError = document.getElementById("authError");
+        var passcodeForm = document.getElementById("passcodeForm");
+        var passcodeInput = document.getElementById("passcodeInput");
+        var passcodeBtn = document.getElementById("passcodeBtn");
+        var whoDad = document.getElementById("whoDad");
+        var whoLorelai = document.getElementById("whoLorelai");
+        var signOutBtn = document.getElementById("signOutBtn");
+        var switchBtn = document.getElementById("switchBtn");
+        var signedInAs = document.getElementById("signedInAs");
+        var messagesEl = document.getElementById("messagesEl");
+        var messageInput = document.getElementById("messageInput");
+        var sendBtn = document.getElementById("sendBtn");
+        var charCount = document.getElementById("charCount");
+        var sendError = document.getElementById("sendError");
+
+        var currentUser = null;
+        var myName = savedName();
+        var messagesRef = null;
+        var messagesQuery = null;
+        var subscribed = false;
+        var seenKeys = {};
+
+        function showAuthError(text) {
+          authError.textContent = text;
+          authError.classList.add("show");
+        }
+        function hideAuthError() {
+          authError.textContent = "";
+          authError.classList.remove("show");
+        }
+        function showSendError(text) {
+          sendError.textContent = text;
+          sendError.classList.add("show");
+        }
+        function hideSendError() {
+          sendError.textContent = "";
+          sendError.classList.remove("show");
+        }
+
+        function formatTime(ts) {
+          if (!ts) return "";
+          var d = new Date(ts);
+          if (isNaN(d.getTime())) return "";
+          var now = new Date();
+          var sameDay = d.toDateString() === now.toDateString();
+          var yesterday = new Date(now);
+          yesterday.setDate(now.getDate() - 1);
+          var isYesterday = d.toDateString() === yesterday.toDateString();
+          var time = d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+          if (sameDay) return "Today at " + time;
+          if (isYesterday) return "Yesterday at " + time;
+          var date = d.toLocaleDateString([], { month: "short", day: "numeric", year: d.getFullYear() !== now.getFullYear() ? "numeric" : undefined });
+          return date + " at " + time;
+        }
+
+        function scrollToBottom() {
+          requestAnimationFrame(function () {
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+          });
+        }
+
+        function renderEmptyState() {
+          var wrap = document.createElement("div");
+          wrap.className = "empty-state";
+          wrap.id = "emptyState";
+          var big = document.createElement("p");
+          big.className = "big serif";
+          big.textContent = "No messages yet";
+          var small = document.createElement("p");
+          small.textContent = "Say hello below — this is just between Dad and Lorelai.";
+          wrap.appendChild(big);
+          wrap.appendChild(small);
+          messagesEl.appendChild(wrap);
+        }
+
+        function addMessageToList(key, msg) {
+          if (seenKeys[key]) return;
+          seenKeys[key] = true;
+
+          var empty = document.getElementById("emptyState");
+          if (empty) empty.remove();
+          var loading = document.getElementById("loadingState");
+          if (loading) loading.remove();
+
+          var isMine = msg.name && myName && msg.name === myName;
+
+          var row = document.createElement("div");
+          row.className = "msg " + (isMine ? "mine" : "theirs");
+
+          var meta = document.createElement("div");
+          meta.className = "msg-meta";
+          var nameSpan = document.createElement("span");
+          nameSpan.className = "name";
+          nameSpan.textContent = msg.name || "Someone";
+          meta.appendChild(nameSpan);
+          var when = formatTime(msg.timestamp);
+          if (when) {
+            meta.appendChild(document.createTextNode(" · " + when));
+          }
+
+          var bubble = document.createElement("div");
+          bubble.className = "bubble";
+          // Plain text only — never parsed as HTML.
+          bubble.textContent = msg.text || "";
+
+          row.appendChild(meta);
+          row.appendChild(bubble);
+          messagesEl.appendChild(row);
+          scrollToBottom();
+        }
+
+        function subscribeToMessages() {
+          if (subscribed) return;
+          subscribed = true;
+          seenKeys = {};
+          messagesEl.innerHTML = "";
+          var loading = document.createElement("div");
+          loading.className = "loading-state";
+          loading.id = "loadingState";
+          loading.textContent = "Loading messages…";
+          messagesEl.appendChild(loading);
+
+          messagesRef = firebase.database().ref("messages");
+          messagesQuery = messagesRef.orderByChild("timestamp");
+          var gotAny = false;
+          messagesQuery.on("child_added", function (snapshot) {
+            gotAny = true;
+            addMessageToList(snapshot.key, snapshot.val() || {});
+          }, function () {
+            var l = document.getElementById("loadingState");
+            if (l) l.textContent = "Couldn’t load messages. Try signing out and coming back in.";
+          });
+          // If the board is empty, the loading note gives way to the empty state.
+          messagesRef.once("value").then(function (snapshot) {
+            if (!snapshot.exists() && !gotAny) {
+              var l = document.getElementById("loadingState");
+              if (l) l.remove();
+              if (!document.getElementById("emptyState")) renderEmptyState();
+            }
+          }).catch(function () { /* child_added errors already surfaced above */ });
+        }
+
+        function unsubscribeFromMessages() {
+          if (messagesQuery) {
+            messagesQuery.off();
+          }
+          subscribed = false;
+          messagesQuery = null;
+          messagesRef = null;
+        }
+
+        function updateCharCount() {
+          charCount.textContent = messageInput.value.length + " / 1000";
+        }
+
+        function autoGrow() {
+          messageInput.style.height = "auto";
+          messageInput.style.height = Math.min(messageInput.scrollHeight, 120) + "px";
+        }
+
+        function sendMessage() {
+          if (!currentUser || !myName) return;
+          var text = messageInput.value.trim();
+          if (!text) return;
+          if (text.length > 1000) text = text.slice(0, 1000);
+          hideSendError();
+          sendBtn.disabled = true;
+
+          var payload = {
+            name: myName,
+            text: text,
+            timestamp: firebase.database.ServerValue.TIMESTAMP
+          };
+
+          firebase.database().ref("messages").push(payload).then(function () {
+            messageInput.value = "";
+            updateCharCount();
+            autoGrow();
+            messageInput.focus();
+          }).catch(function () {
+            showSendError("Your message didn’t send. Check your connection and tap Send to try again — your text is still in the box.");
+          }).then(function () {
+            sendBtn.disabled = false;
+          });
+        }
+
+        // ---- View flow ----
+        function showOnly(view) {
+          authView.classList.add("hidden");
+          whoView.classList.add("hidden");
+          boardView.classList.add("hidden");
+          view.classList.remove("hidden");
+        }
+
+        function enterBoard() {
+          signedInAs.textContent = "Posting as " + myName;
+          showOnly(boardView);
+          subscribeToMessages();
+          messageInput.focus();
+        }
+
+        function afterAnonSignIn() {
+          hideAuthError();
+          if (myName) {
+            enterBoard();
+          } else {
+            showOnly(whoView);
+          }
+        }
+
+        function pickName(name) {
+          myName = name;
+          saveName(name);
+          if (currentUser) {
+            enterBoard();
+          }
+        }
+
+        // ---- Init ----
+        if (typeof firebase === "undefined") {
+          showAuthError("The board couldn’t load. Check your internet connection and refresh the page.");
+          return;
+        }
+        firebase.initializeApp(firebaseConfig);
+        var auth = firebase.auth();
+
+        // Keep the anonymous session on this device so the passcode
+        // isn't needed again on every visit.
+        auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(function () {
+          /* LOCAL is the web default; if it can't be set, the passcode still works for this visit. */
+        });
+
+        auth.onAuthStateChanged(function (user) {
+          currentUser = user;
+          if (!user) {
+            // Signed out (or never signed in): back to the passcode screen.
+            unsubscribeFromMessages();
+            passcodeInput.value = "";
+            showOnly(authView);
+          }
+        });
+
+        passcodeForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          hideAuthError();
+          var word = passcodeInput.value.trim().toLowerCase();
+          if (!word) { showAuthError("Type the secret word to come in."); return; }
+          if (word !== PASSCODE) {
+            showAuthError("That’s not the word — try again.");
+            passcodeInput.select();
+            return;
+          }
+          passcodeBtn.disabled = true;
+          passcodeBtn.textContent = "Coming in…";
+          var proceed = function () {
+            passcodeBtn.disabled = false;
+            passcodeBtn.textContent = "Come in";
+            afterAnonSignIn();
+          };
+          if (auth.currentUser) {
+            currentUser = auth.currentUser;
+            proceed();
+          } else {
+            auth.signInAnonymously().then(function () {
+              proceed();
+            }).catch(function () {
+              passcodeBtn.disabled = false;
+              passcodeBtn.textContent = "Come in";
+              showAuthError("Couldn’t open the board. Check your internet connection and try again.");
+            });
+          }
+        });
+
+        whoDad.addEventListener("click", function () { pickName("Dad"); });
+        whoLorelai.addEventListener("click", function () { pickName("Lorelai"); });
+
+        switchBtn.addEventListener("click", function () {
+          unsubscribeFromMessages();
+          showOnly(whoView);
+        });
+
+        signOutBtn.addEventListener("click", function () {
+          clearName();
+          myName = null;
+          unsubscribeFromMessages();
+          auth.signOut().catch(function () {
+            showOnly(authView);
+          });
+        });
+
+        sendBtn.addEventListener("click", sendMessage);
+        messageInput.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+        messageInput.addEventListener("input", function () {
+          updateCharCount();
+          autoGrow();
+        });
+        updateCharCount();
+      })();
+    </script>
+  </body>
+</html>
