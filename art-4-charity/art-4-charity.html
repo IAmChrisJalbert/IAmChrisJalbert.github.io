@@ -514,8 +514,8 @@
             <span class="kicker">want something custom?</span>
             <h2>Request a commission</h2>
             <p class="sub" style="margin-bottom: 22px;">Tell Lorelai what you'd love her to paint — a pet, a place, a favorite color scheme — and which cause it should support.</p>
-            <form class="commission" id="commissionForm" action="https://formsubmit.co/ajax/iamchrisjalbert@gmail.com" method="POST" enctype="multipart/form-data">
-              <input type="hidden" name="_subject" value="Art 4 Charity — New Commission Request" />
+            <form class="commission" id="commissionForm" action="https://formsubmit.co/iamchrisjalbert@gmail.com" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_subject" value="Art 4 Charity — New Commission Request" /> <input type="hidden" name="_captcha" value="false" /> <input type="hidden" name="_next" value="https://iamchrisjalbert.com/art-4-charity/?submitted=1" />
               <label>Your name
                 <input type="text" name="name" autocomplete="name" placeholder="e.g. Sam Rivera" required />
               </label>
@@ -595,7 +595,7 @@
         update();
       })();
 
-      // ---- Commission form (FormSubmit AJAX — free plan supports file uploads) ----
+      // ---- Commission form (FormSubmit — free plan supports file uploads) ----
       (function () {
         var form = document.getElementById("commissionForm");
         var msg = document.getElementById("formMsg");
@@ -620,41 +620,16 @@
             if (validatePhoto()) msg.textContent = "";
           });
         }
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
+        if (new URLSearchParams(window.location.search).get("submitted") === "1") { msg.textContent = "Thank you! Your commission request was sent — Lorelai will reply to your email soon."; } form.addEventListener("submit", function (e) {
+          // Let the form submit natively unless validation below fails.
           var name = form.elements["name"].value.trim();
           var email = form.elements["email"].value.trim();
           var message = form.elements["message"].value.trim();
           if (!name || !email || !message) {
-            msg.textContent = "Add your name, your email, and your idea first, then send it again.";
+            e.preventDefault(); msg.textContent = "Add your name, your email, and your idea first, then send it again.";
             return;
           }
-          if (!validatePhoto()) return;
-          var hasPhoto = !!(photoInput && photoInput.files && photoInput.files.length);
-          btn.disabled = true;
-          btn.textContent = "Sending…";
-          msg.textContent = "";
-          fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { "Accept": "application/json" }
-          }).then(function (res) {
-            if (res.ok) {
-              if (hasPhoto) {
-                msg.textContent = "Thanks, " + name + "! Your commission request was sent with your photo attached — Lorelai will reply to your email.";
-              } else {
-                msg.textContent = "Thanks, " + name + "! Your commission request was sent — Lorelai will reply to your email.";
-              }
-              form.reset();
-            } else {
-              msg.textContent = "That didn't go through — please try again in a moment.";
-            }
-          }).catch(function () {
-            msg.textContent = "That didn't go through — please check your connection and try again.";
-          }).then(function () {
-            btn.disabled = false;
-            btn.textContent = "Send the request";
-          });
+          if (!validatePhoto()) { e.preventDefault(); return; }
         });
       })();
     </script>
