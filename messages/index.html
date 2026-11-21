@@ -331,14 +331,14 @@
     <div id="authView" class="auth-wrap">
       <div class="auth-card">
         <h1 class="serif">Dad &amp; Lorelai</h1>
-        <p class="sub">This board is just for Dad and Lorelai. Sign in with your email and password to come in.</p>
+        <p class="sub">This board is just for Dad and Lorelai. Sign in with your name or email and password to come in.</p>
 
         <div id="authError" class="error-box" role="alert"></div>
 
         <form id="signInForm" novalidate>
           <div class="field">
-            <label for="emailInput">Email</label>
-            <input id="emailInput" type="email" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="you@example.com" required />
+            <label for="emailInput">Name or email</label>
+            <input id="emailInput" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Lorelai or you@example.com" required />
           </div>
           <div class="field">
             <label for="passwordInput">Password</label>
@@ -402,6 +402,13 @@
         var ACCOUNTS = {
           "iamchrisjalbert@gmail.com": "Dad",
           "lorelaij@jrischools.org": "Lorelai"
+        };
+
+        // Sign-in accepts a first name too ("Lorelai" or "Dad") and maps it
+        // to that person's email, so nobody has to type a full address.
+        var NAMES = {
+          "lorelai": "lorelaij@jrischools.org",
+          "dad": "iamchrisjalbert@gmail.com"
         };
 
         var authView = document.getElementById("authView");
@@ -647,9 +654,10 @@
         signInForm.addEventListener("submit", function (e) {
           e.preventDefault();
           hideAuthError();
-          var email = emailInput.value.trim().toLowerCase();
+          var typed = emailInput.value.trim().toLowerCase();
+          var email = NAMES[typed] || typed;
           var password = passwordInput.value;
-          if (!email) { showAuthError("Type your email to sign in."); emailInput.focus(); return; }
+          if (!email) { showAuthError("Type your name or email to sign in."); emailInput.focus(); return; }
           if (!password) { showAuthError("Type your password to sign in."); passwordInput.focus(); return; }
           signInBtn.disabled = true;
           signInBtn.textContent = "Signing in…";
@@ -663,13 +671,13 @@
             signInBtn.textContent = "Sign in";
             var code = err && err.code ? err.code : "";
             if (code === "auth/invalid-credential" || code === "auth/wrong-password" || code === "auth/user-not-found" || code === "auth/invalid-email") {
-              showAuthError("That email and password don’t match. Check them and try again.");
+              showAuthError("That name or email and password don’t match. Check them and try again.");
             } else if (code === "auth/too-many-requests") {
               showAuthError("Too many tries — wait a bit, then try again.");
             } else if (code === "auth/network-request-failed") {
               showAuthError("Couldn’t reach the board. Check your internet connection and try again.");
             } else {
-              showAuthError("Couldn’t sign in. Check your email and password and try again.");
+              showAuthError("Couldn’t sign in. Check your name or email and password and try again.");
             }
             passwordInput.select();
           });
