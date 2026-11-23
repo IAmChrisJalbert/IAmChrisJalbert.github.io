@@ -55,6 +55,100 @@
           --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
       }
+      /* ---------- Per-person color themes ----------
+         Picked on the board (header button) and saved on that device
+         only, so Dad and Lorelai can each have their own look. An
+         explicit theme beats the dark-mode block above (higher
+         specificity); with no data-theme set, Auto = the warm scheme
+         above, light or dark per the device. */
+      :root[data-theme="ocean"] {
+        --bg: #f0f7fa;
+        --bg-board: #eaf4f9;
+        --surface: #ffffff;
+        --surface-soft: #e3f0f7;
+        --ink: #0c2d3d;
+        --ink-soft: #4a6b7d;
+        --ink-faint: #7d9db0;
+        --line: #cfe3ee;
+        --accent: #0284c7;
+        --accent-hover: #0369a1;
+        --accent-ink: #ffffff;
+        --bubble-mine: #0284c7;
+        --bubble-mine-ink: #ffffff;
+        --bubble-theirs: #e0f2fe;
+        --bubble-theirs-ink: #0c2d3d;
+        --error-bg: #fdf0ec;
+        --error-ink: #8f2f1a;
+        --error-line: #f0c4b4;
+        --input-bg: #ffffff;
+        --shadow: 0 10px 30px rgba(15, 60, 90, 0.10);
+      }
+      :root[data-theme="forest"] {
+        --bg: #f3faf2;
+        --bg-board: #edf7ea;
+        --surface: #ffffff;
+        --surface-soft: #e6f4e3;
+        --ink: #16281a;
+        --ink-soft: #4d6350;
+        --ink-faint: #8aa58c;
+        --line: #cfe3cf;
+        --accent: #15803d;
+        --accent-hover: #166534;
+        --accent-ink: #ffffff;
+        --bubble-mine: #15803d;
+        --bubble-mine-ink: #ffffff;
+        --bubble-theirs: #dcfce7;
+        --bubble-theirs-ink: #16281a;
+        --error-bg: #fdf0ec;
+        --error-ink: #8f2f1a;
+        --error-line: #f0c4b4;
+        --input-bg: #ffffff;
+        --shadow: 0 10px 30px rgba(20, 60, 25, 0.10);
+      }
+      :root[data-theme="plum"] {
+        --bg: #faf5ff;
+        --bg-board: #f6eefc;
+        --surface: #ffffff;
+        --surface-soft: #f1e6fb;
+        --ink: #2e153f;
+        --ink-soft: #6b5280;
+        --ink-faint: #a58bbd;
+        --line: #e3d3f5;
+        --accent: #7e22ce;
+        --accent-hover: #6b21a8;
+        --accent-ink: #ffffff;
+        --bubble-mine: #7e22ce;
+        --bubble-mine-ink: #ffffff;
+        --bubble-theirs: #f3e8ff;
+        --bubble-theirs-ink: #2e153f;
+        --error-bg: #fdf0ec;
+        --error-ink: #8f2f1a;
+        --error-line: #f0c4b4;
+        --input-bg: #ffffff;
+        --shadow: 0 10px 30px rgba(60, 20, 90, 0.10);
+      }
+      :root[data-theme="midnight"] {
+        --bg: #0b1220;
+        --bg-board: #0f172a;
+        --surface: #1e293b;
+        --surface-soft: #24344d;
+        --ink: #f1f5f9;
+        --ink-soft: #cbd5e1;
+        --ink-faint: #94a3b8;
+        --line: #334155;
+        --accent: #38bdf8;
+        --accent-hover: #7dd3fc;
+        --accent-ink: #082f49;
+        --bubble-mine: #38bdf8;
+        --bubble-mine-ink: #082f49;
+        --bubble-theirs: #1e293b;
+        --bubble-theirs-ink: #f1f5f9;
+        --error-bg: #3a1f1f;
+        --error-ink: #ffb59f;
+        --error-line: #6b3a2d;
+        --input-bg: #0f172a;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
       * { box-sizing: border-box; }
       html, body { height: 100%; }
       body {
@@ -200,6 +294,52 @@
         font-size: 0.9rem;
       }
       .btn-ghost:hover { border-color: var(--ink-faint); color: var(--ink); }
+
+      /* ---------- Theme picker ---------- */
+      .head-actions {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .theme-wrap { position: relative; }
+      .theme-menu {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        min-width: 210px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 6px;
+        z-index: 20;
+      }
+      .theme-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 9px 10px;
+        border: none;
+        border-radius: 9px;
+        background: transparent;
+        text-align: left;
+        font-size: 0.95rem;
+      }
+      .theme-option:hover { background: var(--surface-soft); }
+      .theme-option .swatch {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        flex: 0 0 auto;
+      }
+      .theme-option .check {
+        margin-left: auto;
+        color: var(--accent);
+        font-weight: 700;
+      }
 
       .messages {
         flex: 1 1 auto;
@@ -349,6 +489,19 @@
 
       .hidden { display: none !important; }
     </style>
+    <script>
+      // Apply the saved color theme before first paint so the page
+      // never flashes the default scheme. The pick lives in
+      // localStorage on this device only (see the picker in the board
+      // header); "auto" means follow the device, like before.
+      try {
+        var __theme = window.localStorage.getItem("dad-lorelai-theme");
+        if (__theme && __theme !== "auto" &&
+            ["ocean", "forest", "plum", "midnight"].indexOf(__theme) !== -1) {
+          document.documentElement.setAttribute("data-theme", __theme);
+        }
+      } catch (e) { /* private mode etc. — default theme stays */ }
+    </script>
   </head>
   <body>
 
@@ -372,7 +525,7 @@
           <button id="signInBtn" class="btn-primary" type="submit">Sign in</button>
         </form>
 
-        <p class="auth-note">Nothing is saved on this device &mdash;<br />you&rsquo;ll sign in again next visit.</p>
+        <p class="auth-note">Your sign-in isn&rsquo;t saved on this device &mdash;<br />you&rsquo;ll sign in again next visit. Your color theme is the only thing kept here.</p>
       </div>
     </div>
 
@@ -383,7 +536,13 @@
           <h1 class="serif">Dad &amp; Lorelai</h1>
           <p class="who" id="signedInAs">Signed in</p>
         </div>
-        <button id="signOutBtn" class="btn-ghost" type="button">Sign out</button>
+        <div class="head-actions">
+          <div class="theme-wrap">
+            <button id="themeBtn" class="btn-ghost" type="button" aria-haspopup="true" aria-expanded="false">&#127912; Theme</button>
+            <div id="themeMenu" class="theme-menu hidden" role="menu" aria-label="Color theme"></div>
+          </div>
+          <button id="signOutBtn" class="btn-ghost" type="button">Sign out</button>
+        </div>
       </header>
 
       <main id="messagesEl" class="messages" aria-live="polite">
@@ -451,6 +610,81 @@
         var sendBtn = document.getElementById("sendBtn");
         var charCount = document.getElementById("charCount");
         var sendError = document.getElementById("sendError");
+        var themeBtn = document.getElementById("themeBtn");
+        var themeMenu = document.getElementById("themeMenu");
+
+        // ---- Color themes: each person picks their own ----
+        // The pick is saved in localStorage on this device only, so
+        // Dad's phone and Lorelai's device can look different.
+        // "auto" = the original warm scheme, light or dark per device.
+        var THEME_KEY = "dad-lorelai-theme";
+        var THEMES = [
+          { id: "auto", name: "Auto (follows your device)", swatch: "linear-gradient(135deg, #fffaf3 50%, #1d1611 50%)" },
+          { id: "ocean", name: "Ocean", swatch: "#0284c7" },
+          { id: "forest", name: "Forest", swatch: "#15803d" },
+          { id: "plum", name: "Plum", swatch: "#7e22ce" },
+          { id: "midnight", name: "Midnight", swatch: "#0f172a" }
+        ];
+
+        function savedTheme() {
+          try {
+            var t = window.localStorage.getItem(THEME_KEY);
+            for (var i = 0; i < THEMES.length; i++) {
+              if (THEMES[i].id === t) return t;
+            }
+          } catch (e) { /* private mode etc. */ }
+          return "auto";
+        }
+        function applyTheme(id) {
+          if (id === "auto") {
+            document.documentElement.removeAttribute("data-theme");
+          } else {
+            document.documentElement.setAttribute("data-theme", id);
+          }
+          try { window.localStorage.setItem(THEME_KEY, id); } catch (e) {}
+          renderThemeMenu();
+        }
+        function renderThemeMenu() {
+          var current = savedTheme();
+          themeMenu.innerHTML = "";
+          THEMES.forEach(function (th) {
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "theme-option";
+            btn.setAttribute("role", "menuitem");
+            var sw = document.createElement("span");
+            sw.className = "swatch";
+            sw.style.background = th.swatch;
+            btn.appendChild(sw);
+            var label = document.createElement("span");
+            label.textContent = th.name;
+            btn.appendChild(label);
+            if (th.id === current) {
+              var check = document.createElement("span");
+              check.className = "check";
+              check.textContent = "✓";
+              btn.appendChild(check);
+            }
+            btn.addEventListener("click", function () {
+              applyTheme(th.id);
+              closeThemeMenu();
+            });
+            themeMenu.appendChild(btn);
+          });
+        }
+        function closeThemeMenu() {
+          themeMenu.classList.add("hidden");
+          themeBtn.setAttribute("aria-expanded", "false");
+        }
+        function toggleThemeMenu() {
+          if (themeMenu.classList.contains("hidden")) {
+            renderThemeMenu();
+            themeMenu.classList.remove("hidden");
+            themeBtn.setAttribute("aria-expanded", "true");
+          } else {
+            closeThemeMenu();
+          }
+        }
 
         var currentUser = null;
         // Set from the signed-in email (see ACCOUNTS) — kept in memory only
@@ -791,6 +1025,22 @@
             showOnly(authView);
           });
         });
+
+        themeBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          toggleThemeMenu();
+        });
+        document.addEventListener("click", function (e) {
+          if (!themeMenu.classList.contains("hidden") && !themeMenu.contains(e.target)) {
+            closeThemeMenu();
+          }
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeThemeMenu();
+        });
+        // Make sure the live theme matches the saved pick (the small
+        // script in <head> already applied it before first paint).
+        applyTheme(savedTheme());
 
         sendBtn.addEventListener("click", sendMessage);
         messageInput.addEventListener("keydown", function (e) {
