@@ -259,6 +259,31 @@
         border: 1px solid var(--line);
         border-bottom-left-radius: 6px;
       }
+      .reactions {
+        display: flex;
+        gap: 6px;
+        margin-top: 5px;
+      }
+      .msg.mine .reactions { justify-content: flex-end; }
+      .react-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+        line-height: 1.3;
+      }
+      .react-btn:hover { border-color: var(--ink-faint); }
+      .react-btn.active {
+        border-color: var(--accent);
+        background: var(--surface-soft);
+        color: var(--accent);
+      }
+      .react-count { font-weight: 700; font-variant-numeric: tabular-nums; }
 
       .composer {
         flex: 0 0 auto;
@@ -435,6 +460,16 @@
         var messagesQuery = null;
         var subscribed = false;
         var seenKeys = {};
+        // key -> the reactions row element under that message, and the
+        // latest message data for it (kept fresh by child_changed).
+        var reactionRows = {};
+        var messageCache = {};
+
+        // The two reactions on the board: like and heart.
+        var REACT_TYPES = [
+          { key: "like", emoji: "👍", label: "Like" },
+          { key: "heart", emoji: "❤️", label: "Heart" }
+        ];
 
         function showAuthError(text) {
           authError.textContent = text;
@@ -521,8 +556,66 @@
 
           row.appendChild(meta);
           row.appendChild(bubble);
+
+          // Reactions row under the bubble — 👍 like and ❤️ heart.
+          // Stored on the message as reactions: { like: { Dad: true },
+          // heart: { Lorelai: true } }. Tapping your own reaction again
+          // removes it. Counts only show once somebody has reacted.
+          var reactionsRow = document.createElement("div");
+          reactionsRow.className = "reactions";
+          row.appendChild(reactionsRow);
+          reactionRows[key] = reactionsRow;
+          messageCache[key] = msg;
+          renderReactions(key, msg);
+
           messagesEl.appendChild(row);
           scrollToBottom();
+        }
+
+        function reactionCount(msg, type) {
+          var r = (msg && msg.reactions && msg.reactions[type]) || {};
+          return Object.keys(r).length;
+        }
+        function iReacted(msg, type) {
+          return !!(msg && msg.reactions && msg.reactions[type] && myName && msg.reactions[type][myName]);
+        }
+
+        function renderReactions(key, msg) {
+          var row = reactionRows[key];
+          if (!row) return;
+          row.innerHTML = "";
+          REACT_TYPES.forEach(function (t) {
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "react-btn" + (iReacted(msg, t.key) ? " active" : "");
+            btn.setAttribute("aria-label", t.label + " this message");
+            btn.title = t.label;
+            var emoji = document.createElement("span");
+            emoji.textContent = t.emoji;
+            btn.appendChild(emoji);
+            var n = reactionCount(msg, t.key);
+            if (n > 0) {
+              var count = document.createElement("span");
+              count.className = "react-count";
+              count.textContent = String(n);
+              btn.appendChild(count);
+            }
+            btn.addEventListener("click", function () { toggleReaction(key, t.key); });
+            row.appendChild(btn);
+          });
+        }
+
+        function toggleReaction(key, type) {
+          if (!messagesRef || !myName) return;
+          var msg = messageCache[key] || {};
+          var ref = messagesRef.child(key).child("reactions").child(type).child(myName);
+          // The live listener re-renders the row once the write lands,
+          // so a failed write just leaves the buttons as they were.
+          if (iReacted(msg, type)) {
+            ref.remove().catch(function () {});
+          } else {
+            ref.set(true).catch(function () {});
+          }
         }
 
         function subscribeToMessages() {
@@ -545,6 +638,13 @@
           }, function () {
             var l = document.getElementById("loadingState");
             if (l) l.textContent = "Couldn’t load messages. Try signing out and coming back in.";
+          });
+          // Reactions change a message in place — re-render just its
+          // reaction row so a heart or like shows up live, on both sides.
+          messagesQuery.on("child_changed", function (snapshot) {
+            var msg = snapshot.val() || {};
+            messageCache[snapshot.key] = msg;
+            renderReactions(snapshot.key, msg);
           });
           // If the board is empty, the loading note gives way to the empty state.
           messagesRef.once("value").then(function (snapshot) {
