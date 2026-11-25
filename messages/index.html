@@ -294,6 +294,10 @@
         font-size: 0.9rem;
       }
       .btn-ghost:hover { border-color: var(--ink-faint); color: var(--ink); }
+      @media (max-width: 520px) {
+        .board-head h1 { font-size: 1.15rem; }
+        .btn-ghost { padding: 9px 10px; font-size: 0.85rem; }
+      }
 
       /* ---------- Theme picker ---------- */
       .head-actions {
@@ -537,6 +541,7 @@
           <p class="who" id="signedInAs">Signed in</p>
         </div>
         <div class="head-actions">
+          <button id="notifyBtn" class="btn-ghost" type="button" title="Turn on notifications">🔔 Notify me</button>
           <div class="theme-wrap">
             <button id="themeBtn" class="btn-ghost" type="button" aria-haspopup="true" aria-expanded="false">&#127912; Theme</button>
             <div id="themeMenu" class="theme-menu hidden" role="menu" aria-label="Color theme"></div>
@@ -568,6 +573,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-compat.js"></script>
     <script>
       (function () {
         "use strict";
@@ -684,6 +690,133 @@
           } else {
             closeThemeMenu();
           }
+        }
+
+        // ---- Push notifications (Firebase Cloud Messaging) ----
+        // The board can push a notification to the other person's
+        // phone when a new message lands — even with the tab closed.
+        // How it works: this page registers the service worker at
+        // /firebase-messaging-sw.js, asks permission, gets an FCM
+        // token, and saves it at pushTokens/<my uid>/<this device>.
+        // A Cloud Function watches /messages and sends the push to
+        // the other person's saved tokens. The token is per device
+        // and browser; it is never shown on the board.
+        //
+        // VAPID_KEY is the public Web Push certificate from the
+        // Firebase console (Project settings > Cloud Messaging >
+        // Web Push certificates). It is a public key, safe to ship
+        // in the page — but until it is filled in here, the button
+        // below stays off and nothing registers.
+        var VAPID_KEY = "";
+        var notifyBtn = document.getElementById("notifyBtn");
+        var pushMessaging = null;
+        var swRegistration = null;
+        var pushToken = null;
+
+        var DEVICE_KEY = "dad-lorelai-device";
+        function deviceId() {
+          try {
+            var id = window.localStorage.getItem(DEVICE_KEY);
+            if (!id) {
+              id = "dev-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+              window.localStorage.setItem(DEVICE_KEY, id);
+            }
+            return id;
+          } catch (e) { return "dev-unknown"; }
+        }
+
+        function pushSupported() {
+          return ("Notification" in window) && ("serviceWorker" in navigator) &&
+            (typeof firebase !== "undefined") && (typeof firebase.messaging === "function");
+        }
+
+        function refreshNotifyButton() {
+          if (!pushSupported()) {
+            notifyBtn.disabled = true;
+            notifyBtn.title = "Notifications aren't available in this browser.";
+            notifyBtn.textContent = "🔔 Off";
+            return;
+          }
+          if (!VAPID_KEY) {
+            notifyBtn.disabled = true;
+            notifyBtn.title = "Push isn't set up yet — the board still needs its push key.";
+            notifyBtn.textContent = "🔔 Off";
+            return;
+          }
+          if (Notification.permission === "denied") {
+            notifyBtn.disabled = true;
+            notifyBtn.title = "Notifications are blocked for this site — allow them in your browser settings to turn them on.";
+            notifyBtn.textContent = "🔔 Blocked";
+            return;
+          }
+          notifyBtn.disabled = false;
+          notifyBtn.title = pushToken ? "Notifications are on for this device." : "Turn on notifications for this device.";
+          notifyBtn.textContent = pushToken ? "🔔 On" : "🔔 Notify me";
+        }
+
+        function registerPushWorker() {
+          if (swRegistration) return Promise.resolve(swRegistration);
+          return navigator.serviceWorker.register("/firebase-messaging-sw.js").then(function (reg) {
+            swRegistration = reg;
+            return reg;
+          }).catch(function () { return null; });
+        }
+
+        function savePushToken(token) {
+          if (!currentUser) return Promise.resolve(false);
+          return firebase.database().ref("pushTokens").child(currentUser.uid).child(deviceId()).set({
+            token: token,
+            device: (navigator.userAgent || "").slice(0, 120),
+            updatedAt: firebase.database.ServerValue.TIMESTAMP
+          }).then(function () { return true; }).catch(function () { return false; });
+        }
+
+        function fetchAndSaveToken() {
+          if (!pushMessaging) pushMessaging = firebase.messaging();
+          return pushMessaging.getToken({
+            vapidKey: VAPID_KEY,
+            serviceWorkerRegistration: swRegistration || undefined
+          }).then(function (token) {
+            if (!token) return false;
+            return savePushToken(token).then(function (saved) {
+              if (saved) pushToken = token;
+              return saved;
+            });
+          }).catch(function () { return false; });
+        }
+
+        function enableNotifications() {
+          if (!VAPID_KEY || Notification.permission === "denied") { refreshNotifyButton(); return; }
+          var ask = Notification.permission === "granted"
+            ? Promise.resolve("granted")
+            : Notification.requestPermission();
+          ask.then(function (result) {
+            if (result !== "granted") { refreshNotifyButton(); return; }
+            return registerPushWorker().then(function () { return fetchAndSaveToken(); });
+          }).then(function () { refreshNotifyButton(); }).catch(function () { refreshNotifyButton(); });
+        }
+
+        // Called on entering the board: register the worker early so
+        // background pushes can arrive, and if permission was already
+        // granted, quietly (re)save this device's token. The
+        // permission prompt itself only ever comes from tapping the
+        // button — browsers require a user gesture for it.
+        function initPush() {
+          if (!pushSupported()) { refreshNotifyButton(); return; }
+          if (!pushMessaging) pushMessaging = firebase.messaging();
+          if (typeof pushMessaging.onTokenRefresh === "function") {
+            pushMessaging.onTokenRefresh(function () {
+              fetchAndSaveToken().then(function () { refreshNotifyButton(); });
+            });
+          }
+          registerPushWorker().then(function () {
+            if (!VAPID_KEY) { refreshNotifyButton(); return; }
+            if (Notification.permission === "granted") {
+              fetchAndSaveToken().then(function () { refreshNotifyButton(); });
+            } else {
+              refreshNotifyButton();
+            }
+          });
         }
 
         var currentUser = null;
@@ -945,6 +1078,7 @@
           signedInAs.textContent = "Signed in as " + myName;
           showOnly(boardView);
           subscribeToMessages();
+          initPush();
           messageInput.focus();
         }
 
@@ -969,6 +1103,7 @@
           if (!user) {
             // Signed out (or never signed in): back to the sign-in screen.
             myName = null;
+            pushToken = null;
             unsubscribeFromMessages();
             passwordInput.value = "";
             showOnly(authView);
@@ -1020,6 +1155,7 @@
 
         signOutBtn.addEventListener("click", function () {
           myName = null;
+          pushToken = null;
           unsubscribeFromMessages();
           auth.signOut().catch(function () {
             showOnly(authView);
@@ -1030,6 +1166,7 @@
           e.stopPropagation();
           toggleThemeMenu();
         });
+        notifyBtn.addEventListener("click", enableNotifications);
         document.addEventListener("click", function (e) {
           if (!themeMenu.classList.contains("hidden") && !themeMenu.contains(e.target)) {
             closeThemeMenu();
