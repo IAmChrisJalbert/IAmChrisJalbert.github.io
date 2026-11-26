@@ -529,7 +529,7 @@
           <button id="signInBtn" class="btn-primary" type="submit">Sign in</button>
         </form>
 
-        <p class="auth-note">Your sign-in isn&rsquo;t saved on this device &mdash;<br />you&rsquo;ll sign in again next visit. Your color theme is the only thing kept here.</p>
+        <p class="auth-note">You&rsquo;ll stay signed in on this device until you tap Sign out.<br />Your color theme is kept here too.</p>
       </div>
     </div>
 
@@ -1090,11 +1090,11 @@
         firebase.initializeApp(firebaseConfig);
         var auth = firebase.auth();
 
-        // In-memory persistence only: the sign-in lasts just while this
-        // page is open and leaves nothing stored on the device. Closing
-        // the tab or browser ends the session, so email and password are
-        // asked for again on every visit.
-        auth.setPersistence(firebase.auth.Auth.Persistence.NONE).catch(function () {
+        // Local persistence: the sign-in stays saved on this device, so
+        // Dad and Lorelai don't have to sign in on every visit. Tapping
+        // "Sign out" ends it. (This used to be in-memory only, which is
+        // why every visit asked for the password again.)
+        auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(function () {
           /* If it can't be set, signing in still works for this visit. */
         });
 
